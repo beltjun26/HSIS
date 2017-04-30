@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}">
 	
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<title>Login</title>
@@ -16,7 +16,7 @@
             {{ csrf_field() }}
 			<input id="username" type="text" name="username" placeholder="Username" required autofocus>
 			<input id="password" type="password" name="password" placeholder="Password" required="required">
-			<button type="submit" class="btn btn-primary btn-block btn-large"><span class="glyphicon glyphicon-home"></span>Let me in.</button>
+			<button type="submit" class="btn btn-primary btn-block btn-large"><span class="glyphicon glyphicon-off text-danger"></span>Let me in.</button>
 		</form>
 	</div>
 </body>
