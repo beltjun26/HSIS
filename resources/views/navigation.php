@@ -7,7 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="css/nav_style.css">
 	<script type="text/javascript" src="bootstrap/jquery-3.2.0.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<title>Navigation</title>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<title>Home</title>
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
