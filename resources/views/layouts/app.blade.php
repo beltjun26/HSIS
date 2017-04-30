@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> 
                 </button>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                <a class="navbar-brand" href="#" id="side_toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
@@ -43,7 +43,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="sidenav">
+        <div id="sidenav" class="sidenav">
             <div class="sidenav-header">
                 <img class="profile" src="{{ asset('images/profile.jpg') }}">
                 <h1 class="user-name">Rosiebelt Jun Abisado</h1>
@@ -69,5 +69,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/navigation.js') }}"></script>
 </body>
 </html>

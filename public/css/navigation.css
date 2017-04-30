@@ -12,7 +12,8 @@ body{
 	width: 20%;
 	background-color: #34495e;
 	position: fixed;
-	left: 0;
+	left: -20%;
+	transition: .5s;
 }
 .sidenav-nav{
 	
