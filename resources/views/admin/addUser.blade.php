@@ -15,16 +15,16 @@
         			</div>
         			<div class="pane-body user-group">
         				<div class="row text-center">
-        					<div class="col-md-3">
+        					<div class="col-md-3 col-sm-3">
         						<button id="adminBtn" class="btn btn-default" type="button" name="admin">Admin</button>
         					</div>
-        					<div class="col-md-3">
+        					<div class="col-md-3 col-sm-3">
         						<button id="teacherBtn" class="btn btn-default" type="button" name="teacher">Teacher</button>
         					</div>
-        					<div class="col-md-3">
+        					<div class="col-md-3 col-sm-3">
         						<button id="cashierBtn" class="btn btn-default" type="button" name="cashier">Cashier</button>
         					</div>
-        					<div class="col-md-3">
+        					<div class="col-md-3 col-sm-3">
         						<button id="librarianBtn" class="btn btn-default" type="button" name="librarian">Librarian</button>
         					</div>
         				</div>
@@ -39,15 +39,21 @@
         			<div class="panel-heading">
         				Create Admin
         			</div>
-        			<div class="panel-body">
+        			<div id="form_container" class="panel-body">
 
         				<form id="adminForm" class="form-horizontal">
         					<div class="form-group">
 	        					<label class="control-label col-sm-2" for="username">Username:</label>
 	        					<div class="col-sm-10">
-	        						<input id="username" class="form-control" type="text" name="username">		
+	        						<input class="form-control" type="text" name="username">		
 	        					</div>
         					</div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Name:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" name="name">      
+                                </div>
+                            </div>
         					<div class="form-group">
         						<label class="control-label col-sm-2">Password:</label>
         						<div class="col-sm-10">
@@ -71,7 +77,7 @@
         					<div class="form-group">
 	        					<label class="control-label col-sm-2" for="username">Username:</label>
 	        					<div class="col-sm-10">
-	        						<input id="username" class="form-control" type="text" name="username">		
+	        						<input class="form-control" type="text" name="username">		
 	        					</div>
         					</div>
         					<div class="form-group">
@@ -129,13 +135,19 @@
         					</div>
         				</form>
 
-        				<form id="teacherForm" class="form-horizontal">
+        				<form id="cashierForm" class="form-horizontal">
         					<div class="form-group">
 	        					<label class="control-label col-sm-2" for="username">Username:</label>
 	        					<div class="col-sm-10">
-	        						<input id="username" class="form-control" type="text" name="username">		
+	        						<input class="form-control" type="text" name="username">	
 	        					</div>
         					</div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="username">Name:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" name="name">  
+                                </div>
+                            </div>
         					<div class="form-group">
         						<label class="control-label col-sm-2">Password:</label>
         						<div class="col-sm-10">
@@ -154,6 +166,38 @@
         						</div>
         					</div>
         				</form>
+
+                        <form id="librarianForm" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="username">Username:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" name="username">    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="username">Name:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" name="name">  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Password:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="password" name="password">    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Retype Password:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="password" name="retypePassword">  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2 col-sm-offset-5 text-center">
+                                    <input class="btn btn-success" type="submit" name="submit">
+                                </div>
+                            </div>
+                        </form>
         			</div>
         		</div>
         	</div>

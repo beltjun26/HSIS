@@ -8,7 +8,7 @@ class CreateAccountabilityTable extends Migration
 {
     public function up()
     {
-         Schema::create('accountability', function($table){
+         Schema::create('accountabilities', function($table){
             $table->increments('id', 11); //aka accountability_id
             $table->string('accountability_name', 60);
             $table->decimal('decimal', 5, 2);

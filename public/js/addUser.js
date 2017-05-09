@@ -1,30 +1,45 @@
 $(function(){
 	var adminbtn = document.getElementById('adminBtn');
 	var teacherBtn = document.getElementById('teacherBtn');
+	var cashierBtn = document.getElementById('cashierBtn');
+	var librarianBtn = document.getElementById('librarianBtn');
+	cashierBtn.addEventListener('click', cashierClick);
+	librarianBtn.addEventListener('click', librarianClick);
 	teacherBtn.addEventListener('click', teacherClick);
 	adminbtn.addEventListener('click', adminClick);
 });
 
 function adminClick(){
-	var form = document.getElementById('form');
-	var header = form.firstChild;
-	var adminForm = document.getElementById('adminForm');
-	adminForm.style.display = "block";
-	header.innerHTML = "Create Admin";
-	form.style.display = "block";
-
+	hideAllExecpt('adminForm');
 }
 function cashierClick(){
-	
+	hideAllExecpt('cashierForm');
 }
 function teacherClick(){
-	var form = document.getElementById('form');
-	var header = form.firstChild;
-	var teacherForm = document.getElementById('teacherForm');
-	teacherForm.style.display = "block";
-	header.innerHTML = "Create Teacher";
-	form.style.display = "block";
+	hideAllExecpt('teacherForm');
 }
-function librarian() {
-	
+function librarianClick() {
+	hideAllExecpt('librarianForm');	
+}
+function hideAllExecpt(form_id){
+	var header = document.getElementById('form').firstChild;
+	if(form_id == "adminForm"){
+		header.innerHTML = "Create Admin";
+	}else if(form_id == "cashierForm"){
+		header.innerHTML = "Create Cashier";
+	}else if(form_id == "teacherForm"){
+		header.innerHTML = "Create Teacher";
+	}else if(form_id == "librarianForm"){
+		header.innerHTML = "Create librarian";
+	}
+	var allForms = document.getElementById('form_container').children;
+	document.getElementById('form').style.display = "block";
+	for(let i = 0;i<allForms.length;i++){
+		if(allForms[i].id == form_id){
+			allForms[i].style.display = "block";
+		}else{
+			allForms[i].style.display = "none";
+		}
+	}
+
 }

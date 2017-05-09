@@ -2,7 +2,7 @@ body{
 	padding-top: 70px;
 	background-color: white;
 	height: 100vh;
-	font-family: 'Open Sans Light';
+	font-family: 'San Serif Light';
 }
 .navbar-nav > .active > a{
 	background-color: #54c0c0;

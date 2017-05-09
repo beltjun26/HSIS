@@ -8,9 +8,10 @@ class CreateAdminTable extends Migration
 {
     public function up()
     {
-        Schema::create('admin', function($table){
+        Schema::create('admins', function($table){
             $table->string('id', 12)->primary();
-            $table->string('username', 50);
+            $table->string('name');
+            $table->integer('id_users');
             $table->string('password', 100);
         });
     }

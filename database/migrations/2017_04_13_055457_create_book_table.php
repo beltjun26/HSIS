@@ -8,7 +8,7 @@ class CreateBookTable extends Migration
 {
     public function up()
     {
-        Schema::create('book', function($table){
+        Schema::create('books', function($table){
             $table->string('id', 60)->primary();
             $table->string('name', 60);
         });

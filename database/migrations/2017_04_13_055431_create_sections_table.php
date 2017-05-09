@@ -9,7 +9,7 @@ class CreateSectionTable extends Migration
 
     public function up()
     {
-        Schema::create('section', function($table){
+        Schema::create('sections', function($table){
             $table->string('name', 60)->primary();
             $table->string('classroom', 11);
             $table->string('attribute', 60);

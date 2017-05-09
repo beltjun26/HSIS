@@ -9,8 +9,9 @@ class CreateTeacherTable extends Migration
 
     public function up()
     {
-        Schema::create('teacher', function($table){
+        Schema::create('teachers', function($table){
             $table->string('id', 12)->primary();
+            $table->integer('id_users');
             $table->string('teacher_fname', 60);
             $table->string('teacher_mname', 60);
             $table->string('teacher_lname', 60);
@@ -18,7 +19,6 @@ class CreateTeacherTable extends Migration
             $table->string('contact_num', 11);
             $table->string('address', 60);
             $table->string('email', 60);
-            $table->string('username', 60);
             $table->string('password', 60);
         });
     }
