@@ -13,9 +13,9 @@ class CreatePayTable extends Migration
             $table->string('status', 60);
             $table->date('date');
             $table->integer('accountability_id')->unsigned();
-            $table->foreign('accountability_id')->references('id')->on('accountability');
             $table->string('student_LRN', 12);
-            $table->foreign('student_LRN')->references('LRN')->on('student');
+            $table->timestamps();
+        
         });
     }
 

@@ -13,9 +13,8 @@ class CreateBorrowedTable extends Migration
             $table->date('date');
             $table->string('status', 60);
             $table->string('student_LRN', 12);
-            $table->foreign('student_LRN')->references('LRN')->on('student');
             $table->string('book_id', 60);
-            $table->foreign('book_id')->references('id')->on('book');
+            $table->timestamps();
         });
     }
 

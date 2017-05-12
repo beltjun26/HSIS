@@ -1,0 +1,25 @@
+.user-group{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#form{
+	display: none;
+	transition: .3s;
+}
+#adminForm{
+	/*opacity: 0;*/
+	display: none;
+	transition: .1s;
+}
+#teacherForm{
+	display: none;
+}
+#librianForm{
+	display: none;
+}
+#cashierForm{
+	display: none;
+}
+.v-center{
+	margin-top: 50%;
+}

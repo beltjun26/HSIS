@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Admin;
+use App\Cashier;
+use App\Teacher;
+use App\Librarian;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -25,9 +30,9 @@ class RegisterController extends Controller
     /**
      * Where to redirect users after registration.
      *
-     * @var string
+     * @var stripcslashes(str)ng
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -39,6 +44,9 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function registerUser(Request $request){
+        $user = $this->create($request->all());
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -47,11 +55,47 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'type' => 'required|string|max:255',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+        if($data['type'] == 'admin'){
+            return Validator::make($data, [
+                'username' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
+                'password' => 'required|string|min:6|confirmed',
+                'type' => 'required|string|max:10',
+                ]);
+        }elseif($data['type']=='cashier'){
+            return Validator::make($data, [
+                'username' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
+                'password' => 'required|string|min:6|confirmed',
+                'type' => 'required|string|max:10',
+            ]);
+        }elseif($data['type']=='librarian'){
+            return Validator::make($data, [
+                'username' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
+                'password' => 'required|string|min:6|confirmed',
+                'type' => 'required|string|max:10',
+            ]);
+        }elseif($data['type']=='teacher'){
+            return Validator::make($data, [
+                'username' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
+                'password' => 'required|string|min:6|confirmed',
+                'type' => 'required|string|max:10',
+                'firstname' => 'required|string|max:15',
+                'lastname' => 'required|string|max:15',
+                'middlename' => 'required|string|max:15',
+                'position' => 'required|string|max:30',
+                'address' => 'required|string|max:100',
+                'email' => 'required|string|max:100',
+            ]);
+        }
+        //this still need modification
+        // return Validator::make($data, [
+        //     'username' => 'required|string|max:255',
+        //     // 'type' => 'required|string|max:255',
+        //     'password' => 'required|string|min:6|confirmed',
+        // ]);
     }
 
     /**
@@ -62,10 +106,39 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+
+        $user = User::create([
+            'username' => $data['username'],
             'type' => $data['type'],
             'password' => bcrypt($data['password']),
         ]);
+        if($data['type']=="admin"){
+            Admin::create([
+                'name' => $data['name'],
+                'user_id' => $user->id,
+            ]);
+        }elseif ($data['type']=="cahier") {
+            Cashier::create([
+                'user_id' => $user->id,
+                'name' => $data['name'],
+                ]);
+        }elseif ($data['type']=="librarian") {
+            Librarian::create([
+                'user_id' => $user->id,
+                'name' => $data['name'],
+                ]);
+        }elseif ($data['type']=="teacher") {
+            Teacher::create([
+                'user_id' => $user->id,
+                'firstname' => $data['firstname'],
+                'middlename' => $data['middlename'],
+                'lastname' => $data['lastname'],
+                'position' => $data['position'],
+                'contact' => $data['contact'],
+                'address' => $data['address'],
+                'email' => $data['email'],
+                ]);
+        }
+        return $user;
     }
 }

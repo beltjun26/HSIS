@@ -1,13 +1,14 @@
 body{
-	background-color: #e9ebee;
+	padding-top: 70px;
+	background-color: white;
 	height: 100vh;
-	font-family: 'Open Sans Light';
+	font-family: 'San Serif Light';
 }
 .navbar-nav > .active > a{
 	background-color: #54c0c0;
 }
 .navbar-nav > li > a{
-	box-sizing: content-box;
+	border-bottom: 3px solid rgba(0,0,0,0);
 	transition: .3s;
 }
 .navbar-nav > li > a:hover{
@@ -33,6 +34,8 @@ body{
 	
 }
 .profile{
+	object-position: center;
+	object-fit: cover;
 	height: 170px;
 	width: 170px;
 	display: block;

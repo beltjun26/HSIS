@@ -13,10 +13,18 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/home', function(){
-	return view('home');
-});
+// Route::get('/home', 'HomeController@index');
 
+Route::get('/admin', 'AdminHomeController@index');
+Route::get('/teacher', 'TeacherHomeController@index');
+Route::get('/cashier', 'CashierHomeController@index');
+Route::get('/librarian', 'LibrarianHomeController@index');
 
 Auth::routes();
+
+Route::post('registerUser', 'Auth\RegisterController@registerUser');
+
+Route::get('/admin', 'AdminHomeController@addUser');
+
+
 

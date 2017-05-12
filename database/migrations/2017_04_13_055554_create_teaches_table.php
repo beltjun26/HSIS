@@ -14,9 +14,8 @@ class CreateTeachesTable extends Migration
             $table->string('subject', 60);
             $table->time('time');
             $table->string('section_name', 60);
-            $table->foreign('section_name')->references('name')->on('section');
             $table->string('teacher_id', 12);
-            $table->foreign('teacher_id')->references('id')->on('teacher');
+            $table->timestamps();
         });
     }
 
