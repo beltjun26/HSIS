@@ -4,20 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLibrarianTable extends Migration
+class CreateLibrariansTable extends Migration
 {
     public function up()
     {
         Schema::create('librarians', function($table){
-            $table->string('id', 12)->primary();
-            $table->integer('id_users');
-            $table->string('lib_name', 60);
-            $table->string('lib_password', 60);
+            $table->increments('id', 12);
+            $table->integer('user_id');
+            $table->string('name', 60);
+            $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::drop('librarian');
+        Schema::drop('librarians');
     }
 }

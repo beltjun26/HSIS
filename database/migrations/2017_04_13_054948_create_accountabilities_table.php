@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAccountabilityTable extends Migration
+class CreateAccountabilitiesTable extends Migration
 {
     public function up()
     {
@@ -12,11 +12,12 @@ class CreateAccountabilityTable extends Migration
             $table->increments('id', 11); //aka accountability_id
             $table->string('accountability_name', 60);
             $table->decimal('decimal', 5, 2);
+            $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::drop('accountability');
+        Schema::drop('accountabilities');
     }
 }

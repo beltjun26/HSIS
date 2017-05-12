@@ -3,6 +3,16 @@ $(function(){
 	var teacherBtn = document.getElementById('teacherBtn');
 	var cashierBtn = document.getElementById('cashierBtn');
 	var librarianBtn = document.getElementById('librarianBtn');
+	var adminForm = document.getElementById('adminForm');
+	var teacherForm = document.getElementById('teacherForm');
+	var librarianForm = document.getElementById('librarianForm');
+	var cashierForm = document.getElementById('cashierForm');
+
+	adminForm.addEventListener('submit', addUser);
+	teacherForm.addEventListener('submit', addUser);
+	librarianForm.addEventListener('submit', addUser);
+	cashierForm.addEventListener('submit', addUser);
+
 	cashierBtn.addEventListener('click', cashierClick);
 	librarianBtn.addEventListener('click', librarianClick);
 	teacherBtn.addEventListener('click', teacherClick);
@@ -42,4 +52,11 @@ function hideAllExecpt(form_id){
 		}
 	}
 
+}
+function addUser(e){
+	e.preventDefault();
+	var data = $('#'+this.id).serialize();
+	$.post('/registerUser', data, function(data){
+		alert("success");
+	});
 }

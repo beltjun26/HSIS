@@ -4,20 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminTable extends Migration
+class CreateAdminsTable extends Migration
 {
     public function up()
     {
         Schema::create('admins', function($table){
-            $table->string('id', 12)->primary();
+            $table->increments('id', 12);
             $table->string('name');
-            $table->integer('id_users');
-            $table->string('password', 100);
+            $table->integer('user_id');
+            $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::drop('admin');
+        Schema::drop('admins');
     }
 }

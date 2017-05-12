@@ -1,0 +1,6 @@
+Guys please read this
+We need to use charts i think, and the chart.js will do this for us
+but we cant use this unless you install node.js and bower.
+so kindly follow this intructions :)
+1. download and install node.js
+2. on your command line type " npm install -g bower"

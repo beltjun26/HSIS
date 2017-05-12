@@ -3,7 +3,8 @@ window.onload = function(){
 
 };
 
-function toggleSidenav(){
+function toggleSidenav(e){
+	e.preventDefault();
 	sidenav = document.getElementById('sidenav');
 	console.log(sidenav.style.left);
 	if(sidenav.style.left=="0px"){

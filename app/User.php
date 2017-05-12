@@ -27,5 +27,5 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // testing modification for git branching
+    
 }
