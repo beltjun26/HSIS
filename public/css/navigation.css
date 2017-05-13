@@ -75,6 +75,15 @@ body{
 	font-size: 23px;
 	color: white;
 }
+.user-type{
+	display: block;
+	text-align: center;
+	font-family: 'Open Sans Light';
+	font-size: 14px;
+	color: white;
+	text-transform: uppercase;
+
+}
 .sidenav-nav > li> a:hover{
 	background-color: #54c0c0;
 	font-size: 17px;

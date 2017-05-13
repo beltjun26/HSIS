@@ -54,9 +54,18 @@ function hideAllExecpt(form_id){
 
 }
 function addUser(e){
+	console.log("testing");
 	e.preventDefault();
+	var id = this.id;
 	var data = $('#'+this.id).serialize();
-	$.post('/registerUser', data, function(data){
-		alert("success");
+	$.ajax({
+		url: '/registerUser',
+		type: 'post',
+		data: data,
+		success: function(){
+			$('#successModal').modal('show');
+			console.log(id);
+			document.getElementById(id).reset();		
+		}
 	});
 }
