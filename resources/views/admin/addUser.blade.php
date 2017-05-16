@@ -1,7 +1,7 @@
 @extends('layouts.app')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/addUser.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/admin/addUser.css') }}">
 <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/addUser.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/admin/addUser.js') }}"></script>
 @section('content')
     <div class="container">
         <div class="row">

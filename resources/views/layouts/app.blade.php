@@ -43,7 +43,7 @@
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                            Logout
+                            <span class="glyphicon glyphicon-log-out"></span> Logout
                         </a>
                     </li>
                 </ul>
