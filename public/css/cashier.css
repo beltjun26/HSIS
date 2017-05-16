@@ -1,0 +1,79 @@
+.fees-category{
+	display: none;
+}
+
+.fees-category > li> a{
+	color: white;
+	border-bottom:3px solid #2c3e50;
+	box-sizing: content-box;	
+	padding: 13px 8px 13px 32px;
+	display: block;
+	text-decoration: none;
+	transition: .2s;
+	padding-left: 60px;
+}
+
+.fees-category > li> a:hover{
+	background-color: #54c0c0;
+	font-size: 17px;
+}
+
+.icons{
+	padding-right: 10px;
+}
+
+.info{
+	margin-top: 100px;
+}
+
+.panel{
+	border-radius: 0px;
+}
+
+.personal-info{
+	margin-top: 30px;
+}
+
+.personal-info .panel-body{
+	font-size: 15px;
+}
+
+.personal-info table tr td:first-child{
+	width: 10%;
+	word-spacing: 2px;
+}
+
+.personal-info table tr td:last-child{
+	word-spacing: 2px;
+}
+
+#profile{
+	border: solid 1px white;
+	margin-top: 40px;
+	/*width:220px;*/
+	height:220px;
+}
+
+.profile-parts{
+	width: 80%;
+	margin-left: 20%;
+	background-color: white;
+	min-height: 94vh;
+}
+
+.top-info{
+	margin-top: 70px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.top-info h1, .top-info h4{
+	font-family: 'Raleway', sans-serif;
+}
+
+.top-info h4{
+	margin-bottom: 5px;
+}
+.top-info #duration{
+	font-size: 15px;
+}
+
