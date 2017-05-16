@@ -55,7 +55,8 @@
         <div id="sidenav" class="sidenav">
             <div class="sidenav-header">
                 <img class="profile" src="{{ asset('images/profile.jpg') }}">
-                <h1 class="user-name">Rosiebelt Jun Abisado</h1>
+                <h1 class="user-name">{{ Auth::user()->UserName() }}</h1>
+                <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
                 <form>
                     <div class="input-group sidenav-search">
                         <input class="form-control" type="text" name="search" placeholder="Search...">
@@ -77,6 +78,7 @@
     </div>
 
     <!-- Scripts -->
+    
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/navigation.js') }}"></script>
 </body>

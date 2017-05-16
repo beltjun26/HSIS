@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Auth;
+use App\Admin;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -27,5 +29,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    function userName(){
+        if(Auth::user()->type == "admin"){
+            $admin = Admin::whereUser_id(Auth::user()->id)->first();
+            return $admin->name;
+            // return $admin = $this->hasOne('App\Admin', 'id')->select('name');
+           
+        }
+    }
     
 }

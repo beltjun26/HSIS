@@ -50,7 +50,7 @@
         			</div>
         			<div id="form_container" class="panel-body">
 
-        				<form id="adminForm" class="form-horizontal" method="POST" action="{{ route('register') }}">
+        				<form id="adminForm" class="form-horizontal" method="POST" action="/registerUser">
                             {{ csrf_field() }}
         					<div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
 	        					<label class="control-label col-sm-2" for="username">Username:</label>
