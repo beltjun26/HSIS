@@ -12,7 +12,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
-
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <!-- Scripts -->
     
     <script>
@@ -33,7 +33,7 @@
                 <a class="navbar-brand" href="#" id="side_toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav pull-left">
                     <li class="active"><a href="#" style="background: #54c0c0">Home</a></li>
                     <li><a href="#">Class</a></li>
                     <li><a href="#">Grade</a></li> 
