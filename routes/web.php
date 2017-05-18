@@ -15,8 +15,9 @@ Route::get('/', 'HomeController@index');
 
 
 Route::get('/cashier/profile', 'CashierController@profile');
-
 Route::get('/cashier', 'CashierController@home');
+Route::get('/cashier/collect_fees', 'CashierController@sportsCollection');
+
 
 Route::get('/admin', 'AdminHomeController@index');
 Route::get('/teacher', 'TeacherHomeController@index');
