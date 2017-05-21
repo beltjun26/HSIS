@@ -9,7 +9,7 @@
 	position: relative;
 	left:0;
 }
-.list-group > .list-group-item:hover{
+.list-group > a >.list-group-item:hover{
 	left: 10px;
 	background: #54c0c0;
 }

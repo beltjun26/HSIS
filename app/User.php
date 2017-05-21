@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'password','username' ,'type',
+        'password','username' ,'type', 'bdate', 'gender', 'firstname', 'lastname',
     ];
 
     /**
@@ -29,13 +29,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    function userName(){
-        if(Auth::user()->type == "admin"){
-            $admin = Admin::whereUser_id(Auth::user()->id)->first();
-            return $admin->name;
-            // return $admin = $this->hasOne('App\Admin', 'id')->select('name');
-           
+    protected $dates = [
+        'bdate',
+    ];
+    function typedUser(){
+        if($this->type == "admin"){
+            $admin = Admin::whereUser_id($this->id)->first();
+            return $admin;
         }
+    }
+
+    function nameOfUser(){
+        return $this->firstname." ".$this->lastname;
     }
     
 }

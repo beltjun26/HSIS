@@ -54,7 +54,6 @@ function hideAllExecpt(form_id){
 
 }
 function addUser(e){
-	console.log("testing");
 	e.preventDefault();
 	var id = this.id;
 	var data = $('#'+this.id).serialize();

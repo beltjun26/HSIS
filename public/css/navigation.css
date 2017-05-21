@@ -19,7 +19,7 @@ body{
 	margin-bottom: 0px;
 }
 .sidenav{
-	z-index: 3;
+	z-index: 1;
 	height: 100vh;
 	width: 20%;
 	background-color: #999999;
@@ -92,10 +92,3 @@ body{
 
 };
 
-.navbar-nav{
-	text-align: center;
-}
-.navbar-nav > li{
-	float: none;
-	display: inline-block;
-}

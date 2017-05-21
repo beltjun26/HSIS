@@ -44,15 +44,56 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Name</label>
+                            <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">First Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('username') }}" required autofocus>
+                                    <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('firstname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                                <label for="latname" class="col-md-4 control-label">Last Name</label>
+
+                                <div class="col-md-6">
+                                    <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required autofocus>
+
+                                    @if ($errors->has('lastname'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('lastname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('bdate') ? ' has-error' : '' }}">
+                                <label for="bdate" class="col-md-4 control-label">Birthday</label>
+
+                                <div class="col-md-6">
+                                    <input id="bdate" type="date" class="form-control" name="bdate" value="{{ old('bdate') }}" required autofocus>
+
+                                    @if ($errors->has('bdate'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('bdate') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
+                                <label for="gender" class="col-md-4 control-label">Gender</label>
+
+                                <div class="col-md-6">
+                                    <label class="radio-inline"><input id="gender1" type="radio" name="gender" value="male" required >Male</label>
+                                    <label class="radio-inline"><input id="gender2" type="radio" name="gender" value="female" required >Female</label>
+
+
+                                    @if ($errors->has('gender'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('gender') }}</strong>
                                         </span>
                                     @endif
                                 </div>

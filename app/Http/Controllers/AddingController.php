@@ -21,28 +21,26 @@ class AddingController extends Controller
             'username' => $data['username'],
             'type' => $data['type'],
             'password' => bcrypt($data['password']),
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'bdate' => $data['bdate'],
+            'gender' => $data['gender'],
         ]);
         if($data['type']=="admin"){
             Admin::create([
-                'name' => $data['name'],
                 'user_id' => $user->id,
             ]);
-        }elseif ($data['type']=="cahier") {
+        }elseif ($data['type']=="cashier") {
             Cashier::create([
                 'user_id' => $user->id,
-                'name' => $data['name'],
                 ]);
         }elseif ($data['type']=="librarian") {
             Librarian::create([
                 'user_id' => $user->id,
-                'name' => $data['name'],
                 ]);
         }elseif ($data['type']=="teacher") {
             Teacher::create([
                 'user_id' => $user->id,
-                'firstname' => $data['firstname'],
-                'middlename' => $data['middlename'],
-                'lastname' => $data['lastname'],
                 'position' => $data['position'],
                 'contact' => $data['contact'],
                 'address' => $data['address'],

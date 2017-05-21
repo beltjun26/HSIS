@@ -12,7 +12,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
-    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <!-- Scripts -->
     
     <script>
@@ -34,9 +33,12 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav pull-left">
-                    <li class="active"><a href="#" style="background: #54c0c0">Home</a></li>
+                    <li class="active"><a href="{{ url('/') }}" style="background: #54c0c0">Home</a></li>
                     <li><a href="#">Class</a></li>
-                    <li><a href="#">Grade</a></li> 
+                    <li><a href="#">Grade</a></li>
+                    @if(Auth::user()->type=="admin")
+                        <li><a href="{{ url('admin/account') }}">Account</a></li>
+                    @endif 
                 </ul>
                 <ul class="nav navbar-nav pull-right">
                     <li>
@@ -54,8 +56,8 @@
         </nav>
         <div id="sidenav" class="sidenav">
             <div class="sidenav-header">
-                <img class="profile" src="{{ asset('images/profile.jpg') }}">
-                <h1 class="user-name">{{ Auth::user()->UserName() }}</h1>
+                <img class="profile" src="{{ asset('images/profile/'.Auth::user()->id.'.jpg') }}">
+                <h1 class="user-name">{{ Auth::user()->nameOfUser() }}</h1>
                 <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
                 <form>
                     <div class="input-group sidenav-search">
@@ -68,8 +70,12 @@
             </div>
             <div class="sidenav-body">
                 <ul class="sidenav-nav">
-                    <li><a href="">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
+                    <li><a href="/admin/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
+                    @if(Auth::user()->type == 'admin')
+                        <li><a href="/admin/addUser">Add User<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                    @endif
                     <li><a href="">Home<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+
                 </ul>
             </div>
         </div>

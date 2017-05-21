@@ -20,11 +20,12 @@
         			</div>
         		</div>
                 <div class="list-group">
-                    <li class="list-group-item">Male<span class="pull-right glyphicon glyphicon-menu-right"></li>
-                    <li class="list-group-item">Female<span class="pull-right glyphicon glyphicon-menu-right"></li>
-                    <li class="list-group-item">Students<span class="pull-right glyphicon glyphicon-menu-right"></li>
-                    <li class="list-group-item">Teacher<span class="pull-right glyphicon glyphicon-menu-right"></li>
-                    <li class="list-group-item">Another Info<span class="pull-right glyphicon glyphicon-menu-right"></li>
+                    <a href=""><li class="list-group-item">Male<span class="pull-right glyphicon glyphicon-menu-right"></li></a>
+                    <a href=""><li class="list-group-item">Female<span class="pull-right glyphicon glyphicon-menu-right"></li></a>
+                    <a href=""><li class="list-group-item">Students<span class="pull-right glyphicon glyphicon-menu-right"></li></a>
+                    <a href=""><li class="list-group-item">Teacher<span class="pull-right glyphicon glyphicon-menu-right"></li></a>
+                    <a href=""><li class="list-group-item">Another Info<span class="pull-right glyphicon glyphicon-menu-right"></li></a>
+                    
                 </div>
                 <div class="panel panel-info">
                     <div class="panel-heading">

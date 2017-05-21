@@ -58,7 +58,9 @@ class RegisterController extends Controller
         if($data['type'] == 'admin'){
             return Validator::make($data, [
                 'username' => 'required|string|max:255',
-                'name' => 'required|string|max:255',
+                'firstname' => 'required|string|max:255',
+                'lastname' => 'required|string|max:255',
+                // 'bdate' => 'date|string|max:255',
                 'password' => 'required|string|min:6|confirmed',
                 'type' => 'required|string|max:10',
                 ]);
@@ -82,9 +84,6 @@ class RegisterController extends Controller
                 'name' => 'required|string|max:255',
                 'password' => 'required|string|min:6|confirmed',
                 'type' => 'required|string|max:10',
-                'firstname' => 'required|string|max:15',
-                'lastname' => 'required|string|max:15',
-                'middlename' => 'required|string|max:15',
                 'position' => 'required|string|max:30',
                 'address' => 'required|string|max:100',
                 'email' => 'required|string|max:100',
@@ -111,28 +110,26 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'type' => $data['type'],
             'password' => bcrypt($data['password']),
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'bdate' => $data['bdate'],
+            'gender' => $data['gender'],
         ]);
         if($data['type']=="admin"){
             Admin::create([
-                'name' => $data['name'],
                 'user_id' => $user->id,
             ]);
         }elseif ($data['type']=="cahier") {
             Cashier::create([
                 'user_id' => $user->id,
-                'name' => $data['name'],
                 ]);
         }elseif ($data['type']=="librarian") {
             Librarian::create([
                 'user_id' => $user->id,
-                'name' => $data['name'],
                 ]);
         }elseif ($data['type']=="teacher") {
             Teacher::create([
                 'user_id' => $user->id,
-                'firstname' => $data['firstname'],
-                'middlename' => $data['middlename'],
-                'lastname' => $data['lastname'],
                 'position' => $data['position'],
                 'contact' => $data['contact'],
                 'address' => $data['address'],

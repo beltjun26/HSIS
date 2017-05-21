@@ -1,6 +1,6 @@
 window.onload = function(){
 	document.getElementById('side_toggle').addEventListener('click', toggleSidenav);
-	if(isScript == true){
+	if(typeof isScript !== 'undefined'){
 		for(var i = 0;i<myScripts.length;i++){
 			appendScript(myScripts[i]);
 		}
