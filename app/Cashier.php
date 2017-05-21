@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Cashier extends Model
 {
     protected $fillable = [
-        'id_users','name'
+        'user_id',
     ];
+    public function logininfo(){
+    	return $this->hasOne('App\User', 'id', 'user_id');
+    }
 }

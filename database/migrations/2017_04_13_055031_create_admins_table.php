@@ -10,7 +10,6 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function($table){
             $table->increments('id', 12);
-            $table->string('name');
             $table->integer('user_id');
             $table->timestamps();
         });

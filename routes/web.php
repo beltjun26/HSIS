@@ -14,19 +14,36 @@
 Route::get('/', 'HomeController@index');
 
 
-Route::get('/cashier/profile', 'CashierController@profile');
+Route::get('cashier/profile', 'CashierController@profile');
 
-Route::get('/cashier', 'CashierController@home');
+Route::get('cashier', 'CashierController@home');
 
-Route::get('/admin', 'AdminHomeController@index');
-Route::get('/teacher', 'TeacherHomeController@index');
-Route::get('/cashier', 'CashierHomeController@index');
-Route::get('/librarian', 'LibrarianHomeController@index');
+Route::get('admin', 'AdminHomeController@index');
+
+
+Route::get('teacher', 'TeacherHomeController@index');
+
+Route::get('cashier', 'CashierHomeController@index');
+
+Route::get('librarian', 'LibrarianHomeController@index');
+
 Auth::routes();
+
+//post
+Route::post('allAccount', 'AdminHomeController@getAllAccount');
 
 Route::post('registerUser', 'AddingController@registerUser');
 
+// admin
 Route::get('admin/addUser', 'AdminHomeController@addUser');
+
+Route::get('admin/account', 'AdminHomeController@account');
+
+Route::get('admin/profile/{username}', 'AdminHomeController@profile');
+
+Route::get('temporary', function(){
+	return view('profile(teacher)');
+});
 
 
 

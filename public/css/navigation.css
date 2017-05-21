@@ -19,6 +19,7 @@ body{
 	margin-bottom: 0px;
 }
 .sidenav{
+	z-index: 1;
 	height: 100vh;
 	width: 20%;
 	background-color: #999999;
@@ -90,3 +91,4 @@ body{
 
 
 };
+

@@ -1,0 +1,15 @@
+#time{
+   text-align: center;
+   /*margin-top: %	;*/
+   font-size: 45px;
+   font-family: Baskerville, Georgia;
+}
+.list-group-item{
+	transition: .4s;
+	position: relative;
+	left:0;
+}
+.list-group > a >.list-group-item:hover{
+	left: 10px;
+	background: #54c0c0;
+}
