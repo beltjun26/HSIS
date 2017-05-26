@@ -29,19 +29,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> 
                 </button>
-                <a class="navbar-brand" href="#" id="side_toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" id="side_toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-middle">
+                    <li><a class="navbar-brand" href="#">HSIS</a></li>
+                </ul>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav pull-left">
+                <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ url('/') }}" style="background: #54c0c0">Home</a></li>
-                    <li><a href="#">Class</a></li>
-                    <li><a href="#">Grade</a></li>
+                    <li><a href="/admin/class">Class</a></li>
+                    <li><a href="/admin/grade">Grade</a></li>
                     @if(Auth::user()->type=="admin")
                         <li><a href="{{ url('admin/account') }}">Account</a></li>
                     @endif 
                 </ul>
-                <ul class="nav navbar-nav pull-right">
-                    <li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="pull-right">
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -63,7 +68,7 @@
                     <div class="input-group sidenav-search">
                         <input class="form-control" type="text" name="search" placeholder="Search...">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
                         </div>
                     </div>
                 </form>
@@ -73,8 +78,10 @@
                     <li><a href="/admin/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
                     @if(Auth::user()->type == 'admin')
                         <li><a href="/admin/addUser">Add User<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        <li><a href="/admin/addStudent">Add Student<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        <li><a href="/admin/addClass">Add Class<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        <li><a href="/admin/addGrade">Add Grade<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                     @endif
-                    <li><a href="">Home<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
 
                 </ul>
             </div>

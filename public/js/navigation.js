@@ -11,9 +11,8 @@ window.onload = function(){
 function toggleSidenav(e){
 	e.preventDefault();
 	sidenav = document.getElementById('sidenav');
-	console.log(sidenav.style.left);
 	if(sidenav.style.left=="0px"){
-		sidenav.style.left = "-20%";	
+		sidenav.style.left = "-250px";	
 	}else{
 		sidenav.style.left = "0";
 	}

@@ -1,4 +1,4 @@
-$(function(){
+ $(function(){
 	$.ajaxSetup({
 	    headers: {
 	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -41,12 +41,18 @@ $(function(){
 					data: {type: id},
 					success: function(data){
 						console.log(data);
-						for(let i = 0; i < data.length; i++){
-							table += "<tr><td>"+data[i].id+"</td>";
-							table += "<td>"+data[i].username+"</td>";
-							table += "<td>"+data[i].name+"</td>";
-							table += "<td>"+data[i].date+"</td>";
-							table += "<td>"+data[i].gender+"</td></tr>"
+						if(data.length==0){
+							table += "table not found";
+						}
+						else{
+							for(let i = 0; i < data.length; i++){
+								table += "<tr><td>"+data[i].id+"</td>";
+								table += "<td>"+data[i].username+"</td>";
+								table += "<td>"+data[i].name+"</td>";
+								table += "<td>"+data[i].date+"</td>";
+								table += "<td>"+data[i].gender+"</td></tr>"
+							}
+			
 						}
 						table += "</tbody></table>";
 						document.getElementById('table').innerHTML = table;
@@ -60,13 +66,18 @@ $(function(){
 					type: 'post',
 					data: {type: id},
 					success: function(data){
-						console.log(data);
-						for(let i = 0; i < data.length; i++){
-							table += "<tr><td>"+data[i].id+"</td>";
-							table += "<td>"+data[i].username+"</td>";
-							table += "<td>"+data[i].name+"</td>";
-							table += "<td>"+data[i].date+"</td>";
-							table += "<td>"+data[i].gender+"</td></tr>"
+						if(data.length==0){
+							table += "table not found";
+						}
+						else{
+							for(let i = 0; i < data.length; i++){
+								table += "<tr><td>"+data[i].id+"</td>";
+								table += "<td>"+data[i].username+"</td>";
+								table += "<td>"+data[i].name+"</td>";
+								table += "<td>"+data[i].date+"</td>";
+								table += "<td>"+data[i].gender+"</td></tr>"
+							}
+			
 						}
 						table += "</tbody></table>";
 						document.getElementById('table').innerHTML = table;
@@ -80,13 +91,18 @@ $(function(){
 					type: 'post',
 					data: {type: id},
 					success: function(data){
-						console.log(data);
-						for(let i = 0; i < data.length; i++){
-							table += "<tr><td>"+data[i].id+"</td>";
-							table += "<td>"+data[i].username+"</td>";
-							table += "<td>"+data[i].name+"</td>";
-							table += "<td>"+data[i].date+"</td>";
-							table += "<td>"+data[i].gender+"</td></tr>"
+						if(data.length==0){
+							table += "<div>table not found</div>";
+						}
+						else{
+							for(let i = 0; i < data.length; i++){
+								table += "<tr><td>"+data[i].id+"</td>";
+								table += "<td>"+data[i].username+"</td>";
+								table += "<td>"+data[i].name+"</td>";
+								table += "<td>"+data[i].date+"</td>";
+								table += "<td>"+data[i].gender+"</td></tr>"
+							}
+			
 						}
 						table += "</tbody></table>";
 						document.getElementById('table').innerHTML = table;
@@ -100,13 +116,18 @@ $(function(){
 					type: 'post',
 					data: {type: id},
 					success: function(data){
-						console.log(data);
-						for(let i = 0; i < data.length; i++){
-							table += "<tr><td>"+data[i].id+"</td>";
-							table += "<td>"+data[i].username+"</td>";
-							table += "<td>"+data[i].name+"</td>";
-							table += "<td>"+data[i].date+"</td>";
-							table += "<td>"+data[i].gender+"</td></tr>"
+						if(data.length==0){
+							table += "<div>table not found</div>";
+						}
+						else{
+							for(let i = 0; i < data.length; i++){
+								table += "<tr><td>"+data[i].id+"</td>";
+								table += "<td>"+data[i].username+"</td>";
+								table += "<td>"+data[i].name+"</td>";
+								table += "<td>"+data[i].date+"</td>";
+								table += "<td>"+data[i].gender+"</td></tr>"
+							}
+			
 						}
 						table += "</tbody></table>";
 						document.getElementById('table').innerHTML = table;

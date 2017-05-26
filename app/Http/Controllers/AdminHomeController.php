@@ -8,6 +8,8 @@ use App\Admin;
 use App\Cashier;
 use App\Librarian;
 use App\Teacher;
+use App\Section;
+use App\Grade;
 use Illuminate\Http\Request;
 
 class AdminHomeController extends Controller
@@ -19,6 +21,25 @@ class AdminHomeController extends Controller
 
     function addUser(){
     	return view('admin.addUser');
+    }
+
+    function schoolClass(){
+        $classes = Section::all();
+        return view('admin.class', compact('classes'));
+    }
+
+    function addClass(){
+        return view('admin.addClass');
+    }
+
+    function schoolGrade(){
+        $grades = Grade::all();
+        return view('admin.grade', compact('grades'));
+    }
+
+    function addGrade(){
+        $grades = Grade::all();
+        return view('admin.addGrade', compact('grades'));        
     }
 
     public function account(){
@@ -54,5 +75,9 @@ class AdminHomeController extends Controller
             $admin = $user;
             return view('admin.profile', compact('admin'));
         }
+    }
+
+    public function addStudent(){
+        return view('admin.addStudent');
     }
 }

@@ -5,14 +5,9 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="page-header">
-    			<h3 class="text-center">ADD STUDENTS</h3>
-    		</div>
-		</div>
-	</div>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-
-		</div>
+				<h3>Add Grade</h3>
+			</div>
+		</div>	
 	</div>
 </div>
 @endsection

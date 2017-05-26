@@ -17,7 +17,7 @@ $(function(){
 	librarianBtn.addEventListener('click', librarianClick);
 	teacherBtn.addEventListener('click', teacherClick);
 	adminbtn.addEventListener('click', adminClick);
-});
+
 
 function adminClick(){
 	hideAllExecpt('adminForm');
@@ -68,3 +68,4 @@ function addUser(e){
 		}
 	});
 }
+});

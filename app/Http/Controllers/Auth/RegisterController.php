@@ -66,15 +66,17 @@ class RegisterController extends Controller
                 ]);
         }elseif($data['type']=='cashier'){
             return Validator::make($data, [
-                'username' => 'required|string|max:255',
-                'name' => 'required|string|max:255',
-                'password' => 'required|string|min:6|confirmed',
-                'type' => 'required|string|max:10',
+                // 'username' => 'required|string|max:255',
+                // 'firstname' => 'required|string|max:255',
+                // 'lastname' => 'required|string|max:255',
+                // 'password' => 'required|string|min:6|confirmed',
+                // 'type' => 'required|string|max:10',
             ]);
         }elseif($data['type']=='librarian'){
             return Validator::make($data, [
                 'username' => 'required|string|max:255',
-                'name' => 'required|string|max:255',
+                'firstname' => 'required|string|max:255',
+                'lastname' => 'required|string|max:255',
                 'password' => 'required|string|min:6|confirmed',
                 'type' => 'required|string|max:10',
             ]);

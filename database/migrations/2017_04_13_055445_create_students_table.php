@@ -14,9 +14,11 @@ class CreateStudentsTable extends Migration
             $table->string('middle_name', 60);
             $table->string('last_name', 60);
             $table->string('address', 60);
-            $table->string('mother_fullname', 60);
-            $table->string('father_fullname', 60);
-            $table->string('contact_num', 11);
+            $table->date('bdate');
+            $table->string('gender', 7);
+            $table->string('mother_fullname', 60)->nullable();
+            $table->string('father_fullname', 60)->nullable();
+            $table->string('contact_num', 11)->nullable();
             $table->timestamps();
         });
     }
