@@ -103,7 +103,12 @@
                                 <label for="type" class="col-md-4 control-label">Type of User</label>
 
                                 <div class="col-md-6">
-                                    <input id="type" type="text" class="form-control" name="type" value="{{ old('type') }}" required>
+                                    <select class="form-control" name="type">
+                                        <option value="admin">Admin</option>
+                                        <option value="cahier">Cashier</option>
+                                        <option value="teacher">Teacher</option>
+                                        <option value="librarian">Librarian</option>
+                                    </select>
 
                                     @if ($errors->has('type'))
                                         <span class="help-block">

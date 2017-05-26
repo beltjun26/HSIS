@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student;
 use App\User;
 use App\Admin;
 use App\Cashier;
 use App\Teacher;
+use App\Grade;
 use App\Librarian;
 
 class AddingController extends Controller
@@ -48,5 +50,14 @@ class AddingController extends Controller
                 ]);
         }
         return $user;
+    }
+
+    public function addStudent(Request $request){
+        Student::create($request->all());
+        return "success";
+    }
+
+    public function addGrade(Request $request){
+        Grade::create($request->all());
     }
 }
