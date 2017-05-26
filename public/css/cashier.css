@@ -1,3 +1,41 @@
+/*#collect_fee{
+	width: 100px;
+	font-size: 20px;
+}
+*/
+
+*{
+	font-family: 'Raleway', sans-serif;
+}
+
+
+#collect{
+	margin-bottom: 20px;
+}
+
+.collection{
+	background-color: #9e9a99;
+}
+
+.description span{
+	color: #ee6462;
+}
+
+.description label{
+	color: black;
+	margin-right: 10px;
+}
+
+.description p{
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.description u{
+	font-size: 20px;
+	font-weight: 400;
+}
+
 .fees-category{
 	display: none;
 }
@@ -13,21 +51,78 @@
 	padding-left: 60px;
 }
 
+.fee{
+	background-color:#ee6462;
+	padding: 10px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-top: 10px;
+	color: white;
+}
+
+.fee:hover{
+	background-color: #00796B;
+}
+
 .fees-category > li> a:hover{
 	background-color: #54c0c0;
 	font-size: 17px;
+}
+
+.fee-payment{
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.group{
+	margin-top: 20px;
+}
+
+.header hr{
+	margin-top: 0px;
+	border-color: grey;
 }
 
 .icons{
 	padding-right: 10px;
 }
 
+.img-td{
+	width: 150px;
+}
+
 .info{
 	margin-top: 100px;
 }
 
+.item{
+	background-color: #c9e7dd;
+	padding: 10px 5px 10px 5px;
+	margin-bottom: 10px;
+}
+
+.jumbotron{
+	background-color: #E0F2F1;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.navbar-default{
+	background-color: white;
+}
+
 .panel{
 	border-radius: 0px;
+	overflow:hidden;
+}
+
+
+.pay-fee{
+	margin-top: 40px;
+}
+
+#payment{
+	display: none;
 }
 
 .personal-info{
@@ -50,15 +145,81 @@
 #profile{
 	border: solid 1px white;
 	margin-top: 40px;
-	/*width:220px;*/
+	width:220px;
 	height:220px;
 }
 
-.profile-parts{
+#receipt{
+	display: none;
+	min-height: 200px;
+}
+
+#receipt .panel{
+	box-shadow: 0 7px 12px rgba(120, 144, 156, 0.66);
+}
+
+.remove{
+	cursor: pointer;
+}
+
+.remove:hover{
+	color: red;
+}
+
+.right-parts{
 	width: 80%;
 	margin-left: 20%;
-	background-color: white;
+	background-color: #f8f8f8;
 	min-height: 94vh;
+	overflow: hidden;
+}
+
+#search_student{
+	margin-top: 50px;
+}
+
+.student-detail{
+	background-color: white;
+	padding: 10px;
+	padding-bottom: 30px;
+	border-top: solid #ee6462 3px;
+}
+
+.student-info{
+	margin-left: 10px;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.student-info-pic{
+	width: 120px;
+	height: 120px;
+}
+
+.student-pic{
+	margin-left: 20px;
+}
+
+.table-title{
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.title{
+	font-size: 25px;
+	padding: 30px 10px 10px 0px;
+	color: #808080;
+	font-weight: 500;
+}
+
+.total{
+	margin-top: 15px;
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+
+.total-amount{
+	color: red;
 }
 
 .top-info{
@@ -77,3 +238,10 @@
 	font-size: 15px;
 }
 
+
+.unpaid-item{
+	background-color: green;
+	color: white;
+	padding: 10px;
+	cursor: pointer;
+}

@@ -90,4 +90,8 @@ class CashierController extends Controller
     public function profile(){
         return view('cashier.profile');
     }
+
+     public function sportsCollection(){
+        return view('cashier.collect_fees');
+    }
 }

@@ -66,9 +66,8 @@
                     <li><a href="javascript:void(0)" id="fees_collection"><span class="glyphicon glyphicon-list icons"></span>Fees Collection<span class="pull-right glyphicon glyphicon-menu-right" id="fees_collection_span"></span></a>
                     </li>
                     <div class="fees-category">
-                        <li><a href="/cashier/sports_collection"><span class="glyphicon glyphicon-scale icons"></span>Sports</a></li>
-                        <li><a href="/cashier/miscellaneous_collection"><span class="glyphicon glyphicon-book icons"></span>Miscellaneous</a></li>
-                        <li><a href="/cashier/ptaproject_collection"><span class="glyphicon glyphicon-blackboard icons"></span>PTA Project</a></li>
+                        <li><a href="/cashier/collect_fees"><span class="glyphicon glyphicon-download-alt icons"></span>Collect Fees</a></li>
+                        <li><a href="/cashier/miscellaneous_collection"><span class="glyphicon glyphicon-book icons"></span>Fee Categories</a></li>
                         <li><a href="/cashier/collection_settings"><span class="glyphicon glyphicon-cog icons"></span>Collection Settings</a></li>
                     </div>
                     <li><a href="#"><span class="glyphicon glyphicon-alert icons"></span>Overdues</a></li>

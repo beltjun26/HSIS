@@ -14,6 +14,12 @@
 Route::get('/', 'HomeController@index');
 
 
+
+Route::get('cashier/profile', 'CashierController@profile');
+Route::get('cashier', 'CashierController@home');
+Route::get('cashier/collect_fees', 'CashierController@sportsCollection');
+
+
 Route::get('cashier/profile', 'CashierController@profile');
 
 Route::get('cashier', 'CashierController@home');
@@ -26,6 +32,7 @@ Route::get('teacher', 'TeacherHomeController@index');
 Route::get('cashier', 'CashierHomeController@index');
 
 Route::get('librarian', 'LibrarianHomeController@index');
+
 
 Auth::routes();
 
