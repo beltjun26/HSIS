@@ -10,4 +10,7 @@ class Admin extends Model
         'name','user_id' ,
     ];
 
+    public function logininfo(){
+    	return $this->hasOne('App\User', 'id', 'user_id');
+    }
 }

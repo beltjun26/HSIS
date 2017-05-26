@@ -2,7 +2,7 @@ body{
 	padding-top: 70px;
 	background-color: white;
 	height: 100vh;
-	font-family: 'San Serif Light';
+	font-family: 'Open Sans';
 }
 .navbar-nav > .active > a{
 	background-color: #54c0c0;
@@ -11,27 +11,32 @@ body{
 	border-bottom: 3px solid rgba(0,0,0,0);
 	transition: .3s;
 }
-.navbar-nav > li > a:hover{
+.navbar-nav:not(.navbar-middle) > li > a:hover{
 	border-bottom: 3px solid #54c0c0;
 }
 .navbar{
 	border-radius: 0px;
 	margin-bottom: 0px;
 }
+.navbar-nav.navbar-right{
+	margin-right: 5px;
+}
+.navbar-brand{
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
 .sidenav{
+	z-index: 1;
 	height: 100vh;
-	width: 20%;
+	width: 250px;
 	background-color: #999999;
 	position: fixed;
 	top: 50px;
-	left: -20%;
+	left: -250px;
 	transition: .5s;
 	-webkit-box-shadow: -1px -1px 66px 0px rgba(0,0,0,0.41);
 	-moz-box-shadow: -1px -1px 66px 0px rgba(0,0,0,0.41);
 	box-shadow: -1px -1px 66px 0px rgba(0,0,0,0.41);
-}
-.sidenav-nav{
-	
 }
 .profile{
 	object-position: center;
@@ -49,9 +54,10 @@ body{
 	background-color: #777777;
 }
 .sidenav-search{
-	margin-top: 30px;
-	margin-left: 10px;
-	margin-right: 10px;
+	padding: 1em 0.5em;
+}
+.sidenav-search button{
+	padding: 9px 10px;
 }
 .sidenav-nav{
 	padding: 0;
@@ -66,8 +72,11 @@ body{
 	display: block;
 	text-decoration: none;
 	transition: .2s;
-
 }
+#side_toggle{
+	font-size: 1.45em;
+}
+
 .user-name{
 	display: block;
 	text-align: center;
@@ -87,6 +96,11 @@ body{
 .sidenav-nav > li> a:hover{
 	background-color: #54c0c0;
 	font-size: 17px;
+}
 
-
-};
+.navbar-middle{
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%,0);
+}

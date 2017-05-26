@@ -17,7 +17,7 @@ $(function(){
 	librarianBtn.addEventListener('click', librarianClick);
 	teacherBtn.addEventListener('click', teacherClick);
 	adminbtn.addEventListener('click', adminClick);
-});
+
 
 function adminClick(){
 	hideAllExecpt('adminForm');
@@ -54,7 +54,6 @@ function hideAllExecpt(form_id){
 
 }
 function addUser(e){
-	console.log("testing");
 	e.preventDefault();
 	var id = this.id;
 	var data = $('#'+this.id).serialize();
@@ -69,3 +68,4 @@ function addUser(e){
 		}
 	});
 }
+});

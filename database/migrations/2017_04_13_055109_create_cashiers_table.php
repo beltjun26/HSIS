@@ -11,7 +11,6 @@ class CreateCashiersTable extends Migration
         Schema::create('cashiers', function($table){
             $table->increments('id', 12);
             $table->integer('user_id');
-            $table->string('name', 60);
             $table->timestamps();
         });
     }

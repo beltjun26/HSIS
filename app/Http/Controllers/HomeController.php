@@ -28,18 +28,18 @@ class HomeController extends Controller
             return view('/login');
         }else{
             if(Auth::user()->type == 'admin'){
-                redirect('/admin');
+                return redirect('/admin');
             }
             if(Auth::user()->type == 'teacher'){
-                redirect('/teacher');
+                return redirect('/teacher');
             }
             if(Auth::user()->type=='cashier'){
-                redirect('/cahier');
+                return redirect('/cahier');
             }
             if(Auth::user()->type == 'librarian'){
-                redirect('/librarian');
+                return redirect('/librarian');
             }
-            return view('home');            
+                     
         }
 
     }

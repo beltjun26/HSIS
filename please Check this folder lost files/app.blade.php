@@ -12,6 +12,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
+    <link href="/css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/librarian.css"/>
+
     <!-- Scripts -->
     
     <script>
@@ -29,28 +32,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> 
                 </button>
-                <ul class="nav navbar-nav">
-                    <li><a href="#" id="side_toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-middle">
-                    <li><a class="navbar-brand" href="#">HSIS</a></li>
-                </ul>
+                <a class="navbar-brand" href="#" id="side_toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ url('/') }}" style="background: #54c0c0">Home</a></li>
-                    <li><a href="/admin/class">Class</a></li>
-                    <li><a href="/admin/grade">Grade</a></li>
-                    @if(Auth::user()->type=="admin")
-                        <li><a href="{{ url('admin/account') }}">Account</a></li>
-                    @endif 
+                    <li class="active"><a href="#" style="background: #54c0c0">Home</a></li>
+                    <li><a href="#">Class</a></li>
+                    <li><a href="#">Grade</a></li> 
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="pull-right">
+                <ul class="nav navbar-nav pull-right">
+                    <li>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                            <span class="glyphicon glyphicon-log-out"></span> Logout
+                            Logout
                         </a>
                     </li>
                 </ul>
@@ -61,28 +56,21 @@
         </nav>
         <div id="sidenav" class="sidenav">
             <div class="sidenav-header">
-                <img class="profile" src="{{ asset('images/profile/'.Auth::user()->id.'.jpg') }}">
-                <h1 class="user-name">{{ Auth::user()->nameOfUser() }}</h1>
-                <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
+                <img class="profile" src="{{ asset('images/profile.jpg') }}">
+                <h1 class="user-name">Rosiebelt Jun Abisado</h1>
                 <form>
                     <div class="input-group sidenav-search">
                         <input class="form-control" type="text" name="search" placeholder="Search...">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="sidenav-body">
                 <ul class="sidenav-nav">
-                    <li><a href="/admin/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
-                    @if(Auth::user()->type == 'admin')
-                        <li><a href="/admin/addUser">Add User<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
-                        <li><a href="/admin/addStudent">Add Student<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
-                        <li><a href="/admin/addClass">Add Class<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
-                        <li><a href="/admin/addGrade">Add Grade<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
-                    @endif
-
+                    <li><a href="">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
+                    <li><a href="">Home<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                 </ul>
             </div>
         </div>
@@ -91,7 +79,6 @@
     </div>
 
     <!-- Scripts -->
-    
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/navigation.js') }}"></script>
 </body>
