@@ -3,13 +3,18 @@ var clickCountFeesCol = 0;
 $(document).ready(function(){
 	var category = document.getElementsByClassName("category");
 	console.log(category);
+	console.log("hello world");
 
+	createGraph(category);
 	
 	$(document).on("click", "#fees_collection", showSubCategories);
 	$(document).on("click", "#get_student_info", showStudentInfo);
 	$(document).on("click", ".pay-now", computeTotal);
 });
 
+function createGraph(category){
+	
+}
 
 
 function computeTotal(){

@@ -12,6 +12,7 @@ class CreateAccountabilitiesTable extends Migration
             $table->increments('id', 11); //aka accountability_id
             $table->string('accountability_name', 60);
             $table->datetime('due_date');
+            $table->string('scope', 10);
             $table->decimal('amount', 5, 2);
             $table->timestamps();
         });

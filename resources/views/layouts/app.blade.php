@@ -84,7 +84,7 @@
                         <li><a href="/admin/addGrade">Add Grade<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
 
                     @elseif(Auth::user()->type == 'cashier')
-                        <li><a href="/cashier/profile"><span class="glyphicon glyphicon-user icons"></span>Profile</a></li>
+                        <li><a href="/cashier/profile/{{ Auth::user()->username }}"><span class="glyphicon glyphicon-user icons"></span>Profile</a></li>
                         <li><a href="javascript:void(0)" id="fees_collection"><span class="glyphicon glyphicon-list icons"></span>Fees Collection<span class="pull-right glyphicon glyphicon-menu-right" id="fees_collection_span"></span></a>
                         </li>
                         <div class="fees-category">
