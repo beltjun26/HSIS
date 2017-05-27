@@ -7,10 +7,8 @@ use App\Teacher;
 use App\Student_in;
 use App\Student;
 use DB;
-use App\Student;
 use Illuminate\Http\Request;
-use App\Section;
-use App\StudentIn;
+    
 
 class TeacherHomeController extends Controller
 {
