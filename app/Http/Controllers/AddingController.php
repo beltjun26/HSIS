@@ -60,6 +60,7 @@ class AddingController extends Controller
 
     public function addGrade(Request $request){
         Grade::create($request->all());
+        return $request->name;
     }
 
     public function addClass(Request $request){

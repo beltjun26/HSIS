@@ -25,7 +25,7 @@
 					<h4>Existing Grade/s</h4>
 				</div>
 				<div class="row">
-					<ul class="list-group">
+					<ul class="list-group" id="gradeList">
 						@forelse($grades as $grade)
 							<li class="list-group-item">{{ $grade->name }}</li>
 						@empty
