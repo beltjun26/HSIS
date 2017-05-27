@@ -25,11 +25,14 @@ class AdminHomeController extends Controller
 
     function schoolClass(){
         $classes = Section::all();
-        return view('admin.class', compact('classes'));
+        $grades = Grade::all();
+        return view('admin.class', compact('classes', 'grades'));
     }
 
     function addClass(){
-        return view('admin.addClass');
+        $grades = Grade::all();
+        $teachers = Teacher::all();
+        return view('admin.addClass', compact('grades', 'teachers'));
     }
 
     function schoolGrade(){

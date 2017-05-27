@@ -12,7 +12,7 @@
 		</div>
 		<div id="successModal" class="modal fade">
 			<div class="modal-dialog">
-				 <div class="modal-content v-center">
+				 <div class="modal-content" style="margin-top: 50%">
 					  <div class="modal-body text-center text-success">
 							User Successfully Addded
 					  </div>
@@ -25,16 +25,16 @@
 					<h4>Existing Grade/s</h4>
 				</div>
 				<div class="row">
-					<div class="list-group">
+					<ul class="list-group">
 						@forelse($grades as $grade)
-						<ul class="list-group-item">{{ $grade->name }}</ul>
+							<li class="list-group-item">{{ $grade->name }}</li>
 						@empty
-							<ul class="list-group-item">No Grade Yet!</ul>
+							<li class="list-group-item">No Grade Yet!</li>
 						@endforelse
-					</div>
+					</ul>
 				</div>
 			</div>
-			<div class="col-sm-8 col-md-8 col-lg-8">
+			<div class="col-sm-9 col-md-9 col-lg-9">
 				<div class="row">
 
 					<form class="form-horizontal" id="form">
@@ -45,8 +45,10 @@
 								<input class="form-control" type="text" name="name" required>
 							</div>
 						</div>
-						<div class="form-group text-center">
-							<input type="submit" name="submit" class="btn btn-success" value="Add">
+						<div class="form-group">
+							<div class="col-md-6 col-md-offset-4">
+								<input type="submit" name="submit" class="btn btn-success" value="Add">
+							</div>
 						</div>
 					</form>
 				</div>

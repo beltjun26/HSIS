@@ -50,7 +50,7 @@ body{
 }
 .sidenav-header{
 	padding-top: 15px;
-	padding-bottom: 30px;
+	padding-bottom: 5px;
 	background-color: #777777;
 }
 .sidenav-search{
@@ -68,7 +68,7 @@ body{
 	/*border-top: 3px solid grey;*/
 	border-bottom:1px solid white;
 	box-sizing: content-box;	
-	padding: 13px 8px 13px 32px;
+	padding: 10px 8px 10px 32px;
 	display: block;
 	text-decoration: none;
 	transition: .2s;

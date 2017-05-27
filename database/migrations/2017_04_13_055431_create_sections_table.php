@@ -10,10 +10,10 @@ class CreateSectionsTable extends Migration
     public function up()
     {
         Schema::create('sections', function($table){
-            $table->string('name', 60);
+            $table->string('name', 60)->primary();
             $table->string('classroom', 11);
             $table->string('grade_id', 60);
-            $table->integer('teacher_id', 12);
+            $table->string('teacher_id', 12);
             $table->timestamps();
         });
     }

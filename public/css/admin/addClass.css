@@ -1,0 +1,8 @@
+.list-group > .list-group-item{
+	transition: .4s;
+}
+.list-group > .list-group-item:hover{
+	background: #54c0c0;
+	transform: translate(10px, 0px);
+
+}

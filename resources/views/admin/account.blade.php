@@ -43,7 +43,7 @@
 						<td>{{ $admin->logininfo->gender }}</td>
 					</tr>
 				@empty
-					No Data in data base
+					<p class="text-danger text-center">No Data in Database</p>
 				@endforelse
 				</tbody>
 			</table>

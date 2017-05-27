@@ -34,7 +34,7 @@
 			table.name = this.id;
 			id = this.id;
 			if(this.id == 'admin'){
-				var table = "<table><thead><tr><th>ID</th><th>Username</th><th>Name</th><th>Birthday</th><th>Gender</th></tr></thead><tbody>";
+				var table = "<thead><tr><th>ID</th><th>Username</th><th>Name</th><th>Birthday</th><th>Gender</th></tr></thead><tbody>";
 				$.ajax({
 					url:'/allAccount',
 					type: 'post',
@@ -42,7 +42,7 @@
 					success: function(data){
 						console.log(data);
 						if(data.length==0){
-							table += "table not found";
+							table += "<tr class='text-danger text-center'><td colspan='5'>No data in Database</td></tr>"; 
 						}
 						else{
 							for(let i = 0; i < data.length; i++){
@@ -52,22 +52,21 @@
 								table += "<td>"+data[i].date+"</td>";
 								table += "<td>"+data[i].gender+"</td></tr>"
 							}
-			
 						}
-						table += "</tbody></table>";
+						table += "</tbody>";
 						document.getElementById('table').innerHTML = table;
 					}
 				});
 			}
 			if(this.id == 'cashier'){
-				var table = "<table><thead><tr><th>ID</th><th>Username</th><th>Name</th><th>Birthday</th><th>Gender</th></tr></thead><tbody>";
+				var table = "<thead><tr><th>ID</th><th>Username</th><th>Name</th><th>Birthday</th><th>Gender</th></tr></thead><tbody>";
 				$.ajax({
 					url:'/allAccount',
 					type: 'post',
 					data: {type: id},
 					success: function(data){
 						if(data.length==0){
-							table += "table not found";
+							table += "<tr class='text-danger text-center'><td colspan='5'>No data in Database</td></tr>";
 						}
 						else{
 							for(let i = 0; i < data.length; i++){
@@ -79,20 +78,20 @@
 							}
 			
 						}
-						table += "</tbody></table>";
+						table += "</tbody>";
 						document.getElementById('table').innerHTML = table;
 					}
 				});
 			}
 			if(this.id == 'librarian'){
-				var table = "<table><thead><tr><th>ID</th><th>Username</th><th>Name</th><th>Birthday</th><th>Gender</th></tr></thead><tbody>";
+				var table = "<thead><tr><th>ID</th><th>Username</th><th>Name</th><th>Birthday</th><th>Gender</th></tr></thead><tbody>";
 				$.ajax({
 					url:'/allAccount',
 					type: 'post',
 					data: {type: id},
 					success: function(data){
 						if(data.length==0){
-							table += "<div>table not found</div>";
+							table += "<tr class='text-danger text-center'><td colspan='5'>No data in Database</td></tr>";
 						}
 						else{
 							for(let i = 0; i < data.length; i++){
@@ -104,20 +103,20 @@
 							}
 			
 						}
-						table += "</tbody></table>";
+						table += "</tbody>";
 						document.getElementById('table').innerHTML = table;
 					}
 				});
 			}
 			if(this.id == 'teacher'){
-				var table = "<table><thead><tr><th>ID</th><th>Username</th><th>Name</th><th>Birthday</th><th>Gender</th></tr></thead><tbody>";
+				var table = "<thead><tr><th>ID</th><th>Username</th><th>Name</th><th>Birthday</th><th>Gender</th></tr></thead><tbody>";
 				$.ajax({
 					url:'/allAccount',
 					type: 'post',
 					data: {type: id},
 					success: function(data){
 						if(data.length==0){
-							table += "<div>table not found</div>";
+							table += "<tr class='text-danger text-center'><td colspan='5'>table not found</td></tr>";	
 						}
 						else{
 							for(let i = 0; i < data.length; i++){
@@ -129,7 +128,7 @@
 							}
 			
 						}
-						table += "</tbody></table>";
+						table += "</tbody>";
 						document.getElementById('table').innerHTML = table;
 					}
 				});
