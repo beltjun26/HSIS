@@ -12,7 +12,7 @@ class Cashier extends Model
     public function logininfo(){
     	return $this->hasOne('App\User', 'id', 'user_id');
     }
-    public function addAccountabilityCashier(){
+    public function addAccountabilitiesCashier(){
     	return $this->hasMany('App\Accountability');
     }
 }

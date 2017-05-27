@@ -13,4 +13,8 @@ class Student extends Model
     protected $dates = [
     	'bdate',
     ];
+
+    public function hasAccountabilitesStudent(){
+    	return $this->hasMany('App\Accountability');
+    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Accountability extends Model
 {
 	protected $fillable = [
-        'id','accountability_name' ,'decimal', 'cashier_id', 'librarian_id',
+        'user_id','accountability_name' ,'decimal', 'date', 'student_LRN', 'type', 'status'
     ];
 
     public function teacheracc(){
@@ -22,5 +22,12 @@ class Accountability extends Model
     	return $this->belongsTo('App\Librarian');
     }
 
+    public function studentacc(){
+        return $this->belongsTo('App\Student');
+    }
+
+    public function adminacc(){
+        return $this->belongsTo('App\Admin');
+    }
     
 }
