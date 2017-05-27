@@ -9,7 +9,7 @@ class Librarian extends Model
     protected $fillable = [
         'user_id',
     ];
-    public function logininfo(){
+    public function logininfo(){ 
     	return $this->hasOne('App\User', 'id', 'user_id');
     }
 }

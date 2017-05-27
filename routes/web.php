@@ -29,7 +29,7 @@ Route::get('teacher', 'TeacherHomeController@index');
 
 Route::get('cashier', 'CashierHomeController@index');
 
-Route::get('librarian', 'LibrarianHomeController@index');
+Route::get('/librarian', 'LibrarianHomepageController@index');
 
 
 Auth::routes();
@@ -69,7 +69,12 @@ Route::get('temporary', function(){
 });
 
 
+Route::get('/librarian/create', 'LibrarianHomepageController@create');
 
+Route::post('/librarian/addBookAccountability', 'LibrarianHomepageController@addBookAccountability');
 
+Route::get('/class_profile', 'ClassProfileController@index');
 
+Route::post('/accountability/librarianAddAccountability', 'AddingController@addAccountability');
 
+Route::get('/add_accountability', 'AddingController@viewAddAccountability');
