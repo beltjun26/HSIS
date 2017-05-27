@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use DB;
 use Illuminate\Http\Request;
 
@@ -32,11 +32,11 @@ class TeacherHomeController extends Controller
 	    $user = User::whereUsername($username)->first();
         if($user->type == "teacher"){
             $teacher = $user;
-            return view('admin.profile', compact('teacher'));
+            return view('teacher.profile', compact('teacher'));
         }
    		 $grade = "Grade 9";
    		 $sectionName = "Emerald";
-		return view('teacher.profile(teacher)', compact('grade','sectionName'));
+		return view('teacher.profile(teacher)', compact('grade','sectionName','teacher'));
     }
 
 }

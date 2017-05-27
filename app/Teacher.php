@@ -13,7 +13,7 @@ class Teacher extends Model
     	return $this->hasOne('App\User', 'id', 'user_id');
     }
     public function teaches(){
-    	return $this->hasMany('App\')
+    	// return $this->hasMany('App')
     }
 
 }

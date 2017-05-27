@@ -17,7 +17,7 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<dt>Full Name:</dt>
-								<dd>{{ Auth::user()->username }}</dd>
+								<dd>{{ $teacher->username }}</dd>
 							<dt>Age:</dt>
 								<dd>24 yrs. old</dd>
 							<dt>Birthday</dt>
