@@ -82,6 +82,7 @@
                         <li><a href="/admin/addClass">Add Class<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addGrade">Add Grade<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                     @endif
+                    
 
                 </ul>
             </div>
