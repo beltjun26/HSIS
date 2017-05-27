@@ -1,4 +1,4 @@
-@extends('layouts.teacher')
+@extends('layouts.app')
 
 @section('content')
 	<script type= "text/javascript" href="{{ asset('js/jquery.js') }}"></script>

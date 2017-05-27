@@ -1,4 +1,4 @@
-<!-- @extends('layouts.teacher') -->
+@extends('layouts.app')
 
 @section('content')
 	<script type= "text/javascript" href="{{ asset('js/jquery.js') }}"></script>
@@ -17,7 +17,7 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<dt>Full Name:</dt>
-								<dd>Lee Sung Kyung</dd>
+								<dd>{{ Auth::user()->username }}</dd>
 							<dt>Age:</dt>
 								<dd>24 yrs. old</dd>
 							<dt>Birthday</dt>
@@ -37,7 +37,7 @@
 				<div class="col-xs-8">
 						{{ csrf_field() }}
 					<div>
-						<h1><p>Mam Kyung</p></h1>
+						<h1><p>{{Auth::user()->username}}</p></h1>
 						<h4>Grade 4 Maganda</h4>
 						<button class="btn btn-default"><a href= "">View schedule</a></button>
 					</div>
@@ -51,8 +51,8 @@
 									
 									<tr>
 										<div class="col-xs-12">
-											<td class="col-xs-4">1. Elementary Algebra</td>
-											<td class="col-xs-5">1st Yr. Diamond</td>
+											<td class="col-xs-4">{{$sectionName}}</td>
+											<td class="col-xs-5">{{$grade}}</td>
 											<td class="col-xs-3"><a>More Info</a></td>
 										</div>
 									<tr>
