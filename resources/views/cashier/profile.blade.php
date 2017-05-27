@@ -1,9 +1,9 @@
-@extends('layouts.cashier_layout')
+@extends('layouts.app')
 
 @section('content')
-	<div class="profile-parts">
+	<div class="right-parts">
 		<div class="col-sm-3 col-sm-offset-1">
-			<img src="{{asset('images/profile.jpg')}}" id="profile" class="img img-circle img-fluid col-sm-12">
+			<img src="{{asset('images/profile.jpg')}}" id="profile" class="img img-circle">
 		</div>
 		<div class="col-sm-6 top-info">
 			<p><h1>Rosiebelt Jun Abisado</h1>

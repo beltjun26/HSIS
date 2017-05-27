@@ -1,0 +1,379 @@
+/*#collect_fee{
+	width: 100px;
+	font-size: 20px;
+}
+*/
+
+*{
+	font-family: 'Raleway', sans-serif;
+}
+
+.table>tbody>tr>td{
+	vertical-align: middle;
+}
+
+.bg-1{
+	background-color: #3f78bb;
+	color: white;
+}
+.bg-2{
+	background-color: #5db752;
+	color: white;
+}
+.bg-3{
+	background-color: #ecae40;
+	color: white;
+}
+.bg-4{
+	background-color: #d6564e;
+	color: white;
+}
+
+
+.category{
+	width: 10%;
+	background-color: blue;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#collect{
+	margin-bottom: 20px;
+}
+
+.collection{
+	background-color: #9e9a99;
+}
+
+.description span{
+	color: #ee6462;
+}
+
+.description label{
+	color: black;
+	margin-right: 10px;
+}
+
+.description p{
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.description u{
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.fees-category{
+	display: none;
+}
+
+.fees-category > li> a{
+	color: white;
+	border-bottom:3px solid #2c3e50;
+	box-sizing: content-box;	
+	padding: 13px 8px 13px 32px;
+	display: block;
+	text-decoration: none;
+	transition: .2s;
+	padding-left: 60px;
+}
+
+.fee{
+	background-color:#ee6462;
+	padding: 10px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-top: 10px;
+	color: white;
+}
+
+.fee:hover{
+	background-color: #00796B;
+}
+
+.fees-category > li> a:hover{
+	background-color: #54c0c0;
+	font-size: 17px;
+}
+
+.fee-payment{
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.group{
+	margin-top: 20px;
+}
+
+.header hr{
+	margin-top: 0px;
+	border-color: grey;
+}
+
+.history-table{
+	margin-top: 40px;
+	background-color: white;
+	border-width: 0!important;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.history-table thead{
+	border-bottom: 5px solid #ee6462;
+	margin: 0;
+}
+
+.history-table thead th:first-child{
+	background-color: white;
+	border-color: #DDD;
+	margin: 0;
+	width: 25px;
+}
+
+.history-table th:first-child,
+.history-table td:first-child{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #ee6462;
+}
+
+.history-table tr,
+.history-table td:first-child{
+	transition: 0.2s;
+}
+
+.history-table td:first-child{
+	border-color: #ee6462;
+}
+
+.history-table tr:hover td:first-child{
+	border-color: #6BB9F0;
+	background-color: #6BB9F0;
+}
+
+.history-table td:last-child button{
+	display: block;
+	margin: auto;
+}
+
+.history-table td,
+.history-table th{
+	vertical-align: middle;
+}
+
+.history-table th{
+	text-align: center
+}
+
+.icons{
+	padding-right: 10px;
+}
+
+.img-td{
+	width: 150px;
+}
+
+.info{
+	margin-top: 100px;
+}
+
+.info-content{
+	font-size: 50px;
+	font-weight: 100;
+	color: white;
+}
+
+.info-icon{
+	font-size: 80px;
+}
+
+.info-title{
+	color: white;
+}
+
+.item{
+	background-color: #c9e7dd;
+	padding: 10px 5px 10px 5px;
+	margin-bottom: 10px;
+}
+
+.jumbotron{
+	background-color: #E0F2F1;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.navbar-default{
+	background-color: white;
+}
+
+.new-category-div{
+	margin-top: 10px;
+}
+
+.no_record{
+	color: white;
+}
+
+.panel{
+	border-radius: 0px;
+	overflow:hidden;
+}
+
+
+.pay-fee{
+	margin-top: 40px;
+}
+
+#payment{
+	display: none;
+}
+
+.personal-info{
+	margin-top: 30px;
+}
+
+.personal-info .panel-body{
+	font-size: 15px;
+}
+
+.personal-info table tr td:first-child{
+	width: 10%;
+	word-spacing: 2px;
+}
+
+.personal-info table tr td:last-child{
+	word-spacing: 2px;
+}
+
+#profile{
+	border: solid 1px white;
+	margin-top: 40px;
+	width:220px;
+	height:220px;
+}
+
+#receipt{
+	display: none;
+	min-height: 200px;
+}
+
+#receipt .panel{
+	box-shadow: 0 7px 12px rgba(120, 144, 156, 0.66);
+}
+
+.remove{
+	cursor: pointer;
+}
+
+.remove:hover{
+	color: red;
+}
+
+.right-parts{
+	width: 90%;
+	margin-left: 5%;
+	background-color: #f8f8f8;
+	min-height: 94vh;
+	overflow: hidden;
+}
+
+#search_student{
+	margin-top: 50px;
+}
+
+.student-detail{
+	background-color: white;
+	padding: 10px;
+	padding-bottom: 30px;
+	border-top: solid #ee6462 3px;
+}
+
+.student-info{
+	margin-left: 10px;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.student-info-pic{
+	width: 120px;
+	height: 120px;
+}
+
+.student-pic{
+	margin-left: 20px;
+}
+
+.table-title{
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.title{
+	font-size: 25px;
+	padding: 30px 10px 10px 0px;
+	color: #808080;
+	font-weight: 500;
+}
+
+.top-boxes{
+	width: 22%;
+	float: left;
+	padding: 20px 10px;
+	margin-left: 16px;
+	margin-right: 20px;
+	min-height: 100px;
+	margin-bottom: 20px;
+	box-shadow: grey 2px 5px 20px
+}
+
+.total{
+	margin-top: 15px;
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+
+
+.total-amount{
+	color: red;
+}
+
+.top-info{
+	margin-top: 70px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.top-info h1, .top-info h4{
+	font-family: 'Raleway', sans-serif;
+}
+
+.top-info h4{
+	margin-bottom: 5px;
+}
+.top-info #duration{
+	font-size: 15px;
+}
+
+
+.unpaid-item{
+	background-color: green;
+	color: white;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.categories-table{
+	margin-top: 10px;
+}
+
+.categories-table td:last-child button{
+	display: inline;
+}
+
+.categories-table td:last-child{
+	width: 200px;
+}
+
+.categories-table td:first-child{
+	width: 25px;
+}

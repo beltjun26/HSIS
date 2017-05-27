@@ -1,10 +1,10 @@
-@extends('layouts.cashier_layout')
+@extends('layouts.app')
 
 @section('content')
 
 	<div class="right-parts">
 		<div class="col-sm-12 header">
-			<div class="title"><span class="glyphicon glyphicon-plus"></span>  FEES COLLECTION</div><hr/>
+			<div class="title"><span class="glyphicon glyphicon-plus icons"></span>FEES COLLECTION</div><hr/>
 		</div>
 
 		<div class="col-sm-8 col-sm-offset-2" id="search_student">

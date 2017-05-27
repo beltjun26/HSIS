@@ -12,7 +12,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/homepage(teacher).css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/cashier/cashier.css') }}">
 
     <!-- Scripts -->
     
@@ -77,17 +78,30 @@
             </div>
             <div class="sidenav-body">
                 <ul class="sidenav-nav">
-                    <!-- <li><a href="/admin/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li> -->
+                    <li><a href="/admin/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
                     @if(Auth::user()->type == 'admin')
+                        <li><a href="/admin/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
                         <li><a href="/admin/addUser">Add User<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addStudent">Add Student<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addClass">Add Class<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addGrade">Add Grade<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        
                     @elseif(Auth::user()->type == 'teacher')
                         <li><a href="/teacher/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
                         <li><a href="/teacher/schedule">Schedule<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/teacher/classRecord">Class Record<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <!-- <li><a href="/teacher/">Classes<span class="pull-right glyphicon glyphicon-menu-right"></a></li> -->
+
+                    @elseif(Auth::user()->type == 'cashier')
+                        <li><a href="/cashier/profile"><span class="glyphicon glyphicon-user icons"></span>Profile</a></li>
+                        <li><a href="javascript:void(0)" id="fees_collection"><span class="glyphicon glyphicon-list icons"></span>Fees Collection<span class="pull-right glyphicon glyphicon-menu-right" id="fees_collection_span"></span></a>
+                        </li>
+                        <div class="fees-category">
+                            <li><a href="/cashier/collect_fees"><span class="glyphicon glyphicon-download-alt icons"></span>Collect Fees</a></li>
+                            <li><a href="/cashier/fee_categories"><span class="glyphicon glyphicon-book icons"></span>Fee Categories</a></li>
+                        </div>
+                        <li><a href="/cashier/overdues"><span class="glyphicon glyphicon-alert icons"></span>Overdues</a></li>
+                        <li><a href="collection_history"><span class="glyphicon glyphicon-list-alt icons"></span>Collection History<!--span class="pull-right glyphicon glyphicon-menu-right"--></a></li>
 
                     @endif
 
@@ -105,5 +119,8 @@
     
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/navigation.js') }}"></script>
+    <script src="{{ asset('js/cashier/cashier.js') }}"></script>
+
+    @stack('scripts')
 </body>
 </html>
