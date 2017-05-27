@@ -11,6 +11,8 @@ class CreateLibrariansTable extends Migration
         Schema::create('librarians', function($table){
             $table->increments('id', 12);
             $table->integer('user_id');
+            $table->date('start_appointment');
+            $table->date('end_appointment');
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Accountability extends Model
 {
+
 	protected $fillable = [
         'user_id','accountability_name' ,'decimal', 'date', 'student_LRN', 'type', 'status'
     ];
@@ -22,6 +23,7 @@ class Accountability extends Model
     	return $this->belongsTo('App\Librarian');
     }
 
+
     public function studentacc(){
         return $this->belongsTo('App\Student');
     }
@@ -29,5 +31,5 @@ class Accountability extends Model
     public function adminacc(){
         return $this->belongsTo('App\Admin');
     }
-    
+
 }

@@ -4,7 +4,7 @@
 	<script type= "text/javascript" href="{{ asset('js/jquery.js') }}"></script>
 	<script type= "text/javascript" href="{{ asset('js/app.js') }}"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/homepage(teacher).css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/teacher/homepage.css')}}">
 
 
 	<!-- <div class= "container"> -->

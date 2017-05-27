@@ -225,9 +225,6 @@
 	margin-top: 40px;
 }
 
-#payment{
-	display: none;
-}
 
 .personal-info{
 	margin-top: 30px;
@@ -254,7 +251,6 @@
 }
 
 #receipt{
-	display: none;
 	min-height: 200px;
 }
 

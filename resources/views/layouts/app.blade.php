@@ -12,8 +12,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
-
     <link rel="stylesheet" type="text/css" href="{{ asset('css/cashier/cashier.css') }}">
+    <script type="text/javascript" src = "{{ asset('js/script.js') }}"></script>
 
     <!-- Scripts -->
     
@@ -67,14 +67,15 @@
                 <img class="profile" src="{{ asset('images/profile/'.Auth::user()->id.'.jpg') }}">
                 <h1 class="user-name">{{ Auth::user()->nameOfUser() }}</h1>
                 <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
-                <form>
-                    <div class="input-group sidenav-search">
-                        <input class="form-control" type="text" name="search" placeholder="Search...">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
+                    <form action ="/search" method="post">
+                        {{ csrf_field() }}
+                        <div class="input-group sidenav-search">
+                            <input class="form-control" type="text" name="search" placeholder="Search...">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default" ><span class="glyphicon glyphicon-search" ></span></button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
             </div>
             <div class="sidenav-body">
                 <ul class="sidenav-nav">
@@ -92,7 +93,7 @@
                         <!-- <li><a href="/teacher/">Classes<span class="pull-right glyphicon glyphicon-menu-right"></a></li> -->
 
                     @elseif(Auth::user()->type == 'cashier')
-                        <li><a href="/cashier/profile"><span class="glyphicon glyphicon-user icons"></span>Profile</a></li>
+                        <li><a href="/cashier/profile/{{ Auth::user()->username }}"><span class="glyphicon glyphicon-user icons"></span>Profile</a></li>
                         <li><a href="javascript:void(0)" id="fees_collection"><span class="glyphicon glyphicon-list icons"></span>Fees Collection<span class="pull-right glyphicon glyphicon-menu-right" id="fees_collection_span"></span></a>
                         </li>
                         <div class="fees-category">

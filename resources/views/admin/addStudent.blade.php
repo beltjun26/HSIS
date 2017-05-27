@@ -14,9 +14,19 @@
 		<div class="col-md-6 col-md-offset-3">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-
+					To Class:
 				</div>
 				<div class="panel-body">
+					<div class="form-group">
+						<select class="form-control" name="sectionName">
+						<option value="none">Dont assign!</option>
+						@forelse($classes as $class)
+							<option>{{ $class->getGrade->name }} {{ $class->name }}</option>
+						@empty
+
+						@endforelse
+					</select>
+					</div>
 					
 				</div>
 			</div>

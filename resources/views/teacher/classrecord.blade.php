@@ -4,11 +4,11 @@
 	<script type= "text/javascript" href="{{ asset('js/jquery.js') }}"></script>
 	<script type= "text/javascript" href="{{ asset('js/app.js') }}"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/classrecord.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/teacher/classrecord.css')}}">
 
 <div class="panel panel-default record">
 	<div class="panel-body">
-		<div class="class_name">Grade 4: Maganda</div>
+		<div class="class_name">{{$section}}</div>
 		<div class="table-responsive">
 			<table class="table">
 				<colgroup></colgroup>
@@ -27,7 +27,7 @@
 					<th class="text-center">Average</th>
 				</tr>
 				<tr>
-					<td>Chin-chin Amar</td>
+					<td>{{$student->first_name}}</td>
 					<td><input type="text"  class = "input text-center" name=""></td>
 					<td><input type="text"  class = "input text-center" name=""></td>
 					<td><input type="text"  class = "input text-center" name=""></td>

@@ -22,14 +22,33 @@ Route::get('cashier/profile', 'CashierController@profile');
 
 Route::get('cashier', 'CashierController@home');
 
-Route::get('admin', 'AdminHomeController@index');
 
+Route::get('admin', 'AdminHomeController@index');
 
 Route::get('teacher', 'TeacherHomeController@index');
 
 Route::get('cashier', 'CashierHomeController@index');
 
 Route::get('/librarian', 'LibrarianHomepageController@index');
+
+
+Route::post('/search', 'HomeController@search');
+
+// cashier
+Route::get('/cashier/profile/{username}', 'CashierController@profile');
+
+Route::get('/cashier/add_new_category', 'CashierController@newCategory');
+
+Route::get('/cashier/collect_payment', 'CashierController@collectPayment');
+
+Route::get('/cashier/collect_fees', 'CashierController@collectFees');
+
+Route::get('/cashier/fee_categories', 'CashierController@feeCategories');
+
+Route::get('/cashier/overdues', 'CashierController@overdues');
+
+Route::get('/cashier/collection_history', 'CashierController@collectionHistory');
+
 
 
 Auth::routes();
@@ -45,11 +64,15 @@ Route::post('addGrade', 'AddingController@addGrade');
 
 Route::post('addClass', 'AddingController@addClass');
 
+Route::post('searchStudent', 'TeacherHomeController@searchStudent');
+
+Route::post('assignStudent', 'TeacherHomeController@assignStudent');
+
 
 // admin
-Route::get('admin/class', 'AdminHomeController@schoolClass');
+Route::get('admin/class', 'AdminHomeController@schoolClasses');
 
-Route::get('admin/grade', 'AdminHomeController@schoolGrade');
+Route::get('admin/grade', 'AdminHomeController@schoolGrades');
 
 Route::get('admin/addUser', 'AdminHomeController@addUser');
 
@@ -63,6 +86,21 @@ Route::get('admin/addClass', 'AdminHomeController@addClass');
 
 Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 
+<<<<<<< HEAD
+=======
+Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
+
+Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
+
+//for teacher only
+Route::get('teacher/schedule', 'TeacherHomeController@schedule');
+
+Route::get('teacher/classRecord/{sectionName}', 'TeacherHomeController@classRecord');
+
+Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
+
+Route::get('student', 'TeacherHomeController@student');
+>>>>>>> 3c15be0e67d4925739b8cf36316038979a8c4016
 
 Route::get('temporary', function(){
 	return view('profile(teacher)');
