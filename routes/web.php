@@ -24,6 +24,9 @@ Route::get('teacher', 'TeacherHomeController@index');
 
 Route::get('/librarian', 'LibrarianHomepageController@index');
 
+
+Route::post('/search', 'HomeController@search');
+
 // cashier
 Route::get('/cashier', 'CashierController@home');
 
@@ -42,6 +45,7 @@ Route::get('/cashier/overdues', 'CashierController@overdues');
 Route::get('/cashier/collection_history', 'CashierController@collectionHistory');
 
 
+
 Auth::routes();
 
 //post
@@ -55,11 +59,15 @@ Route::post('addGrade', 'AddingController@addGrade');
 
 Route::post('addClass', 'AddingController@addClass');
 
+Route::post('searchStudent', 'TeacherHomeController@searchStudent');
+
+Route::post('assignStudent', 'TeacherHomeController@assignStudent');
+
 
 // admin
-Route::get('admin/class', 'AdminHomeController@schoolClass');
+Route::get('admin/class', 'AdminHomeController@schoolClasses');
 
-Route::get('admin/grade', 'AdminHomeController@schoolGrade');
+Route::get('admin/grade', 'AdminHomeController@schoolGrades');
 
 Route::get('admin/addUser', 'AdminHomeController@addUser');
 
@@ -73,10 +81,14 @@ Route::get('admin/addClass', 'AdminHomeController@addClass');
 
 Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 
+Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
+
+Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
+
 //for teacher only
 Route::get('teacher/schedule', 'TeacherHomeController@schedule');
 
-Route::get('teacher/classRecord', 'TeacherHomeController@classRecord');
+Route::get('teacher/classRecord/{sectionName}', 'TeacherHomeController@classRecord');
 
 Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 

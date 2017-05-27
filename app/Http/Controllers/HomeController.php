@@ -43,4 +43,7 @@ class HomeController extends Controller
         }
 
     }
+    public function search(Request $request){
+        return view('auth.search');
+    }
 }

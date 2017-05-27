@@ -73,6 +73,7 @@ class AddingController extends Controller
             return "success";
     }
 
+
     public function viewAddAccountability(){
         return view('/add_accountability');
     }
@@ -87,5 +88,6 @@ class AddingController extends Controller
             'user_id' => Auth::user()->id
         ]);
         return redirect('/librarian');
+
     }
 }

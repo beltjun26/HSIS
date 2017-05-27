@@ -42,8 +42,8 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ url('/') }}" style="background: #54c0c0">Home</a></li>
-                    <li><a href="/admin/class">Class</a></li>
-                    <li><a href="/admin/grade">Grade</a></li>
+                    <li><a href="/{{ Auth::user()->type }}/class">Class</a></li>
+                    <li><a href="/{{ Auth::user()->type }}/grade">Grade</a></li>
                     @if(Auth::user()->type=="admin")
                         <li><a href="{{ url('admin/account') }}">Account</a></li>
                     @endif 
@@ -67,14 +67,15 @@
                 <img class="profile" src="{{ asset('images/profile/'.Auth::user()->id.'.jpg') }}">
                 <h1 class="user-name">{{ Auth::user()->nameOfUser() }}</h1>
                 <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
-                <form>
-                    <div class="input-group sidenav-search">
-                        <input class="form-control" type="text" name="search" placeholder="Search..." id = "search">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
+                    <form action ="/search" method="post">
+                        {{ csrf_field() }}
+                        <div class="input-group sidenav-search">
+                            <input class="form-control" type="text" name="search" placeholder="Search...">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default" ><span class="glyphicon glyphicon-search" ></span></button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
             </div>
             <div class="sidenav-body">
                 <ul class="sidenav-nav">
@@ -88,7 +89,7 @@
                     @elseif(Auth::user()->type == 'teacher')
                         <li><a href="/teacher/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
                         <li><a href="/teacher/schedule">Schedule<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
-                        <li><a href="/teacher/classRecord">Class Record<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        <!-- <li><a href="/teacher/classRecord">Class Record<span class="pull-right glyphicon glyphicon-menu-right"></a></li> -->
                         <!-- <li><a href="/teacher/">Classes<span class="pull-right glyphicon glyphicon-menu-right"></a></li> -->
 
                     @elseif(Auth::user()->type == 'cashier')
