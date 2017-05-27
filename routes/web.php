@@ -13,11 +13,6 @@
 
 Route::get('/', 'HomeController@index');
 
-
-
-
-
-
 Route::get('admin', 'AdminHomeController@index');
 
 Route::get('teacher', 'TeacherHomeController@index');
@@ -28,6 +23,7 @@ Route::get('/librarian', 'LibrarianHomepageController@index');
 Route::post('/search', 'HomeController@search');
 
 // cashier
+
 Route::get('/cashier/profile/{username}', 'CashierController@profile');
 
 Route::get('/cashier/add_new_category', 'CashierController@newCategory');
@@ -84,6 +80,8 @@ Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
 Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
 
 //for teacher only
+Route::get('teacher/class/{name}', 'TeacherHomeController@getClass');
+
 Route::get('teacher/schedule', 'TeacherHomeController@schedule');
 
 Route::get('teacher/classRecord/{sectionName}', 'TeacherHomeController@classRecord');
