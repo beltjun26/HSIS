@@ -9,4 +9,8 @@ class Grade extends Model
     protected $fillable = [
     	'id', 'name',
     ];
+
+    public function getClasses(){
+    	return $this->hasMany('App\Section');
+    }
 }

@@ -10,6 +10,7 @@ use App\Cashier;
 use App\Teacher;
 use App\Grade;
 use App\Librarian;
+use App\Section;
 
 class AddingController extends Controller
 {
@@ -59,5 +60,14 @@ class AddingController extends Controller
 
     public function addGrade(Request $request){
         Grade::create($request->all());
+    }
+
+    public function addClass(Request $request){
+
+        if(Section::whereName($request->name)->exists()){
+            return "error";
+        }
+        Section::create($request->all());
+            return "success";
     }
 }

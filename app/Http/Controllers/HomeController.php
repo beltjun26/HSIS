@@ -34,7 +34,7 @@ class HomeController extends Controller
                 return redirect('/teacher');
             }
             if(Auth::user()->type=='cashier'){
-                return redirect('/cahier');
+                return redirect('/cairo_surface_finish(surface)hier');
             }
             if(Auth::user()->type == 'librarian'){
                 return redirect('/librarian');

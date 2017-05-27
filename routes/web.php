@@ -15,10 +15,8 @@ Route::get('/', 'HomeController@index');
 
 
 
-Route::get('cashier/profile', 'CashierController@profile');
-Route::get('cashier', 'CashierController@home');
-Route::get('cashier/collect_fees', 'CashierController@sportsCollection');
 
+Route::get('cashier/collect_fees', 'CashierController@sportsCollection');
 
 Route::get('cashier/profile', 'CashierController@profile');
 
@@ -44,6 +42,8 @@ Route::post('registerUser', 'AddingController@registerUser');
 Route::post('addStudent', 'AddingController@addStudent');
 
 Route::post('addGrade', 'AddingController@addGrade');
+
+Route::post('addClass', 'AddingController@addClass');
 
 
 // admin

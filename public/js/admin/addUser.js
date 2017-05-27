@@ -63,7 +63,6 @@ function addUser(e){
 		data: data,
 		success: function(){
 			$('#successModal').modal('show');
-			console.log(id);
 			document.getElementById(id).reset();		
 		}
 	});

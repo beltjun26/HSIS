@@ -80,8 +80,8 @@
 							<div class="form-group">
 								  <label class="control-label col-sm-2" for="lastname">Gender:</label>
 								  <div class="col-sm-10">
-										<label><input type="radio" name="gender">Male</label>
-										<label><input type="radio" name="gender">Female</label>
+										<label><input type="radio" name="gender" value="male">Male</label>
+										<label><input type="radio" name="gender" value="female">Female</label>
 								  </div>
 							</div>
 							<div class="form-group">
@@ -105,7 +105,7 @@
 									 <input type="hidden" name="type" value="admin">
 						</form>
 
-						<form id="teacherForm" class="form-horizontal" method="POST" action="{{ route('register') }}">
+						<form id="teacherForm" class="form-horizontal" method="POST" action="/registerUser">
 									 {{ csrf_field() }}
 							<div class="form-group">
 								<label class="control-label col-sm-2" for="username">Username:</label>
@@ -141,6 +141,12 @@
 								  </div>
 							</div>
 							<div class="form-group">
+								  <label class="control-label col-sm-2" for="email">Email:  </label>
+								  <div class="col-sm-10">
+										<input class="form-control" type="email" name="email">  
+								  </div>
+							</div>
+							<div class="form-group">
 								  <label class="control-label col-sm-2" for="lastname">Birthday:</label>
 								  <div class="col-sm-10">
 										<input class="form-control" type="date" name="bdate">  
@@ -149,8 +155,8 @@
 							<div class="form-group">
 								  <label class="control-label col-sm-2" for="lastname">Gender:</label>
 								  <div class="col-sm-10">
-										<label><input type="radio" name="gender">Male</label>
-										<label><input type="radio" name="gender">Female</label>
+										<label><input type="radio" name="gender" value="male">Male</label>
+										<label><input type="radio" name="gender" value="female">Female</label>
 								  </div>
 							</div>
 
@@ -213,8 +219,8 @@
 							<div class="form-group">
 								  <label class="control-label col-sm-2" for="lastname">Gender:</label>
 								  <div class="col-sm-10">
-										<label><input type="radio" name="gender">Male</label>
-										<label><input type="radio" name="gender">Female</label>
+										<label><input type="radio" name="gender" value="male">Male</label>
+										<label><input type="radio" name="gender" value="female">Female</label>
 								  </div>
 							</div>
 
@@ -269,31 +275,31 @@
 							<div class="form-group">
 								  <label class="control-label col-sm-2" for="lastname">Gender:</label>
 								  <div class="col-sm-10">
-										<label><input type="radio" name="gender">Male</label>
-										<label><input type="radio" name="gender">Female</label>
+										<label><input type="radio" name="gender" value="male">Male</label>
+										<label><input type="radio" name="gender" value="female">Female</label>
 								  </div>
 							</div>
 
-									 <div class="form-group">
-										  <label class="control-label col-sm-2">Password:</label>
-										  <div class="col-sm-10">
-												<input class="form-control" type="password" name="password">
-										  </div>
-									 </div>
+							 <div class="form-group">
+								  <label class="control-label col-sm-2">Password:</label>
+								  <div class="col-sm-10">
+										<input class="form-control" type="password" name="password">
+								  </div>
+							 </div>
 
-									 <div class="form-group">
-										  <label class="control-label col-sm-2">Retype Password:</label>
-										  <div class="col-sm-10">
-												<input class="form-control" type="password" name="password_confirmation">  
-										  </div>
-									 </div>
-									 <div class="form-group">
-										  <div class="col-sm-2 col-sm-offset-5 text-center">
-												<input class="btn btn-success" type="submit" name="submit">
-										  </div>
-									 </div>
-									 <input type="hidden" name="type" value="librarian">
-								</form>
+							 <div class="form-group">
+								  <label class="control-label col-sm-2">Retype Password:</label>
+								  <div class="col-sm-10">
+										<input class="form-control" type="password" name="password_confirmation">  
+								  </div>
+							 </div>
+							 <div class="form-group">
+								  <div class="col-sm-2 col-sm-offset-5 text-center">
+										<input class="btn btn-success" type="submit" name="submit">
+								  </div>
+							 </div>
+							 <input type="hidden" name="type" value="librarian">
+						</form>
 					</div>
 				</div>
 			</div>

@@ -37,6 +37,18 @@ class User extends Authenticatable
             $admin = Admin::whereUser_id($this->id)->first();
             return $admin;
         }
+        if($this->type == "cashier"){
+            $admin = Cashier::whereUser_id($this->id)->first();
+            return $admin;
+        }
+        if($this->type == "librarian"){
+            $admin = Librarian::whereUser_id($this->id)->first();
+            return $admin;
+        }
+        if($this->type == "teacher"){
+            $admin = Teacher::whereUser_id($this->id)->first();
+            return $admin;
+        }
     }
 
     function nameOfUser(){
