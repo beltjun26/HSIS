@@ -67,6 +67,7 @@ Route::get('teacher/classRecord', 'TeacherHomeController@classRecord');
 
 Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 
+Route::get('student', 'TeacherHomeController@student');
 
 Route::get('temporary', function(){
 	return view('profile(teacher)');
