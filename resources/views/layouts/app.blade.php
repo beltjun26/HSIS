@@ -75,8 +75,8 @@
             </div>
             <div class="sidenav-body">
                 <ul class="sidenav-nav">
-                    <li><a href="/admin/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
                     @if(Auth::user()->type == 'admin')
+                        <li><a href="/admin/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
                         <li><a href="/admin/addUser">Add User<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addStudent">Add Student<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addClass">Add Class<span class="pull-right glyphicon glyphicon-menu-right"></a></li>

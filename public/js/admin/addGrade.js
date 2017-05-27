@@ -11,9 +11,14 @@ function addGrade(e){
 		url: '/addGrade',
 		type: 'post',
 		data: grade,
-		success: function(){
+		success: function(data){
 			$('#successModal').modal('show');
 			document.getElementById('form').reset();
+			var li = document.createElement('li');
+			var text = document.createTextNode(data);
+			li.appendChild(text);
+			li.className = "list-group-item";
+			document.getElementById('gradeList').appendChild(li);
 		}
 	});
 

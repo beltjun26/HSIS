@@ -1,7 +1,7 @@
 @extends('layouts.app')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/addClass.css') }}">
 <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/Chart.bundle.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/admin/class.js') }}"></script>
 @section('content')
 <div class="container">
 	<div class="row">
@@ -27,22 +27,30 @@
 					</div>
 					
 				</div>
-				<div class="list-group">
+				<div id="btnList" class="list-group">
 					@foreach($grades as $grade)
-					<a id="{{ $grade->id }}" href="#" class="list-group-item">{{ $grade->name }}<span class="pull-right glyphicon glyphicon-menu-right"></a>
+					<a href="#" onclick="showClass({{ $grade->id }}, event)" class="list-group-item">{{ $grade->name }}<span class="pull-right glyphicon glyphicon-menu-right"></a>
 					@endforeach
 				</div>
 			</div>
-			<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+			<div id="listContainer" class="col-sm-6 col-md-6 col-lg-6 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 				
 			    @foreach($grades as $grade)
-			    	<div class="list-group" id="{{ $grade->id }}">
-			    		@forelse($grade->getClasses as $class)
-						<a href="" class="list-group-item">{{ $class->name }}</a>
-						@empty
-
-						@endforelse
-					</div>
+			    	<div class="panel panel-default" id="{{ $grade->id }}" style="display: none">
+			    		<div class="panel-heading">
+			    			<h4>{{ $grade->name }}</h4>
+			    		</div>
+			    		<div class="panel-body">
+			    			<div class="list-group">
+				    		@forelse($grade->getClasses as $class)
+							<a href="#" class="list-group-item">{{ $class->name }}</a>
+							@empty
+								No section Added
+							@endforelse
+						</div>
+			    		</div>
+			    	</div>
+			    	
 			    @endforeach
 			</div>
 			
