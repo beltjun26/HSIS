@@ -1,0 +1,28 @@
+*{
+	font-family: Raleway Light;
+}
+
+#profile{
+	border: solid 1px white;
+	border-radius: 50% 50% 50% 50%;
+	width:180px;
+	height:180px;
+	margin-left: 1%;
+
+}
+.body_part{
+	
+}
+.right_side{
+	
+}
+.panel{
+	margin-top: 30px;
+}
+#stud_list{
+	margin-top: 70px;
+}
+/*#more{
+	margin-left: 200px;
+	margin-right: 0px;
+}*/

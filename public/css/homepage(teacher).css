@@ -1,0 +1,39 @@
+*{
+	font-family: Raleway Light;
+}
+#homepanel{
+	font-family: Raleway Light;
+	margin-left: 280px;
+	max-width: 1080px;
+	height: default;
+}
+#banner{
+	font-size: 40px;
+	line-height: 70px;
+
+}	
+.school{
+	font-size: 20px;
+	line-height: 10px;
+}
+#mission{
+	font-size: 20px;
+	margin-left: 10px;
+}
+#mission-panel{
+
+	width:350px;
+	margin-left: 20px;
+	margin-top: 100px;
+}
+#vision-panel{
+	width:350px;
+	margin-left: 20px;
+	
+}
+#announcement-panel{
+	position: absolute;
+	width: 650px;
+	margin-top: -467px;
+	margin-left: 400px;
+}

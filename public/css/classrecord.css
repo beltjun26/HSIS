@@ -1,0 +1,31 @@
+*{
+	font-family:Raleway Light;
+}
+
+.record{
+	max-width: 900px;
+	margin-left:280px;
+}
+.input{
+	max-width:50px;
+	align:center;
+	margin-left: 25px;
+}
+.class_name{
+	font-size: 30px;
+	padding-bottom: 20px;
+	font-family:Raleway Light;
+}
+.save{
+	margin-left: 85%;
+}
+#confirm_modal{
+	max-width: 700px;
+	margin-left: 300px;
+}
+#password{
+	margin-top: 20px;
+}
+#confirm{
+	margin:30px 0px 0px 500px;
+}
