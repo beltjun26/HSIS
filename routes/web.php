@@ -86,8 +86,7 @@ Route::get('admin/addClass', 'AdminHomeController@addClass');
 
 Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 
-<<<<<<< HEAD
-=======
+
 Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
 
 Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
@@ -100,7 +99,7 @@ Route::get('teacher/classRecord/{sectionName}', 'TeacherHomeController@classReco
 Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 
 Route::get('student', 'TeacherHomeController@student');
->>>>>>> 3c15be0e67d4925739b8cf36316038979a8c4016
+
 
 Route::get('temporary', function(){
 	return view('profile(teacher)');
