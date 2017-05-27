@@ -16,18 +16,15 @@ Route::get('/', 'HomeController@index');
 
 
 
-Route::get('cashier/collect_fees', 'CashierController@sportsCollection');
 
-Route::get('cashier/profile', 'CashierController@profile');
-
-Route::get('cashier', 'CashierController@home');
 
 Route::get('admin', 'AdminHomeController@index');
 
+Route::get('/cashier/{page_name}', 'CashierController@findPage');
+
+Route::resource('/cashier', 'CashierController');
 
 Route::get('teacher', 'TeacherHomeController@index');
-
-Route::get('cashier', 'CashierHomeController@index');
 
 Route::get('librarian', 'LibrarianHomeController@index');
 

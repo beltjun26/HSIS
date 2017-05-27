@@ -11,7 +11,8 @@ class CreateAccountabilitiesTable extends Migration
          Schema::create('accountabilities', function($table){
             $table->increments('id', 11); //aka accountability_id
             $table->string('accountability_name', 60);
-            $table->decimal('decimal', 5, 2);
+            $table->datetime('due_date');
+            $table->decimal('amount', 5, 2);
             $table->timestamps();
         });
     }

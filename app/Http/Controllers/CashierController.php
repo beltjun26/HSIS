@@ -13,7 +13,7 @@ class CashierController extends Controller
      */
     public function index()
     {
-        //
+        return view('cashier.home');
     }
 
     /**
@@ -83,15 +83,19 @@ class CashierController extends Controller
     }
 
 
-    public function home(){
-        return view('cashier.home');
-    }
+    // public function home(){
+        
+    // }
 
     public function profile(){
         return view('cashier.profile');
     }
 
-     public function sportsCollection(){
+     public function collectFees(){
         return view('cashier.collect_fees');
+    }
+
+    public function findPage($page_name){
+        return view('cashier.'.$page_name);
     }
 }
