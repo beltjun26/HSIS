@@ -74,15 +74,11 @@ class AddingController extends Controller
             return "success";
     }
 
-<<<<<<< HEAD
+
     public function viewAddAccountability($type, $id){
         $types = Accountability::where('type',$type)->get();
         return view('accountability.add_accountability');
-=======
 
-    public function viewAddAccountability(){
-        return view('/add_accountability');
->>>>>>> 3c15be0e67d4925739b8cf36316038979a8c4016
     }
 
     public function addAccountability(Request $request, $type){
@@ -95,12 +91,9 @@ class AddingController extends Controller
             'status' => 'Not Settled',
             'user_id' => Auth::user()->id
         ]);
-<<<<<<< HEAD
-        return redirect('/accountability/view_accountability');
-=======
-        return redirect('/librarian');
 
->>>>>>> 3c15be0e67d4925739b8cf36316038979a8c4016
+        return redirect('/accountability/view_accountability');
+
     }
 
     // public function teacherAddAccountability(Request $request){
