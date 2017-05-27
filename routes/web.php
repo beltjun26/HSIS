@@ -28,6 +28,8 @@ Route::get('teacher', 'TeacherHomeController@index');
 
 Route::get('/librarian', 'LibrarianHomepageController@index');
 
+Route::post('/search', 'HomeController@search');
+
 
 Auth::routes();
 

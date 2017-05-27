@@ -67,14 +67,15 @@
                 <img class="profile" src="{{ asset('images/profile/'.Auth::user()->id.'.jpg') }}">
                 <h1 class="user-name">{{ Auth::user()->nameOfUser() }}</h1>
                 <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
-                <form>
-                    <div class="input-group sidenav-search">
-                        <input class="form-control" type="text" name="search" placeholder="Search..." id = "search">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
+                    <form action ="/search" method="post">
+                        {{ csrf_field() }}
+                        <div class="input-group sidenav-search">
+                            <input class="form-control" type="text" name="search" placeholder="Search...">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default" ><span class="glyphicon glyphicon-search" ></span></button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
             </div>
             <div class="sidenav-body">
                 <ul class="sidenav-nav">

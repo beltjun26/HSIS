@@ -1,10 +1,11 @@
 window.onload = function(){
+	// document.getElementById('submit').addEventListener('click', search);
 	document.getElementById('side_toggle').addEventListener('click', toggleSidenav);
 	if(typeof isScript !== 'undefined'){
 		for(var i = 0;i<myScripts.length;i++){
 			appendScript(myScripts[i]);
 		}
-		
+	
 	}
 };
 
@@ -25,3 +26,10 @@ function appendScript(scriptSrc){
 	s.src = scriptSrc;
 	$("head").append(s);
 }
+
+// function search(){
+// 	var input = document.getElementById("search").value;
+
+// 	console.log(input);
+
+// }
