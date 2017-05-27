@@ -18,12 +18,16 @@ class Student extends Model
     	'bdate',
     ];
 
-<<<<<<< HEAD
+
     function student_acc(){
     	return $this->belongsToMany('App\Accountability', 'pay', 'LRN', 'student_LRN');
-=======
+    }
+
     public function fullName(){
     	return $this->first_name." ".$this->middle_name." ".$this->last_name;
->>>>>>> 2907478862790930eb2d1ba17c156e23d25d0277
+    }
+
+    public function hasAccountabilitesStudent(){
+    	return $this->hasMany('App\Accountability');
     }
 }

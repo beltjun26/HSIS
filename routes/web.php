@@ -16,11 +16,18 @@ Route::get('/', 'HomeController@index');
 
 
 
+Route::get('cashier/collect_fees', 'CashierController@sportsCollection');
+
+Route::get('cashier/profile', 'CashierController@profile');
+
+Route::get('cashier', 'CashierController@home');
 
 
 Route::get('admin', 'AdminHomeController@index');
 
 Route::get('teacher', 'TeacherHomeController@index');
+
+Route::get('cashier', 'CashierHomeController@index');
 
 Route::get('/librarian', 'LibrarianHomepageController@index');
 
@@ -81,6 +88,8 @@ Route::get('admin/addClass', 'AdminHomeController@addClass');
 
 Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 
+<<<<<<< HEAD
+=======
 Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
 
 Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
@@ -93,6 +102,7 @@ Route::get('teacher/classRecord/{sectionName}', 'TeacherHomeController@classReco
 Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 
 Route::get('student', 'TeacherHomeController@student');
+>>>>>>> 3c15be0e67d4925739b8cf36316038979a8c4016
 
 Route::get('temporary', function(){
 	return view('profile(teacher)');
@@ -105,6 +115,18 @@ Route::post('/librarian/addBookAccountability', 'LibrarianHomepageController@add
 
 Route::get('/class_profile', 'ClassProfileController@index');
 
-Route::post('/accountability/librarianAddAccountability', 'AddingController@addAccountability');
+Route::post('/accountability/librarianAddAccountability', 'AddingController@librarianAddAccountability');
 
-Route::get('/add_accountability', 'AddingController@viewAddAccountability');
+Route::post('/accountability/cashierAddAccountability', 'AddingController@cashierAddAccountability');
+
+Route::post('/accountability/teacherAddAccountability', 'AddingController@teacherAddAccountability');
+
+Route::post('/accountability/adminAddAccountability', 'AddingController@adminAddAccountability');
+
+Route::get('/accountability/add_accountability/{$type}', 'AddingController@viewAddAccountability');
+
+Route::get('/accountability/edit/{id}', 'AccountabilityController@edit');
+
+Route::get('/accountability/update/{id}', 'AccountabilityController@update');
+
+Route::get('/accountability/view_accountability/{type}', 'AccountabilityController@index');

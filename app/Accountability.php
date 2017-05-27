@@ -27,4 +27,8 @@ class Accountability extends Model
         return $this->belongsToMany('App\Student', 'pays', 'id', 'accountability_id');
     }
 
+    public function adminacc(){
+        return $this->belongsTo('App\Admin');
+    }
+
 }
