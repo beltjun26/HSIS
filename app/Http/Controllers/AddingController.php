@@ -11,6 +11,7 @@ use App\Teacher;
 use App\Grade;
 use App\Librarian;
 use App\Section;
+use App\Accountability;
 
 class AddingController extends Controller
 {
@@ -72,7 +73,21 @@ class AddingController extends Controller
             return "success";
     }
 
-    public function addStudentTo(Request $request){
+
+    public function viewAddAccountability(){
+        return view('/add_accountability');
+    }
+
+    public function librarianAddAccountability(Request $request){
+        Accountability::create([
+            'accountability_name' => $request->accountability_name,
+            'student_LRN' => $request->student_LRN,
+            'date' => $request->date,
+            'decimal' => $request->accountability_amount,
+            'type'=>'librarian',
+            'user_id' => Auth::user()->id
+        ]);
+        return redirect('/librarian');
 
     }
 }

@@ -4,7 +4,7 @@
 	<script type= "text/javascript" href="{{ asset('js/jquery.js') }}"></script>
 	<script type= "text/javascript" href="{{ asset('js/app.js') }}"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/classrecord.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/teacher/classrecord.css')}}">
 
 <div class="panel panel-default record">
 	<div class="panel-body">

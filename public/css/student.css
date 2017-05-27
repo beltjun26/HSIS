@@ -1,0 +1,34 @@
+*{
+	font-family: Raleway Light;
+}
+#left_part{
+	margin-left: 150px;
+	position:absolute;
+	max-width: 500px;
+	margin-top:40px;
+
+}
+#prof_pic{
+	border:1px solid black;
+	border-radius: 50%;
+	max-width: 200px;
+	height:200px;
+	margin-left: 20px;
+
+}
+#stud_info{
+	margin-top: 40px;
+}
+
+#right_part{
+	position: absolute;
+	margin-top: 40px;
+	margin-left: 450px;	
+	/*width:600px;*/
+
+}
+#grades{
+	margin-top: 80px;
+	width: 750px;
+	height: 300px;
+}

@@ -11,19 +11,19 @@ use App\StudentIn;
 class TeacherHomeController extends Controller
 {
     function index(){
-    	return view('teacher.homepage(teacher)');
+    	return view('teacher.homepage');
     }
     function schedule(){
     	return view('teacher.schedule');
     }
     function classRecord(){
-    	$student = DB::table('student_ins')
-	    	->select('student_ins.section_name', 'student_ins.student_LRN')
-	    	->join('teaches','teaches.section_name','teaches.teacher_id')
-	    	->where(['student_ins.section_name'=>'teaches.section_name'])
-	    	->get();
+    	// $student = DB::table('student_ins')
+	    // 	->select('student_ins.section_name', 'student_ins.student_LRN')
+	    // 	->join('teaches','teaches.section_name','teaches.teacher_id')
+	    // 	->where(['student_ins.section_name'=>'teaches.section_name'])
+	    // 	->get();
    		 
-    	return view('teacher.classrecord', compact('student'));
+    	return view('teacher.classrecord');
     }
     function profile($username){
 
@@ -35,11 +35,14 @@ class TeacherHomeController extends Controller
 	    $user = User::whereUsername($username)->first();
         if($user->type == "teacher"){
             $teacher = $user;
-            return view('teacher.profile', compact('teacher'));
+            $grade = "Grade 9";
+            $sectionName = "Emerald";
+            return view('teacher.profile', compact('grade','sectionName','teacher'));
         }
-   		 $grade = "Grade 9";
-   		 $sectionName = "Emerald";
-		return view('teacher.profile(teacher)', compact('grade','sectionName','teacher'));
+    }
+
+    function student(){
+        return view('teacher.student');
     }
 
     public function getClass($name){

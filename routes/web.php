@@ -20,13 +20,24 @@ Route::get('/', 'HomeController@index');
 
 Route::get('admin', 'AdminHomeController@index');
 
-Route::get('/cashier/{page_name}', 'CashierController@findPage');
-
-Route::resource('/cashier', 'CashierController');
-
 Route::get('teacher', 'TeacherHomeController@index');
 
-Route::get('librarian', 'LibrarianHomeController@index');
+Route::get('/librarian', 'LibrarianHomepageController@index');
+
+// cashier
+Route::get('/cashier/profile/{username}', 'CashierController@profile');
+
+Route::get('/cashier/add_new_category', 'CashierController@newCategory');
+
+Route::get('/cashier/collect_payment', 'CashierController@collectPayment');
+
+Route::get('/cashier/collect_fees', 'CashierController@collectFees');
+
+Route::get('/cashier/fee_categories', 'CashierController@feeCategories');
+
+Route::get('/cashier/overdues', 'CashierController@overdues');
+
+Route::get('/cashier/collection_history', 'CashierController@collectionHistory');
 
 
 Auth::routes();
@@ -75,13 +86,19 @@ Route::get('teacher/classRecord', 'TeacherHomeController@classRecord');
 
 Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 
+Route::get('student', 'TeacherHomeController@student');
 
 Route::get('temporary', function(){
 	return view('profile(teacher)');
 });
 
 
+Route::get('/librarian/create', 'LibrarianHomepageController@create');
 
+Route::post('/librarian/addBookAccountability', 'LibrarianHomepageController@addBookAccountability');
 
+Route::get('/class_profile', 'ClassProfileController@index');
 
+Route::post('/accountability/librarianAddAccountability', 'AddingController@addAccountability');
 
+Route::get('/add_accountability', 'AddingController@viewAddAccountability');
