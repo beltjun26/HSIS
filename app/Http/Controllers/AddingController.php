@@ -71,4 +71,8 @@ class AddingController extends Controller
         Section::create($request->all());
             return "success";
     }
+
+    public function addStudentTo(Request $request){
+
+    }
 }

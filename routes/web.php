@@ -42,11 +42,15 @@ Route::post('addGrade', 'AddingController@addGrade');
 
 Route::post('addClass', 'AddingController@addClass');
 
+Route::post('searchStudent', 'TeacherHomeController@searchStudent');
+
+Route::post('assignStudent', 'TeacherHomeController@assignStudent');
+
 
 // admin
-Route::get('admin/class', 'AdminHomeController@schoolClass');
+Route::get('admin/class', 'AdminHomeController@schoolClasses');
 
-Route::get('admin/grade', 'AdminHomeController@schoolGrade');
+Route::get('admin/grade', 'AdminHomeController@schoolGrades');
 
 Route::get('admin/addUser', 'AdminHomeController@addUser');
 
@@ -59,6 +63,10 @@ Route::get('admin/addStudent', 'AdminHomeController@addStudent');
 Route::get('admin/addClass', 'AdminHomeController@addClass');
 
 Route::get('admin/addGrade', 'AdminHomeController@addGrade');
+
+Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
+
+Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
 
 //for teacher only
 Route::get('teacher/schedule', 'TeacherHomeController@schedule');
