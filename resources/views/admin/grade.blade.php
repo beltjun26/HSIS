@@ -52,11 +52,11 @@
                     randomScalingFactor(),
                 ],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)'
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
                 ],
                 label: 'Dataset 1'
             }],
@@ -75,7 +75,7 @@
             },
             title: {
                 display: true,
-                text: 'Chart.js Doughnut Chart'
+                text: 'Grade Information Statistic'
             },
             animation: {
                 animateScale: true,

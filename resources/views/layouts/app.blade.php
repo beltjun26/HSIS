@@ -13,6 +13,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/cashier/cashier.css') }}">
+    <script type="text/javascript" src = "{{ asset('js/script.js') }}"></script>
+
     <!-- Scripts -->
     
     <script>
@@ -67,7 +69,7 @@
                 <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
                 <form>
                     <div class="input-group sidenav-search">
-                        <input class="form-control" type="text" name="search" placeholder="Search...">
+                        <input class="form-control" type="text" name="search" placeholder="Search..." id = "search">
                         <div class="input-group-btn">
                             <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
                         </div>
@@ -82,6 +84,12 @@
                         <li><a href="/admin/addStudent">Add Student<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addClass">Add Class<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addGrade">Add Grade<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        
+                    @elseif(Auth::user()->type == 'teacher')
+                        <li><a href="/teacher/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
+                        <li><a href="/teacher/schedule">Schedule<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        <li><a href="/teacher/classRecord">Class Record<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        <!-- <li><a href="/teacher/">Classes<span class="pull-right glyphicon glyphicon-menu-right"></a></li> -->
 
                     @elseif(Auth::user()->type == 'cashier')
                         <li><a href="/cashier/profile/{{ Auth::user()->username }}"><span class="glyphicon glyphicon-user icons"></span>Profile</a></li>
@@ -95,6 +103,9 @@
                         <li><a href="collection_history"><span class="glyphicon glyphicon-list-alt icons"></span>Collection History<!--span class="pull-right glyphicon glyphicon-menu-right"--></a></li>
 
                     @endif
+
+
+
 
                 </ul>
             </div>

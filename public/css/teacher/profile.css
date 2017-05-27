@@ -1,0 +1,36 @@
+*{
+	font-family: Raleway Light;
+}
+
+#profile{
+	border: solid 1px white;
+	border-radius: 50% 50% 50% 50%;
+	width:220px;
+	height:220px;
+	margin-left: 35px;
+
+}
+#header{
+	margin-top:60px;
+	/*width: 600px;*/
+}
+#details{
+	max-width: 280px;
+}
+.body_part{
+
+}
+.right_side{
+	
+}
+.panel{
+	margin-top: 30px;
+	/*margin-left: -50px;*/
+}
+#stud_list{
+	margin-top: 90px;
+}
+/*#more{
+	margin-left: 200px;
+	margin-right: 0px;
+}*/
