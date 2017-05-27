@@ -13,16 +13,19 @@
 
 Route::get('/', 'HomeController@index');
 
+
 Route::get('admin', 'AdminHomeController@index');
 
 Route::get('teacher', 'TeacherHomeController@index');
 
 Route::get('/librarian', 'LibrarianHomepageController@index');
 
-
 Route::post('/search', 'HomeController@search');
 
 // cashier
+
+Route::get('/cashier', 'CashierController@home');
+
 
 Route::get('/cashier/profile/{username}', 'CashierController@profile');
 
@@ -75,6 +78,7 @@ Route::get('admin/addClass', 'AdminHomeController@addClass');
 
 Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 
+
 Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
 
 Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
@@ -90,6 +94,7 @@ Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 
 Route::get('student', 'TeacherHomeController@student');
 
+
 Route::get('temporary', function(){
 	return view('profile(teacher)');
 });
@@ -101,6 +106,18 @@ Route::post('/librarian/addBookAccountability', 'LibrarianHomepageController@add
 
 Route::get('/class_profile', 'ClassProfileController@index');
 
-Route::post('/accountability/librarianAddAccountability', 'AddingController@addAccountability');
+Route::post('/accountability/librarianAddAccountability', 'AddingController@librarianAddAccountability');
 
-Route::get('/add_accountability', 'AddingController@viewAddAccountability');
+Route::post('/accountability/cashierAddAccountability', 'AddingController@cashierAddAccountability');
+
+Route::post('/accountability/teacherAddAccountability', 'AddingController@teacherAddAccountability');
+
+Route::post('/accountability/adminAddAccountability', 'AddingController@adminAddAccountability');
+
+Route::get('/accountability/add_accountability/{$type}', 'AddingController@viewAddAccountability');
+
+Route::get('/accountability/edit/{id}', 'AccountabilityController@edit');
+
+Route::get('/accountability/update/{id}', 'AccountabilityController@update');
+
+Route::get('/accountability/view_accountability/{type}', 'AccountabilityController@index');

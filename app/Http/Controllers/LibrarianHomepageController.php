@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Accountability;
 
-
 use Illuminate\Http\Request;
 
 class LibrarianHomepageController extends Controller
@@ -22,7 +21,9 @@ class LibrarianHomepageController extends Controller
                         ->join('students', function($join){
                         $join->on('borrowed.student_LRN', '=', 'students.LRN');
         })->get();
+
         $accs = Accountability::where('type', 'librarian')->get();
+
         return view('librarian.index', ['results'=>$results, 'accs'=>$accs]);
     }
 
