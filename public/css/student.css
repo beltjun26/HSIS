@@ -2,10 +2,10 @@
 	font-family: Raleway Light;
 }
 #left_part{
-	margin-left: 150px;
+	margin-left: 120px;
 	position:absolute;
 	max-width: 500px;
-	margin-top:40px;
+	margin-top:20px;
 
 }
 #prof_pic{
@@ -13,22 +13,23 @@
 	border-radius: 50%;
 	max-width: 200px;
 	height:200px;
-	margin-left: 20px;
+	margin-left: 500px;
+	/*align:center;*/
 
 }
-#stud_info{
-	margin-top: 40px;
-}
+/*#stud_info{
+	margin-top: 20px;
+}*/
 
 #right_part{
 	position: absolute;
-	margin-top: 40px;
-	margin-left: 450px;	
-	/*width:600px;*/
+	margin-top: 20px;
+	margin-left: 400px;	
+	width:600px;
 
 }
 #grades{
-	margin-top: 80px;
+	/*margin-top: 80px;*/
 	width: 750px;
 	height: 300px;
 }

@@ -65,7 +65,7 @@ Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 //for teacher only
 Route::get('teacher/schedule', 'TeacherHomeController@schedule');
 
-Route::get('teacher/classRecord', 'TeacherHomeController@classRecord');
+Route::get('teacher/classRecord/{sectionName}', 'TeacherHomeController@classRecord');
 
 Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 
