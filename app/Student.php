@@ -13,4 +13,8 @@ class Student extends Model
     protected $dates = [
     	'bdate',
     ];
+
+    function student_acc(){
+    	return $this->belongsToMany('App\Accountability', 'pay', 'LRN', 'student_LRN');
+    }
 }

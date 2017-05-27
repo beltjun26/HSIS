@@ -46,7 +46,7 @@
 		<div class="modal fade" id="newCategoryMod" role="dialog">
 		    <div class="modal-dialog">
 		      <div class="modal-content">
-		      <form method="post" action="/cashier/add_new_category">
+		      <form method="get" action="/cashier/add_new_category">
 		        <div class="modal-header bg-primary">
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		          <h4 class="modal-title"><span class="glyphicon glyphicon-plus icons"></span>New Category</h4>
@@ -54,23 +54,24 @@
 		        <div class="modal-body">
 		        	<div class="input-group">
 		        		<label class="input-group-addon"><b>Category Name: </b></label>
-		        		<input type="text" name="accountability_name" class="form-control" />
+		        		<input type="text" name="accountability_name" class="form-control" required="" />
 		          	</div>
 		          	<div class="input-group group">
 		        		<label class="input-group-addon"><b>Amount: </b></label>
-		        		<input type="text" name="amount" class="form-control" />
+		        		<input type="text" name="amount" class="form-control" required="" />
 		          	</div>
 		          	<div class="input-group group">
 		        		<label class="input-group-addon"><b>Due Date: </b></label>
-		        		<input type="date" name="due_date" class="form-control" />
+		        		<input type="date" name="due_date" class="form-control" required="" />
 		          	</div>
 		          	<div class="input-group group">
 		        		<label class="input-group-addon"><b>Scope: </b></label>
-		        		<input type="text" name="scope" class="form-control" />
+		        		<input type="text" name="scope" class="form-control" required="" />
 		          	</div>
+		          		<input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 		        </div>
 		        <div class="modal-footer">
-		          <button type="submit" class="btn btn-success" data-dismiss="modal">OK</button>
+		          <input type="submit" class="btn btn-success" value="OK"/>
 		        </div>
 		       </form>
 		      </div>

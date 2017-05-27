@@ -8,10 +8,10 @@ class CreatePayTable extends Migration
 {
     public function up()
     {
-        Schema::create('pay', function($table){
+        Schema::create('pays', function($table){
             $table->increments('id', 11);
             $table->string('status', 60);
-            $table->date('date');
+            $table->date('date')->nullable();
             $table->integer('accountability_id')->unsigned();
             $table->string('student_LRN', 12);
             $table->timestamps();

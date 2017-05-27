@@ -25,6 +25,8 @@ Route::get('teacher', 'TeacherHomeController@index');
 Route::get('/librarian', 'LibrarianHomepageController@index');
 
 // cashier
+Route::get('/cashier', 'CashierController@home');
+
 Route::get('/cashier/profile/{username}', 'CashierController@profile');
 
 Route::get('/cashier/add_new_category', 'CashierController@newCategory');
