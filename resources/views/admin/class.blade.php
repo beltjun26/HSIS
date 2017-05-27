@@ -43,7 +43,7 @@
 			    		<div class="panel-body">
 			    			<div class="list-group">
 				    		@forelse($grade->getClasses as $class)
-							<a href="#" class="list-group-item">{{ $class->name }}</a>
+							<a href="/{{ Auth::user()->type }}/class/{{ $class->name }}" class="list-group-item">{{ $class->name }}</a>
 							@empty
 								No section Added
 							@endforelse

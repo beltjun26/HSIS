@@ -23,7 +23,7 @@ class AdminHomeController extends Controller
     	return view('admin.addUser');
     }
 
-    function schoolClass(){
+    function schoolClasses(){
         $classes = Section::all();
         $grades = Grade::all();
         return view('admin.class', compact('classes', 'grades'));
@@ -35,7 +35,7 @@ class AdminHomeController extends Controller
         return view('admin.addClass', compact('grades', 'teachers'));
     }
 
-    function schoolGrade(){
+    function schoolGrades(){
         $grades = Grade::all();
         return view('admin.grade', compact('grades'));
     }
@@ -81,6 +81,9 @@ class AdminHomeController extends Controller
     }
 
     public function addStudent(){
-        return view('admin.addStudent');
+        $classes = Section::all();
+        return view('admin.addStudent', compact('classes'));
     }
+
+   
 }

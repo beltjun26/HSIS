@@ -33,7 +33,7 @@
 
 		<div class="col-sm-12">
 			<div class="col-sm-12">
-				<div class="student-detail col-sm-6 panel panel-default">
+				<div class="student-detail col-sm-7 panel panel-default">
 					<table class="table">
 						<tr class="text-primary">
 							<th colspan="4" class="table-title">
@@ -69,7 +69,7 @@
 				</div>
 
 
-				<div class="student-detail col-sm-6 panel panel-default">
+				<div class="student-detail col-sm-5 panel panel-default">
 					<table class="table">
 						<tr class="text-primary">
 							<th colspan="4" class="table-title">

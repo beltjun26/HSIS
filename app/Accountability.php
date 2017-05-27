@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Accountability extends Model
 {
+
 	protected $fillable = [
         'id','accountability_name' ,'decimal', 'cashier_id', 'librarian_id',
     ];
@@ -22,5 +23,4 @@ class Accountability extends Model
     	return $this->belongsTo('App\Librarian');
     }
 
-    
 }

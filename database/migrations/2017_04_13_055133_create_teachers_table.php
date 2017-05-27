@@ -16,6 +16,8 @@ class CreateTeachersTable extends Migration
             $table->string('contact', 11);
             $table->string('address', 60);
             $table->string('email', 60);
+            $table->date('start_appointment');
+            $table->date('end_appointment');
             $table->timestamps();
         });
     }
