@@ -16,7 +16,9 @@
 			<div class="col-sm-12 col-md-12 col-lg-12">
 				<div class="page-header text-center">
 					<h2>No Data in the Database yet</h2>
+					@if(Auth::user()->type=="admin")
 					<a href="/admin/addClass" class="btn btn-default">Add Class</a>
+					@endif
 				</div>
 			</div>
 		@else
