@@ -119,7 +119,15 @@ class CashierController extends Controller
     }
 
     public function overdues(){
-        return view('cashier.overdues');
+        $students = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at')
+            ->join('pays', 'pays.student_LRN', 'LRN')
+            ->join('accountabilities','accountabilities.id','pays.accountability_id')
+            ->where('status','unpaid')
+            ->get();
+
+            return view('cashier.overdues', compact('students'));
+        
+
     }
 
     public function newCategory(Request $request){
@@ -152,11 +160,42 @@ class CashierController extends Controller
     }
 
     public function collectionHistory(){
-        return view('cashier.collection_history');
+        $late = false;
+       
+
+        $students = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at','amount', 'date')
+            ->join('pays', 'pays.student_LRN', 'LRN')
+            ->join('accountabilities','accountabilities.id','pays.accountability_id')
+            ->get();
+
+        $studentOnTime = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at','amount','date')
+            ->join('pays', 'pays.student_LRN', 'LRN')
+            ->join('accountabilities','accountabilities.id','pays.accountability_id')
+            ->where('status','paid')
+            ->get();
+        $sports = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at','amount','date')
+            ->join('pays', 'pays.student_LRN', 'LRN')
+            ->join('accountabilities','accountabilities.id','pays.accountability_id')
+            ->where('accountability_name','Sports Fees')
+            ->get();
+        $miscellaneous = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at','amount','date')
+            ->join('pays', 'pays.student_LRN', 'LRN')
+            ->join('accountabilities','accountabilities.id','pays.accountability_id')
+            ->where('accountability_name','Miscellaneous')
+            ->get();
+
+        $pta = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at','amount','date')
+            ->join('pays', 'pays.student_LRN', 'LRN')
+            ->join('accountabilities','accountabilities.id','pays.accountability_id')
+            ->where('accountability_name','PTA Fees')
+            ->get();
+      
+        return view('cashier.collection_history',compact('students','studentOnTime','sports','miscellaneous','pta'));
+
     }
 
-
     public function home(){
+         
         return view('cashier.home');
     }
 

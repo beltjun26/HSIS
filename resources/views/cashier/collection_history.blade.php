@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+	
 	<div class="right-parts">
 		<div class="col-sm-12 header">
 			<div class="title"><span class="glyphicon glyphicon-list-alt icons"></span>COLLECTION HISTORY</div><hr/>
@@ -36,36 +36,30 @@
 							<th class="text-center t-head">STATUS</th>
 							<th class="text-center t-head">OVERDUE DURATION</th>
 						</thead>
+						<?php $counter = 0; ?>
+						@foreach($students as $student)
+						<?php 
+							$counter +=1;
+							$overdue = ((strtotime(date("Y-m-d")) - strtotime($student->due_date))/86400);
+							if($overdue<0){
+								$overdue = "--";
+							}
+							else{
+								$overdue = $overdue . " days";
+							}
+						 ?>
 						<tr>
-							<td>1</td>
-							<td class="text-center">Nemiada, Michelle</td>
-							<td class="text-center">Sports Fee</td>
-							<td class="text-center">Php 100.00</td>
-							<td class="text-center">May 29, 2017</td>
-							<td class="text-center">May 28, 2017</td>
-							<td class="text-center">On time</td>
-							<td class="text-center">--</td>
+							<td>{{$counter}}</td>
+							<td class="text-center">{{$student->first_name}}</td>
+							<td class="text-center">{{$student->accountability_name}}</td>
+							<td class="text-center">{{$student->amount}}</td>
+							<td class="text-center">{{$student->due_date}}</td>
+							<td class="text-center">{{$student->date}}</td>
+							<td class="text-center">{{$student->status}}</td>
+							<td class="text-center">{{$overdue}}</td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td class="text-center">Amar, Chin-Chin</td>
-							<td class="text-center">Sports Fee</td>
-							<td class="text-center">Php 100.00</td>
-							<td class="text-center">May 29, 2017</td>
-							<td class="text-center">May 30, 2017</td>
-							<td class="text-center">overdue</td>
-							<td class="text-center">1 day</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td class="text-center">Dela Cruz, Relyn</td>
-							<td class="text-center">Laboratory Fee</td>
-							<td class="text-center">Php 100.00</td>
-							<td class="text-center">May 29, 2017</td>
-							<td class="text-center">May 28, 2017</td>
-							<td class="text-center">On time</td>
-							<td class="text-center">--</td>
-						</tr>
+						
+						@endforeach
 					</table>
 				</div>
 		   	</div>
@@ -81,16 +75,29 @@
 							<th class="text-center t-head">STATUS</th>
 							<th class="text-center t-head">OVERDUE DURATION</th>
 						</thead>
+						<?php $counter = 0; ?>
+						@foreach($students as $student)
+							<?php 
+								$counter +=1;
+								$overdue = ((strtotime(date("Y-m-d")) - strtotime($student->due_date))/86400);
+								if($overdue<0){
+									$overdue = "This is on time";
+								}
+								else{
+									$overdue = $overdue . " days";
+								}
+							 ?>
 						<tr>
-							<td>2</td>
-							<td class="text-center">Amar, Chin-Chin</td>
-							<td class="text-center">Sports Fee</td>
-							<td class="text-center">Php 100.00</td>
-							<td class="text-center">May 29, 2017</td>
-							<td class="text-center">May 30, 2017</td>
-							<td class="text-center">overdue</td>
-							<td class="text-center">1 day</td>
+							<td>{{$counter}}</td>
+							<td class="text-center">{{$student->first_name}}</td>
+							<td class="text-center">{{$student->accountability_name}}</td>
+							<td class="text-center">{{$student->amount}}</td>
+							<td class="text-center">{{$student->due_date}}</td>
+							<td class="text-center">{{$student->date}}</td>
+							<td class="text-center">{{$student->status}}</td>
+							<td class="text-center" id = "over">{{$overdue}}</td>
 						</tr>
+						@endforeach
 					</table>
 				</div>
 		   	</div>
@@ -104,28 +111,31 @@
 							<th class="text-center t-head">DUE DATE</th>
 							<th class="text-center t-head">PAYMENT DATE</th>
 							<th class="text-center t-head">STATUS</th>
-							<th class="text-center t-head">OVERDUE DURATION</th>
 						</thead>
+						<?php $counter = 0; ?>
+						@foreach($studentOnTime as $studentOn)
+							<?php 
+								$counter +=1;
+								$overdue = ((strtotime(date("Y-m-d")) - strtotime($studentOn->due_date))/86400);
+								if($overdue<0){
+									$overdue = "This is on time";
+								}
+								else{
+									$overdue = $overdue . " days";
+								}
+							 ?>
 						<tr>
-							<td>1</td>
-							<td class="text-center">Nemiada, Michelle</td>
-							<td class="text-center">Sports Fee</td>
-							<td class="text-center">Php 100.00</td>
-							<td class="text-center">May 29, 2017</td>
-							<td class="text-center">May 28, 2017</td>
-							<td class="text-center">On time</td>
-							<td class="text-center">--</td>
+							<td>{{$counter}}</td>
+							<td class="text-center">{{$studentOn->first_name}}</td>
+							<td class="text-center">{{$studentOn->accountability_name}}</td>
+							<td class="text-center">{{$studentOn->amount}}</td>
+							<td class="text-center">{{$studentOn->due_date}}</td>
+							<td class="text-center">{{$studentOn->date}}</td>
+							<td class="text-center">{{$studentOn->status}}</td>
+							
 						</tr>
-						<tr>
-							<td>3</td>
-							<td class="text-center">Dela Cruz, Relyn</td>
-							<td class="text-center">Laboratory Fee</td>
-							<td class="text-center">Php 100.00</td>
-							<td class="text-center">May 29, 2017</td>
-							<td class="text-center">May 28, 2017</td>
-							<td class="text-center">On time</td>
-							<td class="text-center">--</td>
-						</tr>
+						@endforeach
+						
 					</table>
 				</div>
 		    </div>
@@ -141,30 +151,33 @@
 							<th class="text-center t-head">STATUS</th>
 							<th class="text-center t-head">OVERDUE DURATION</th>
 						</thead>
+						<?php $counter = 0; ?>
+						@foreach($sports as $sport)
+							<?php 
+								$counter +=1;
+								$overdue = ((strtotime(date("Y-m-d")) - strtotime($sport->due_date))/86400);
+								if($overdue<0){
+									$overdue = "This is on time";
+								}
+								else{
+									$overdue = $overdue . " days";
+								}
+							 ?>
 						<tr>
-							<td>1</td>
-							<td class="text-center">Nemiada, Michelle</td>
-							<td class="text-center">Sports Fee</td>
-							<td class="text-center">Php 100.00</td>
-							<td class="text-center">May 29, 2017</td>
-							<td class="text-center">May 28, 2017</td>
-							<td class="text-center">On time</td>
-							<td class="text-center">--</td>
+							<td>{{$counter}}</td>
+							<td class="text-center">{{$sport->first_name}}</td>
+							<td class="text-center">{{$sport->accountability_name}}</td>
+							<td class="text-center">{{$sport->amount}}</td>
+							<td class="text-center">{{$sport->due_date}}</td>
+							<td class="text-center">{{$sport->date}}</td>
+							<td class="text-center">{{$sport->status}}</td>
+							<td class="text-center">{{$overdue}}</td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td class="text-center">Amar, Chin-Chin</td>
-							<td class="text-center">Sports Fee</td>
-							<td class="text-center">Php 100.00</td>
-							<td class="text-center">May 29, 2017</td>
-							<td class="text-center">May 30, 2017</td>
-							<td class="text-center">overdue</td>
-							<td class="text-center">1 day</td>
-						</tr>
+						@endforeach
 					</table>
 				</div>
 		    </div>
-		     <div id="miscellaneous" class="tab-pane fade">
+		    <div id="miscellaneous" class="tab-pane fade">
 		      	<div class=" history-table panel panel-default">
 					<table class="table table-hover table-bordered">
 						<thead>
@@ -176,9 +189,29 @@
 							<th class="text-center t-head">STATUS</th>
 							<th class="text-center t-head">OVERDUE DURATION</th>
 						</thead>
+						<?php $counter = 0; ?>
+						@foreach($miscellaneous as $m)
+							<?php 
+								$counter +=1;
+								$overdue = ((strtotime(date("Y-m-d")) - strtotime($m->due_date))/86400);
+								if($overdue<0){
+									$overdue = "This is on time";
+								}
+								else{
+									$overdue = $overdue . " days";
+								}
+							 ?>
 						<tr>
-							<td colspan="8" class="no_record">No records found</td>
+							<td>{{$counter}}</td>
+							<td class="text-center">{{$m->first_name}}</td>
+							<td class="text-center">{{$m->accountability_name}}</td>
+							<td class="text-center">{{$m->amount}}</td>
+							<td class="text-center">{{$m->due_date}}</td>
+							<td class="text-center">{{$m->date}}</td>
+							<td class="text-center">{{$m->status}}</td>
+							<td class="text-center">{{$overdue}}</td>
 						</tr>
+						@endforeach
 					</table>
 				</div>
 		    </div>
@@ -194,9 +227,29 @@
 							<th class="text-center t-head">STATUS</th>
 							<th class="text-center t-head">OVERDUE DURATION</th>
 						</thead>
+						<?php $counter = 0; ?>
+						@foreach($pta as $p)
+							<?php 
+								$counter +=1;
+								$overdue = ((strtotime(date("Y-m-d")) - strtotime($p->due_date))/86400);
+								if($overdue<0){
+									$overdue = "This is on time";
+								}
+								else{
+									$overdue = $overdue . " days";
+								}
+							 ?>
 						<tr>
-							<td colspan="8" class="no_record">No records found</td>
+							<td>{{$counter}}</td>
+							<td class="text-center">{{$p->first_name}}</td>
+							<td class="text-center">{{$p->accountability_name}}</td>
+							<td class="text-center">{{$p->amount}}</td>
+							<td class="text-center">{{$p->due_date}}</td>
+							<td class="text-center">{{$p->date}}</td>
+							<td class="text-center">{{$p->status}}</td>
+							<td class="text-center">{{$overdue}}</td>
 						</tr>
+						@endforeach
 					</table>
 		    	</div>
 		 	</div>
