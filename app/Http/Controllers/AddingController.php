@@ -12,7 +12,9 @@ use App\Grade;
 use App\Librarian;
 use App\Section;
 use App\Accountability;
+use App\Pay;
 use Auth;
+use DB;
 
 class AddingController extends Controller
 {
@@ -75,22 +77,21 @@ class AddingController extends Controller
     }
 
 
-    public function viewAddAccountability($type, $id){
-        $types = Accountability::where('type',$type)->get();
+    public function viewAddAccountability(){
         return view('accountability.add_accountability');
-
     }
 
-    public function addAccountability(Request $request, $type){
+    public function addAccountability(Request $request){
+
         Accountability::create([
             'accountability_name' => $request->accountability_name,
-            'student_LRN' => $request->student_LRN,
-            'date' => $request->accountability_date,
-            'decimal' => $request->accountability_amount,
-            'type'=>$type,
-            'status' => 'Not Settled',
-            'user_id' => Auth::user()->id
+            'amount' => $request->accountability_amount,
+            'user_id' => Auth::user()->id,
+            'due_date' => $request->due_date,
+            'scope' => $request->scope
         ]);
+
+        $id = Auth::user()->id;
 
         return redirect('/accountability/view_accountability');
 
@@ -100,6 +101,7 @@ class AddingController extends Controller
     public function editProfile(Request $request){
         
     }
+
 
     // public function teacherAddAccountability(Request $request){
     //     Accountability::create([
@@ -138,3 +140,4 @@ class AddingController extends Controller
     // }
 
 }
+

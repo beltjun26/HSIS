@@ -18,7 +18,7 @@
 							</th>
 						</tr>
 						<tr>
-							<td rowspan="3" class="img-td"><img class="student-info-pic img-circle img-thumbnail" src="{{ asset('images/pic1.jpg') }}"></td>
+							<td rowspan="3" class="img-td"><img class="student-info-pic img-circle img-thumbnail" src="{{ asset('images/profile/1.jpg') }}"></td>
 							<td><label>Name: </label></td>
 							<td>
 							@foreach($student as $std)
@@ -30,7 +30,7 @@
 							<td>Grade 9</td>
 						<tr>
 							<td><label>Section: </label></td>
-							<td>Maligaya</td>
+							<td>{{$student_info->section_name}}</td>
 						</tr>
 					</table>
 				</div>
@@ -52,24 +52,15 @@
 								<th class="text-center t-head">Due</th>
 								<th class="text-center t-head">Action</th>
 							</tr>
+
+							@foreach($to_pay as $acc)
 							<tr>
-								<td class="text-center">Sports Fee</td>
-								<td class="text-center">Php 150.00</td>
-								<td class="text-center">May 29, 2017</td>
+								<td class="text-center">{{ $acc["accountability_name"] }}</td>
+								<td class="text-center">Php {{ $acc["amount"]}}</td>
+								<td class="text-center">{{ $acc["due_date"]}}</td>
 								<td class="text-center"><button class="btn btn-warning pay-now">pay now</button></td>
 							</tr>
-							<tr>
-								<td class="text-center">Sports Fee</td>
-								<td class="text-center">Php 150.00</td>
-								<td class="text-center">May 29, 2017</td>
-								<td class="text-center"><button class="btn btn-warning pay-now">pay now</button></td>
-							</tr>
-							<tr>
-								<td class="text-center">Sports Fee</td>
-								<td class="text-center">Php 150.00</td>
-								<td class="text-center">May 29, 2017</td>
-								<td class="text-center"><button class="btn btn-warning pay-now">pay now</button></td>
-							</tr>
+							@endforeach
 						</table>
 						</td></tr>
 					</table>

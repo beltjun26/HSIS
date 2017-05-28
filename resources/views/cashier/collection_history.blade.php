@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<script src="{{ asset('js/cashier/cashier.js') }}"></script>
 @section('content')
 	
 	<div class="right-parts">

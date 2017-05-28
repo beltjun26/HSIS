@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pay;
+use App\Accountability;
+use Auth;
 
-class ViewAccountabilityController extends Controller
+class PayController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('librarian.view_accountability');
+        $acc_id = $id;
+        $details = Accountability::where('id', $id)->get();
+        return view('pay.add_studentAccountability', compact('id', 'acc_id', 'details'));
     }
 
     /**
@@ -80,5 +85,16 @@ class ViewAccountabilityController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addStudentAccountability(Request $request){
+        Pay::create([
+            'status' => 'Not paid',
+            'date' => $request->due_date,
+            'accountability_id' => $request->accountability_id,
+            'student_LRN' => $request->student_LRN
+        ]);
+
+        return redirect('accountability/view_accountability');
     }
 }

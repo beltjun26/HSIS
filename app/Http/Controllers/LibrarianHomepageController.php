@@ -22,9 +22,7 @@ class LibrarianHomepageController extends Controller
                         $join->on('borrowed.student_LRN', '=', 'students.LRN');
         })->get();
 
-        $accs = Accountability::where('type', 'librarian')->get();
-
-        return view('librarian.index', ['results'=>$results, 'accs'=>$accs]);
+        return view('librarian.index', ['results'=>$results]);
     }
 
     /**

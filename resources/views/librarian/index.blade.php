@@ -5,12 +5,9 @@
 
 	<div class="container" id="content">
 		<div class="row">
-			<p id="type">This is your Homepage.</p>
-		</div>
-		<div class="row">
 			<div id="buttons-group">
 				<a href="/librarian/create" type="button" class="btn btn-default">Borrow Books</a>
-				<a href="/accountability/view_accountability/librarian" type="button" class="btn btn-default">View Accountabilities</a>
+				<a href="/accountability/view_accountability" type="button" class="btn btn-default">View Accountabilities</a>
 			</div>
 		</div>
 		<div class="row" id="table-div">
