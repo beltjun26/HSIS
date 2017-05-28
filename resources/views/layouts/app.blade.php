@@ -12,12 +12,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
-<<<<<<< HEAD
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/cashier/cashier.css') }}">
     <!-- <script type="text/javascript" src = "{{ asset('js/script.js') }}"></script> -->
 
-=======
->>>>>>> e253829dad6248dbdd81c02e4f663f07f86929e6
     <!-- Scripts -->
     
     <script>
