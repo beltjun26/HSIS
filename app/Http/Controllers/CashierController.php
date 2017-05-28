@@ -193,7 +193,10 @@ class CashierController extends Controller
 
 
     public function home(){
-        return view('cashier.home');
+        $accountabilities = Accountability::all();
+        $pays = Pay::select(DB::raw('DISTINCT student_LRN'))->get();
+        $students = Student::all();
+        return view('cashier.home', compact('accountabilities', 'pays', 'students'));
     }
 
      public function collectFees(){
