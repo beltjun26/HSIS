@@ -1,4 +1,3 @@
-var clickCountFeesCol = 0;
 
 $(document).ready(function(){
 	var category = document.getElementsByClassName("category");
@@ -7,10 +6,14 @@ $(document).ready(function(){
 
 	createGraph(category);
 	
-	$(document).on("click", "#fees_collection", showSubCategories);
 	$(document).on("click", "#get_student_info", showStudentInfo);
 	$(document).on("click", ".pay-now", computeTotal);
+	$(document).on("sumbit", ".edit_category", editCategory);
 });
+
+function editCategory(){
+	console.log("anyeong!");
+}
 
 function createGraph(category){
 	
@@ -27,22 +30,6 @@ function computeTotal(){
 	
 	var totalAmount = document.getElementsByClassName("total-amount")[0];
 	totalAmount.innerHTML = "Php " + total + ".00";
-}
-
-function showSubCategories(){
-	clickCountFeesCol ++;
-
-	var feesCategory = document.getElementsByClassName("fees-category")[0];
-	var feesCollectionSpan = document.getElementById("fees_collection_span");
-
-	if(clickCountFeesCol % 2 == 1){
-		feesCategory.style.display = "block";
-		feesCollectionSpan.className = "pull-right glyphicon glyphicon-menu-down";
-	}	
-	else{
-		feesCategory.style.display = "none";
-		feesCollectionSpan.className = "pull-right glyphicon glyphicon-menu-right";
-	}
 }
 
 function showStudentInfo(){

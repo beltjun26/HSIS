@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Accountability;
 use App\User;
+use App\Pay;
 use App\Cashier;
 use App\Student;
 
@@ -122,11 +123,50 @@ class CashierController extends Controller
     }
 
     public function newCategory(Request $request){
-        dd($request)
-        // Accountability::create($request->all());
+        $student = Student::all();
+        if(sizeof($student)>0){
+            $acc = new Accountability;
+            $acc->accountability_name = $request->input('accountability_name');
+            $acc->amount = $request->input('amount');
+            $acc->due_date = $request->input('due_date');
+            $acc->scope = $request->input('scope');
+            $acc->user_id = $request->input('user_id');
+            $acc->save();
 
-        $accountability = new Accountability;
-        $accountability->accountability_name = $request->accountability_name;
+            $accountability_id = DB::getPdo()->lastInsertId();
+            $student = Student::all();
+            if($request->input('scope')=="all"){
+                foreach($student as $std){
+                    $pay = new Pay;
+                    $pay->student_LRN = $std->LRN;
+                    $pay->status = "unpaid";
+                    $pay->accountability_id = $accountability_id;
+                    $pay->save();
+                }
+            }
+        }
+
+        return redirect('/cashier/fee_categories');
+    }
+
+    public function editCategory(Request $request){
+        $acc = Accountability::findOrFail($request->input('category_id'));
+
+        $acc->accountability_name = $request->input('accountability_name');
+        $acc->amount = explode(" ", $request->input('amount'))[1];
+        $acc->due_date = $request->input('due_date');
+        $acc->scope = $request->input('scope');
+        $acc->user_id = $request->input('user_id');
+        $acc->save();
+
+        return redirect('/cashier/fee_categories');
+    }
+
+    public function deleteCategory(Request $request){
+        $id = $request->input('category_id');
+        $category = Accountability::findOrFail($id);
+        $category->delete();
+
         return redirect('/cashier/fee_categories');
     }
 

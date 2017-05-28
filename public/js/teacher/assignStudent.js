@@ -1,18 +1,19 @@
 $(function(){
+	
+	var result = document.getElementById('result');
+	var search = document.getElementById('searching');
+	var change = document.getElementById('change');
+	search.addEventListener('submit', searchStudent);
 	$.ajaxSetup({
 	    headers: {
 	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	    }
 	});
-	var result = document.getElementById('result');
-	var search = document.getElementById('search');
-	var change = document.getElementById('change');
-	search.addEventListener('submit',  searchStudent);
 });
 
-function searchStudent(event){
-	event.preventDefault();
-	var datas = $('#search').serialize();
+function searchStudent(e){
+	e.preventDefault();
+	var datas = $('#searching').serialize();
 	$.ajax({
 		url: '/searchStudent',
 		type: 'post',

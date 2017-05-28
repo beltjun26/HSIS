@@ -18,10 +18,18 @@ class Student extends Model
     ];
 
     public function hasAccountabilites(){
-    	return $this->belongsToMany('App\Accountability','pay','accountability_id','student_LRN');
+    	return $this->belongsToMany('App\Accountability','pays','accountability_id','student_LRN');
+    }
+
+    public function student_acc(){
+    	return $this->belongsToMany('App\Accountability', 'pay', 'LRN', 'student_LRN');
     }
 
     public function fullName(){
     	return $this->first_name." ".$this->middle_name." ".$this->last_name;
+    }
+
+    public function hasAccountabilitesStudent(){
+    	return $this->hasMany('App\Accountability');
     }
 }

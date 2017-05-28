@@ -8,6 +8,10 @@ class Pay extends Model
 {
 
 	protected $fillable = [
-        'status','date','accountability_id','Student_LRN'
-    ];
+		'status', 'date', 'accountability_id', 'student_LRN',
+	];
+
+    public function payer(){
+    	return $this->belongsTo('App\Student', 'student_LRN');
+    }
 }

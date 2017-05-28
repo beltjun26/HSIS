@@ -14,27 +14,22 @@
 Route::get('/', 'HomeController@index');
 
 
-
-
-Route::get('cashier/collect_fees', 'CashierController@sportsCollection');
-
-Route::get('cashier/profile', 'CashierController@profile');
-
-Route::get('cashier', 'CashierController@home');
-
-
 Route::get('admin', 'AdminHomeController@index');
 
 Route::get('teacher', 'TeacherHomeController@index');
-
-Route::get('cashier', 'CashierHomeController@index');
 
 Route::get('/librarian', 'LibrarianHomepageController@index');
 
 Route::post('/search', 'HomeController@search');
 
 // cashier
+Route::get('/cashier', 'CashierController@home');
+
 Route::get('/cashier/profile/{username}', 'CashierController@profile');
+
+Route::get('cashier/edit_category', 'CashierController@editCategory');
+
+Route::get('cashier/delete_category', 'CashierController@deleteCategory');
 
 Route::get('/cashier/add_new_category', 'CashierController@newCategory');
 
@@ -89,6 +84,8 @@ Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
 
 Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
+
+Route::get('admin/profile/{username}/edit', 'AdminHomeController@editProfile');
 
 //for teacher only
 Route::get('teacher/schedule', 'TeacherHomeController@schedule');

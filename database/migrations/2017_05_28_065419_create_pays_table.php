@@ -13,7 +13,7 @@ class CreatePaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('pays', function (Blueprint $table) {
+        Schema::create('pays', function($table){
             $table->increments('id', 11);
             $table->string('status', 60);
             $table->date('date')->nullable();

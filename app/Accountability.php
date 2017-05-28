@@ -20,7 +20,8 @@ class Accountability extends Model
         return $this->belongsTo('App\User');
     }
 
+
     public function studentAccountability(){
-        return $this->belongsToMany('App\Student','pay','accountability_id','student_LRN');
+        return $this->belongsToMany('App\Student','pays','accountability_id','student_LRN');
     }
 }
