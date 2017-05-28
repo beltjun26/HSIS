@@ -12,8 +12,4 @@ class Teacher extends Model
     public function logininfo(){
     	return $this->hasOne('App\User', 'id', 'user_id');
     }
-    public function addAccountabilitiesTeacher(){
-    	return $this->hasMany('App\Accoutability');
-    }
-
 }

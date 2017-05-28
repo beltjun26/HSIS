@@ -4,8 +4,13 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePayTable extends Migration
+class CreatePaysTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('pays', function($table){
@@ -15,12 +20,16 @@ class CreatePayTable extends Migration
             $table->integer('accountability_id')->unsigned();
             $table->string('student_LRN', 12);
             $table->timestamps();
-        
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::drop('pay');
+        Schema::dropIfExists('pays');
     }
 }

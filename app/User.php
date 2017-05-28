@@ -51,6 +51,10 @@ class User extends Authenticatable
         }
     }
 
+    function accountabilitiesAdd(){
+        return $this->hasMany('App\Accountability');
+    }
+
     function nameOfUser(){
         return $this->firstname." ".$this->lastname;
     }

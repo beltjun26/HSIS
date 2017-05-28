@@ -2,27 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use App\Accountability;
-
 use Illuminate\Http\Request;
+use App\Pay;
+use App\Accountability;
+use Auth;
 
-class LibrarianHomepageController extends Controller
+class PayController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $results = DB::table('borrowed')
-                        ->join('students', function($join){
-                        $join->on('borrowed.student_LRN', '=', 'students.LRN');
-        })->get();
-
-        return view('librarian.index', ['results'=>$results]);
+        $acc_id = $id;
+        $details = Accountability::where('id', $id)->get();
+        return view('pay.add_studentAccountability', compact('id', 'acc_id', 'details'));
     }
 
     /**
@@ -32,7 +28,7 @@ class LibrarianHomepageController extends Controller
      */
     public function create()
     {
-        return view('librarian.create');
+        //
     }
 
     /**
@@ -91,14 +87,14 @@ class LibrarianHomepageController extends Controller
         //
     }
 
-    public function addBookAccountability(Request $request){
-    	DB::table('borrowed')->insert([
-    		'student_LRN'=> $request->student_LRN,
-    		'book_id'=>$request->book_id,
-    		'date'=>$request->borrow_date,
-    		'status'=>'Not returned'
-    	]);
+    public function addStudentAccountability(Request $request){
+        Pay::create([
+            'status' => 'Not paid',
+            'date' => $request->due_date,
+            'accountability_id' => $request->accountability_id,
+            'student_LRN' => $request->student_LRN
+        ]);
 
-    	return redirect('/librarian');
+        return redirect('accountability/view_accountability');
     }
 }

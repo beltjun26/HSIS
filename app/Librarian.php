@@ -12,8 +12,4 @@ class Librarian extends Model
     public function logininfo(){ 
     	return $this->hasOne('App\User', 'id', 'user_id');
     }
-	public function addAccountabilitiesLibrarian(){
-		return $this->hasMany('App\Accountability');
-	}
-
 }
