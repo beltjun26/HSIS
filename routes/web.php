@@ -24,13 +24,11 @@ Route::post('/search', 'HomeController@search');
 
 // cashier
 
-<<<<<<< HEAD
-=======
+
 Route::get('cashier/class', 'AdminHomeController@schoolClasses');
 
 Route::get('cashier/grade', 'AdminHomeController@schoolGrades');
 
->>>>>>> 548a5f9566f918b40a33b066761f9e3f4cf001f4
 Route::get('/cashier', 'CashierController@home');
 
 
