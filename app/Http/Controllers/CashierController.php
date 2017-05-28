@@ -133,8 +133,6 @@ class CashierController extends Controller
             $acc->user_id = $request->input('user_id');
             $acc->save();
 
-            Accountability::create($request->all());
-
             $accountability_id = DB::getPdo()->lastInsertId();
             $student = Student::all();
             if($request->input('scope')=="all"){
@@ -147,6 +145,27 @@ class CashierController extends Controller
                 }
             }
         }
+
+        return redirect('/cashier/fee_categories');
+    }
+
+    public function editCategory(Request $request){
+        $acc = Accountability::findOrFail($request->input('category_id'));
+
+        $acc->accountability_name = $request->input('accountability_name');
+        $acc->amount = explode(" ", $request->input('amount'))[1];
+        $acc->due_date = $request->input('due_date');
+        $acc->scope = $request->input('scope');
+        $acc->user_id = $request->input('user_id');
+        $acc->save();
+
+        return redirect('/cashier/fee_categories');
+    }
+
+    public function deleteCategory(Request $request){
+        $id = $request->input('category_id');
+        $category = Accountability::findOrFail($id);
+        $category->delete();
 
         return redirect('/cashier/fee_categories');
     }

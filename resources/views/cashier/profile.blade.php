@@ -3,7 +3,7 @@
 @section('content')
 	<div class="right-parts">
 		<div class="col-sm-3 col-sm-offset-1">
-			<img src="{{asset('images/profile.jpg')}}" id="profile" class="img img-circle">
+			<img src="{{asset('images/profile/1.jpg')}}" id="profile" class="img img-circle">
 		</div>
 		<div class="col-sm-6 top-info">
 			<p><h1>{{ $cashier->nameOfUser() }}</h1>

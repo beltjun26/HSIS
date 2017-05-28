@@ -61,7 +61,7 @@
         </nav>
         <div id="sidenav" class="sidenav">
             <div class="sidenav-header">
-                <img class="profile" src="{{ asset('images/profile/'.Auth::user()->id.'.jpg') }}">
+                <img class="profile" src="{{ asset('images/profile/1.jpg') }}">
                 <h1 class="user-name">{{ Auth::user()->nameOfUser() }}</h1>
                 <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
                     <form action ="/search" method="post">

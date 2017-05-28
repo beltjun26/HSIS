@@ -8,7 +8,7 @@ $(document).ready(function(){
 	
 	$(document).on("click", "#get_student_info", showStudentInfo);
 	$(document).on("click", ".pay-now", computeTotal);
-	$(document).on("click", ".editCategory", editCategory);
+	$(document).on("sumbit", ".edit_category", editCategory);
 });
 
 function editCategory(){
