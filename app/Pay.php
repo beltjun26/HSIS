@@ -14,4 +14,8 @@ class Pay extends Model
     public function payer(){
     	return $this->belongsTo('App\Student', 'student_LRN');
     }
+
+    public function acc_details(){
+    	return $this->belongsTo('App\Accountability', 'accountability_id', 'id');
+    }
 }

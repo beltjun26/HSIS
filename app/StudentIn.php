@@ -10,4 +10,8 @@ class StudentIn extends Model
     protected $fillable = [
     	'student_LRN', 'section_name'
     ];
+
+    public function student_info(){
+    	return $this->belongsTo('App\Student', 'student_LRN', 'LRN');
+    }
 }
