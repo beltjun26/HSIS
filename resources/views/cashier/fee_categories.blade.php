@@ -30,7 +30,7 @@
 								<td class="text-center">{{ $category->due_date}}</td>
 								<td class="text-center">{{ $category->scope }}</td>
 								<td class="text-center">
-									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>edit</button>
+									<button class="btn btn-warning editCategory"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editCategory" data-pg="{{ $category->id }}"></span>edit</button>
 									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>delete</button>
 								</td>
 							</tr>
@@ -79,4 +79,43 @@
 		    </div>
 		</div>
 
+
+		<div class="modal fade" id="editCategory" role="dialog">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		      <form method="get" action="/cashier/edit_category">
+		        <div class="modal-header bg-warning">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title"><span class="glyphicon glyphicon-plus icons"></span>New Category</h4>
+		        </div>
+		        <div class="modal-body">
+		        	<div class="input-group">
+		        		<label class="input-group-addon"><b>Category Name: </b></label>
+		        		<input type="text" name="accountability_name" class="form-control" required="" />
+		          	</div>
+		          	<div class="input-group group">
+		        		<label class="input-group-addon"><b>Amount: </b></label>
+		        		<input type="text" name="amount" class="form-control" required="" />
+		          	</div>
+		          	<div class="input-group group">
+		        		<label class="input-group-addon"><b>Due Date: </b></label>
+		        		<input type="date" name="due_date" class="form-control" required="" />
+		          	</div>
+		          	<div class="input-group group">
+		        		<label class="input-group-addon"><b>Scope: </b></label>
+		        		<input type="text" name="scope" class="form-control" required="" />
+		          	</div>
+		          		<input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
+		        </div>
+		        <div class="modal-footer">
+		          <input type="submit" class="btn btn-success" value="OK"/>
+		        </div>
+		       </form>
+		      </div>
+		      
+		    </div>
+		</div>
+		
+	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="{{ asset('js/cashier/cashier.js') }}"></script>
 @endsection

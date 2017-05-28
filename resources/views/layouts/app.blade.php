@@ -12,9 +12,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/cashier/cashier.css') }}">
-    <script type="text/javascript" src = "{{ asset('js/script.js') }}"></script>
-
     <!-- Scripts -->
     
     <script>
@@ -93,6 +90,8 @@
                         <!-- <li><a href="/teacher/">Classes<span class="pull-right glyphicon glyphicon-menu-right"></a></li> -->
 
                     @elseif(Auth::user()->type == 'cashier')
+
+                    <link rel="stylesheet" type="text/css" href="{{ asset('css/cashier/cashier.css') }}">
                         <li><a href="/cashier/profile/{{ Auth::user()->username }}"><span class="glyphicon glyphicon-user icons"></span>Profile</a></li>
                         <li><a href="javascript:void(0)" id="fees_collection"><span class="glyphicon glyphicon-list icons"></span>Fees Collection<span class="pull-right glyphicon glyphicon-menu-right" id="fees_collection_span"></span></a>
                         </li>
@@ -102,7 +101,6 @@
                         </div>
                         <li><a href="/cashier/overdues"><span class="glyphicon glyphicon-alert icons"></span>Overdues</a></li>
                         <li><a href="collection_history"><span class="glyphicon glyphicon-list-alt icons"></span>Collection History<!--span class="pull-right glyphicon glyphicon-menu-right"--></a></li>
-
                     @endif
 
 
@@ -119,8 +117,6 @@
     
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/navigation.js') }}"></script>
-    <script src="{{ asset('js/cashier/cashier.js') }}"></script>
-
     @stack('scripts')
 </body>
 </html>
