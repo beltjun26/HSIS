@@ -19,11 +19,12 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-sm-12 col-md-12 col-lg-12">
-								<form id="search" method="post">
+								<form id="searching" method="post">
 								{{ csrf_field() }}
 									<div class="form-group">
 										<label for="search">Search Student: </label>
-										<input class="form-control" type="text" name="search" placeholder="Keyword">
+										<input class="form-control" type="text" name="search" 
+										placeholder="Keyword">
 									</div>
 								</form>
 							</div>

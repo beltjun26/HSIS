@@ -29,6 +29,10 @@ Route::get('/cashier', 'CashierController@home');
 
 Route::get('/cashier/profile/{username}', 'CashierController@profile');
 
+Route::get('cashier/edit_category', 'CashierController@editCategory');
+
+Route::get('cashier/delete_category', 'CashierController@deleteCategory');
+
 Route::get('/cashier/add_new_category', 'CashierController@newCategory');
 
 Route::get('/cashier/collect_payment', 'CashierController@collectPayment');
@@ -82,6 +86,8 @@ Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
 
 Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
+
+Route::get('admin/profile/{username}/edit', 'AdminHomeController@editProfile');
 
 //for teacher only
 Route::get('teacher/class/{name}', 'TeacherHomeController@getClass');

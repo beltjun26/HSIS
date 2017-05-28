@@ -10,7 +10,7 @@
 			<div class="col-sm-9 col-md-9 col-lg-9">
 				<h1><p>{{ $admin->nameOfUser() }}</p></h1>
 				<h4>{{ $admin->type }}</h4>
-				<button class="btn btn-default">View schedule</button>
+				<a href="/admin/profile/{{ $admin->username }}/edit" class="btn btn-default">Edit</a>
 			</div>
 		</div>
 		<div class="row">

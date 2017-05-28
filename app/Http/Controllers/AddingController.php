@@ -96,6 +96,11 @@ class AddingController extends Controller
 
     }
 
+
+    public function editProfile(Request $request){
+        
+    }
+
     // public function teacherAddAccountability(Request $request){
     //     Accountability::create([
     //         'accountability_name' => $request->accountability_name,
@@ -131,4 +136,5 @@ class AddingController extends Controller
     //     ]);
     //     return redirect('/admin');
     // }
+
 }

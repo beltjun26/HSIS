@@ -48,7 +48,7 @@
 							for(let i = 0; i < data.length; i++){
 								table += "<tr><td>"+data[i].id+"</td>";
 								table += "<td>"+data[i].username+"</td>";
-								table += "<td>"+data[i].name+"</td>";
+								table += "<td><a href='/admin/profile/"+data[i].username+"'>"+data[i].name+"</td>";
 								table += "<td>"+data[i].date+"</td>";
 								table += "<td>"+data[i].gender+"</td></tr>"
 							}
