@@ -17,30 +17,28 @@
 						<th class="text-center t-head">DUE DATE</th>
 						<th class="text-center t-head">OVERDUE DURATION</th>
 					</thead>
+					<?php $counter = 0; ?>
+
+					@foreach($students as $student)
+					<?php 
+							$counter += 1;
+							$overdue = ((strtotime(date("Y-m-d")) - strtotime($student->due_date))/86400);
+							if($overdue<0){
+								$overdue = "--";
+							}
+							else{
+								$overdue = $overdue . " days";
+							}
+					?>
 					<tr>
-						<td>1</td>
-						<td class="text-center">Nemiada, Michelle</td>
-						<td class="text-center">Sports Fee</td>
-						<td class="text-center">Php 100.00</td>
-						<td class="text-center">May 29, 2017</td>
-						<td class="text-center">2 days</td>
+						<td>{{$counter}}</td>
+						<td class="text-center">{{$student->first_name}}</td>
+						<td class="text-center">{{$student->accountability_name}}</td>
+						<td class="text-center">{{$student->LRN}}</td>
+						<td class="text-center">{{$student->due_date}}</td>
+						<td class="text-center">{{$overdue}}</td>
 					</tr>
-					<tr>
-						<td>2</td>
-						<td class="text-center">Amar, Chin-Chin</td>
-						<td class="text-center">Sports Fee</td>
-						<td class="text-center">Php 100.00</td>
-						<td class="text-center">May 29, 2017</td>
-						<td class="text-center">1 day</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td class="text-center">Dela Cruz, Relyn</td>
-						<td class="text-center">Laboratory Fee</td>
-						<td class="text-center">Php 100.00</td>
-						<td class="text-center">May 29, 2017</td>
-						<td class="text-center">1 days</td>
-					</tr>
+					@endforeach
 				</table>
 			</div>
 		</div>

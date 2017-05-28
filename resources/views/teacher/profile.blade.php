@@ -38,7 +38,6 @@
 						{{ csrf_field() }}
 					<div>
 						<h1><p>{{$teacher->nameOfUser()}}</p></h1>
-						
 						<h4>{{$teacher->typedUser()->position}}</h4>
 					</div>
 					<hr />
@@ -52,7 +51,7 @@
 								@foreach($section as $sections)
 									<tr>
 										<div class="col-xs-12">
-											<td class="col-xs-4">{{$sections->name}}</td>
+											<td class="col-xs-4"><a href="/teacher/class/{{$sections->name}}">{{$sections->name}}</a></td>
 											<td class="col-xs-5">{{$sections->grade_id}}</td>
 											<td class="col-xs-3"><a href="/teacher/classRecord/{{$sections->name}}">See Class Record</a></td>
 										</div>

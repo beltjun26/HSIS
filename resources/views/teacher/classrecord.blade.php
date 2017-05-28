@@ -27,7 +27,7 @@
 					<th class="text-center">Average</th>
 				</tr>
 				<tr>
-					<td>{{$student->first_name}}</td>
+					<td>{{$student->fullname()}}</td>
 					<td><input type="text"  class = "input text-center" name=""></td>
 					<td><input type="text"  class = "input text-center" name=""></td>
 					<td><input type="text"  class = "input text-center" name=""></td>
