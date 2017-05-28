@@ -31,7 +31,6 @@ Route::get('cashier', 'CashierHomeController@index');
 
 Route::get('/librarian', 'LibrarianHomepageController@index');
 
-
 Route::post('/search', 'HomeController@search');
 
 // cashier
@@ -112,18 +111,15 @@ Route::post('/librarian/addBookAccountability', 'LibrarianHomepageController@add
 
 Route::get('/class_profile', 'ClassProfileController@index');
 
-Route::post('/accountability/librarianAddAccountability', 'AddingController@librarianAddAccountability');
+Route::get('/accountability/add_accountability/{id}', 'AddingController@viewAddAccountability');
 
-Route::post('/accountability/cashierAddAccountability', 'AddingController@cashierAddAccountability');
+Route::post('/accountability/userAccountability', 'AddingController@addAccountability');
 
-Route::post('/accountability/teacherAddAccountability', 'AddingController@teacherAddAccountability');
+Route::get('accountability/addAccountability', 'AddingController@addAccountability');
 
-Route::post('/accountability/adminAddAccountability', 'AddingController@adminAddAccountability');
 
-Route::get('/accountability/add_accountability/{$type}', 'AddingController@viewAddAccountability');
+Route::get('/accountability/edit_accountability/{id}', 'AccountabilityController@edit');
 
-Route::get('/accountability/edit/{id}', 'AccountabilityController@edit');
+Route::post('/accountability/update_accountability/{id}', 'AccountabilityController@update');
 
-Route::get('/accountability/update/{id}', 'AccountabilityController@update');
-
-Route::get('/accountability/view_accountability/{type}', 'AccountabilityController@index');
+Route::get('/accountability/view_accountability', 'AccountabilityController@index');

@@ -3,33 +3,24 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Accountability extends Model
 {
-
 	protected $fillable = [
-        'user_id','accountability_name' ,'decimal', 'date', 'student_LRN', 'type', 'status'
+        'id','user_id','accountability_name' ,'amount', 'scope', 'due_date'
     ];
 
-    public function teacheracc(){
-    	return $this->belongsTo('App\Teacher');
+    public function acc_id($acc_name){
+    	$id = DB::table('accountabilities')->where('accountability_name', $acc_name);
+    	return $id;
     }
 
-    public function cashieracc(){
-    	return $this->belongsTo('App\Cashier');
+    public function userAddAccountability(){
+        return $this->belongsTo('App\User');
     }
 
-    public function librarianacc(){
-    	return $this->belongsTo('App\Librarian');
+    public function studentAccountability(){
+        return $this->belongsToMany('App\Student','pay','accountability_id','student_LRN');
     }
-
-
-    public function studentacc(){
-        return $this->belongsTo('App\Student');
-    }
-
-    public function adminacc(){
-        return $this->belongsTo('App\Admin');
-    }
-
 }

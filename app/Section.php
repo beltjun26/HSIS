@@ -18,7 +18,4 @@ class Section extends Model
    public function getGrade(){
    		return $this->belongsTo('App\Grade', 'grade_id', 'id');
    }
-
-
-    
 }
