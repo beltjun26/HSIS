@@ -90,4 +90,8 @@ class AddingController extends Controller
         return redirect('/librarian');
 
     }
+
+    public function editProfile(Request $request){
+        
+    }
 }

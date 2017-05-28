@@ -38,7 +38,7 @@
 					<tr>
 						<td>{{ $admin->user_id }}</td>
 						<td>{{ $admin->logininfo->username}}</td>
-						<td>{{ $admin->logininfo->nameOfUser() }}</td>
+						<td><a href="/admin/profile/{{ $admin->logininfo->username }}">{{ $admin->logininfo->nameOfUser() }}</a></td>
 						<td>{{ $admin->logininfo->bdate->format('l j F Y') }}</td>
 						<td>{{ $admin->logininfo->gender }}</td>
 					</tr>

@@ -51,7 +51,7 @@ class TeacherHomeController extends Controller
     }
 
     public function assignToSection($name){
-        $result = Section::whereName($name);
+        $result = Section::whereName($name)->first();
         return view('teacher.assignStudent', compact('result'));
     }
 

@@ -79,6 +79,8 @@ Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
 
 Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
 
+Route::get('admin/profile/{username}/edit', 'AdminHomeController@editProfile');
+
 //for teacher only
 Route::get('teacher/schedule', 'TeacherHomeController@schedule');
 

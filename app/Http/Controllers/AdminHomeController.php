@@ -85,5 +85,10 @@ class AdminHomeController extends Controller
         return view('admin.addStudent', compact('classes'));
     }
 
+    public function editProfile($username){
+        $user = User::whereUsername($username)->first();
+        return view('admin.editProfile', compact('user'));   
+    }
+
    
 }
