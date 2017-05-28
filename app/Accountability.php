@@ -8,7 +8,7 @@ class Accountability extends Model
 {
 
 	protected $fillable = [
-        'id','accountability_name' ,'decimal', 'cashier_id', 'librarian_id',
+        'id','accountability_name' ,'amount', 'cashier_id', 'librarian_id', 'due_date', 'scope', 'user_id'
     ];
 
     public function teacheracc(){
@@ -21,6 +21,14 @@ class Accountability extends Model
 
     public function librarianacc(){
     	return $this->belongsTo('App\Librarian');
+    }
+
+    public function student_acc(){
+        return $this->belongsToMany('App\Student', 'pays', 'id', 'accountability_id');
+    }
+
+    public function adminacc(){
+        return $this->belongsTo('App\Admin');
     }
 
 }

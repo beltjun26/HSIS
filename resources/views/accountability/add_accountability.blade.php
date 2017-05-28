@@ -5,11 +5,11 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<h2 style="text-align: center">
-				Add accountabilities
+				Add accountability
 			</h2>
 			<div class="panel panel-default" style="margin-top: 30px;">
 				<div class="panel-body panel-default">
-					<form action="/accountability/librarianAddAccountability" method="post">
+					<form action="/accountability/addAccountability/{{}}" method="post">
 						{{ csrf_field() }}
 						<div class="form-group">
 							<div class="input-group">
@@ -32,7 +32,7 @@
 								<div class="input-group-addon">
 									Amount
 								</div>
-								<input class="form-control" type="number" name="accountability_amount" />
+								<input class="form-control" type="number" step="0.01" name="accountability_amount" />
 							</div>
 						</div>
 						<div class="form-group">

@@ -8,7 +8,7 @@
 
 <div class="panel panel-default record">
 	<div class="panel-body">
-		<div class="class_name">Grade 4: Maganda</div>
+		<div class="class_name">{{$section}}</div>
 		<div class="table-responsive">
 			<table class="table">
 				<colgroup></colgroup>
@@ -27,7 +27,7 @@
 					<th class="text-center">Average</th>
 				</tr>
 				<tr>
-					<td>Chin-chin Amar</td>
+					<td>{{$student->first_name}}</td>
 					<td><input type="text"  class = "input text-center" name=""></td>
 					<td><input type="text"  class = "input text-center" name=""></td>
 					<td><input type="text"  class = "input text-center" name=""></td>

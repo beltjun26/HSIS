@@ -12,9 +12,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navigation.css') }}">
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="{{ asset('css/cashier/cashier.css') }}">
     <!-- <script type="text/javascript" src = "{{ asset('js/script.js') }}"></script> -->
 
+=======
+>>>>>>> e253829dad6248dbdd81c02e4f663f07f86929e6
     <!-- Scripts -->
     
     <script>
@@ -42,8 +45,8 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ url('/') }}" style="background: #54c0c0">Home</a></li>
-                    <li><a href="/admin/class">Class</a></li>
-                    <li><a href="/admin/grade">Grade</a></li>
+                    <li><a href="/{{ Auth::user()->type }}/class">Class</a></li>
+                    <li><a href="/{{ Auth::user()->type }}/grade">Grade</a></li>
                     @if(Auth::user()->type=="admin")
                         <li><a href="{{ url('admin/account') }}">Account</a></li>
                     @endif 
@@ -64,17 +67,18 @@
         </nav>
         <div id="sidenav" class="sidenav">
             <div class="sidenav-header">
-                <img class="profile" src="{{ asset('images/profile/'.Auth::user()->id.'.jpg') }}">
+                <img class="profile" src="{{ asset('images/profile/1.jpg') }}">
                 <h1 class="user-name">{{ Auth::user()->nameOfUser() }}</h1>
                 <h5 class="user-type"><i>{{ Auth::user()->type }}</i></h5>
-                <form>
-                    <div class="input-group sidenav-search">
-                        <input class="form-control" type="text" name="search" placeholder="Search..." id = "search">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
+                    <form action ="/search" method="post">
+                        {{ csrf_field() }}
+                        <div class="input-group sidenav-search">
+                            <input class="form-control" type="text" name="search" placeholder="Search...">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default" ><span class="glyphicon glyphicon-search" ></span></button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
             </div>
             <div class="sidenav-body">
                 <ul class="sidenav-nav">
@@ -88,10 +92,12 @@
                     @elseif(Auth::user()->type == 'teacher')
                         <li><a href="/teacher/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>
                         <li><a href="/teacher/schedule">Schedule<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
-                        <li><a href="/teacher/classRecord">Class Record<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        <!-- <li><a href="/teacher/classRecord">Class Record<span class="pull-right glyphicon glyphicon-menu-right"></a></li> -->
                         <!-- <li><a href="/teacher/">Classes<span class="pull-right glyphicon glyphicon-menu-right"></a></li> -->
 
                     @elseif(Auth::user()->type == 'cashier')
+
+                    <link rel="stylesheet" type="text/css" href="{{ asset('css/cashier/cashier.css') }}">
                         <li><a href="/cashier/profile/{{ Auth::user()->username }}"><span class="glyphicon glyphicon-user icons"></span>Profile</a></li>
                         <li><a href="javascript:void(0)" id="fees_collection"><span class="glyphicon glyphicon-list icons"></span>Fees Collection<span class="pull-right glyphicon glyphicon-menu-right" id="fees_collection_span"></span></a>
                         </li>
@@ -101,7 +107,6 @@
                         </div>
                         <li><a href="/cashier/overdues"><span class="glyphicon glyphicon-alert icons"></span>Overdues</a></li>
                         <li><a href="collection_history"><span class="glyphicon glyphicon-list-alt icons"></span>Collection History<!--span class="pull-right glyphicon glyphicon-menu-right"--></a></li>
-
                     @endif
 
 
@@ -118,8 +123,6 @@
     
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/navigation.js') }}"></script>
-    <script src="{{ asset('js/cashier/cashier.js') }}"></script>
-
     @stack('scripts')
 </body>
 </html>

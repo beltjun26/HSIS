@@ -11,16 +11,10 @@ class CreateAccountabilitiesTable extends Migration
          Schema::create('accountabilities', function($table){
             $table->increments('id', 11); //aka accountability_id
             $table->string('accountability_name', 60);
-
-            $table->datetime('due_date');
+            $table->date('due_date');
             $table->string('scope', 10);
             $table->decimal('amount', 5, 2);
-            $table->integer('student_LRN');
-            $table->date('date');
-            $table->decimal('decimal', 5, 2);
-            $table->string('type', 20);
             $table->integer('user_id');
-
             $table->timestamps();
         });
     }

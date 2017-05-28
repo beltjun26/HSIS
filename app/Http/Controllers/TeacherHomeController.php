@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\User;
-use DB;
-use App\Student;
-use Illuminate\Http\Request;
 use App\Section;
-use App\StudentIn;
+use App\Teacher;
+use App\Student_in;
+use App\Student;
+use DB;
+use Illuminate\Http\Request;
+    
 
 class TeacherHomeController extends Controller
 {
@@ -16,28 +18,26 @@ class TeacherHomeController extends Controller
     function schedule(){
     	return view('teacher.schedule');
     }
-    function classRecord(){
-    	// $student = DB::table('student_ins')
-	    // 	->select('student_ins.section_name', 'student_ins.student_LRN')
-	    // 	->join('teaches','teaches.section_name','teaches.teacher_id')
-	    // 	->where(['student_ins.section_name'=>'teaches.section_name'])
-	    // 	->get();
+    function classRecord($sectionName){
+        $section = $sectionName;
+        $stud_in = Student_in::where('section_name', '=',  $sectionName)->get();
+        $student = Student::where('LRN', '=', $stud_in->student_LRN)->get();
+    	
    		 
-    	return view('teacher.classrecord');
+    	return view('teacher.classrecord',compact('section','student'));
     }
     function profile($username){
-
-    	// $student = DB::table('student_ins')
-	    // 	->select('student_ins.section_name', 'student_ins.student_LRN')
-	    // 	->join('teaches','teaches.section_name','teaches.teacher_id')
-	    // 	->where(['student_ins.section_name'=>'teaches.section_name'])
-	    // 	->get();
 	    $user = User::whereUsername($username)->first();
+        // $userId = $user->id;
+        $teachered = Teacher::where('user_id','=',$user->id)->first();
+        // $teacherId = $teacher->id;
+        $section = Section::where('teacher_id', '=', $teachered->id)->get();
+        // $sectionName = $section->name;
         if($user->type == "teacher"){
             $teacher = $user;
             $grade = "Grade 9";
             $sectionName = "Emerald";
-            return view('teacher.profile', compact('grade','sectionName','teacher'));
+            return view('teacher.profile', compact('grade','sectionName','teacher','userId','teachered', 'section'));
         }
     }
 

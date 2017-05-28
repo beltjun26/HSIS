@@ -12,7 +12,7 @@
 			<div class="right_side">
 				<div class="col-xs-4">
 					<div>
-						<img src="{{asset('images/profile.jpg')}}" id="profile">
+						<img src="{{asset('images/profile/1.jpg')}}" id="profile">
 					</div>
 					<div class="panel panel-default" id = "details">
 						<div class="panel-body">
@@ -37,55 +37,27 @@
 				<div class="col-xs-8" id = "header">
 						{{ csrf_field() }}
 					<div>
-						<h1><p>{{$teacher->username}}</p></h1>
-						<h4>Grade 4 Maganda</h4>
+						<h1><p>{{$teacher->nameOfUser()}}</p></h1>
+						
 						<h4>{{$teacher->typedUser()->position}}</h4>
 					</div>
 					<hr />
 					<div class="panel panel-default"  id="stud_list">
 						<div class="panel-heading">
-							Class List
+							Section List
 						</div>
 						<div class="panel-body">
 							<div class="table">
 								<table>
-									
+								@foreach($section as $sections)
 									<tr>
 										<div class="col-xs-12">
-											<td class="col-xs-4">{{$sectionName}}</td>
-											<td class="col-xs-5">{{$grade}}</td>
-											<td class="col-xs-3"><a href="/student">More Info</a></td>
-										</div>
-									<tr>
-									
-										<div class="col-xs-12">
-											<td class="col-xs-4">2. Biology</td>
-											<td class="col-xs-5">3rd Yr. Rose</td>
-											<td class="col-xs-3"><a>More Info</a></td>
-										</div>
-										
-									</tr>
-									<tr>
-										<div class="col-xs-12">
-											<td class="col-xs-4">3. Chemistry</td>
-											<td class="col-xs-5">3rd Yr. Sampaguita</td>
-											<td class="col-xs-3"><a>More Info</a></td>
+											<td class="col-xs-4">{{$sections->name}}</td>
+											<td class="col-xs-5">{{$sections->grade_id}}</td>
+											<td class="col-xs-3"><a href="/teacher/classRecord/{{$sections->name}}">See Class Record</a></td>
 										</div>
 									</tr>
-									<tr>
-										<div class="col-xs-12">
-											<td class="col-xs-4">4. Chemistry</td>
-											<td class="col-xs-5">3rd Yr. Gumamela</td>
-											<td class="col-xs-3"><a>More Info</a></td>
-										</div>
-									</tr>
-									<tr>
-										<div class="col-xs-12">
-											<td class="col-xs-5">5. Calculus</td>
-											<td class="col-xs-5">4th Yr. SSC</td>
-											<td class="col-xs-3"><a>More Info</a></td>
-										</div>
-									</tr>
+								@endforeach
 								</table>
 							</div>
 							
