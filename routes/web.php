@@ -13,7 +13,6 @@
 
 Route::get('/', 'HomeController@index');
 
-
 Route::get('admin', 'AdminHomeController@index');
 
 Route::get('teacher', 'TeacherHomeController@index');
@@ -21,8 +20,6 @@ Route::get('teacher', 'TeacherHomeController@index');
 Route::get('/librarian', 'LibrarianHomepageController@index');
 
 Route::post('/search', 'HomeController@search');
-
-// cashier
 
 Route::get('cashier/class', 'AdminHomeController@schoolClasses');
 
@@ -48,11 +45,8 @@ Route::get('/cashier/overdues', 'CashierController@overdues');
 
 Route::get('/cashier/collection_history', 'CashierController@collectionHistory');
 
-
-
 Auth::routes();
 
-//post
 Route::post('allAccount', 'AdminHomeController@getAllAccount');
 
 Route::post('registerUser', 'AddingController@registerUser');
@@ -67,8 +61,6 @@ Route::post('searchStudent', 'TeacherHomeController@searchStudent');
 
 Route::post('assignStudent', 'TeacherHomeController@assignStudent');
 
-
-// admin
 Route::get('admin/class', 'AdminHomeController@schoolClasses');
 
 Route::get('admin/grade', 'AdminHomeController@schoolGrades');
@@ -85,14 +77,11 @@ Route::get('admin/addClass', 'AdminHomeController@addClass');
 
 Route::get('admin/addGrade', 'AdminHomeController@addGrade');
 
-
 Route::get('admin/class/{name}', 'TeacherHomeController@getClass');
 
 Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
 
 Route::get('admin/profile/{username}/edit', 'AdminHomeController@editProfile');
-
-//for teacher only
 
 Route::get('teacher/class', 'AdminHomeController@schoolClasses');
 
@@ -106,17 +95,15 @@ Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 
 Route::get('student', 'TeacherHomeController@student');
 
-
 Route::get('temporary', function(){
 	return view('profile(teacher)');
 });
 
+Route::get('/accountability/view_accountability', 'AccountabilityController@index');
 
 Route::get('/librarian/create', 'LibrarianHomepageController@create');
 
 Route::post('/librarian/addBookAccountability', 'LibrarianHomepageController@addBookAccountability');
-
-Route::get('/class_profile', 'ClassProfileController@index');
 
 Route::get('/accountability/add_accountability/{id}', 'AddingController@viewAddAccountability');
 
@@ -124,9 +111,6 @@ Route::post('/accountability/userAccountability', 'AddingController@addAccountab
 
 Route::get('accountability/addAccountability', 'AddingController@addAccountability');
 
-
 Route::get('/accountability/edit_accountability/{id}', 'AccountabilityController@edit');
 
 Route::post('/accountability/update_accountability/{id}', 'AccountabilityController@update');
-
-Route::get('/accountability/view_accountability', 'AccountabilityController@index');
