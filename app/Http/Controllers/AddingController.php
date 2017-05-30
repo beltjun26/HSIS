@@ -102,4 +102,42 @@ class AddingController extends Controller
         
     }
 
+
+    // public function teacherAddAccountability(Request $request){
+    //     Accountability::create([
+    //         'accountability_name' => $request->accountability_name,
+    //         'student_LRN' => $request->student_LRN,
+    //         'date' => $request->accountability_date,
+    //         'decimal' => $request->accountability_amount,
+    //         'type'=>'teacher',
+    //         'user_id' => Auth::user()->id
+    //     ]);
+    //     return redirect('/teacher');
+    // }
+
+    // public function cashierAddAccountability(Request $request){
+    //     Accountability::create([
+    //         'accountability_name' => $request->accountability_name,
+    //         'student_LRN' => $request->student_LRN,
+    //         'date' => $request->accountability_date,
+    //         'decimal' => $request->accountability_amount,
+    //         'type'=>'cashier',
+    //         'user_id' => Auth::user()->id
+    //     ]);
+    //     return redirect('/cashier');
+    // }
+
+    // public function adminAddAccountability(Request $request){
+    //     Accountability::create([
+    //         'accountability_name' => $request->accountability_name,
+    //         'student_LRN' => $request->student_LRN,
+    //         'date' => $request->accountability_date,
+    //         'decimal' => $request->accountability_amount,
+    //         'type'=>'admin',
+    //         'user_id' => Auth::user()->id
+    //     ]);
+    //     return redirect('/admin');
+    // }
+
 }
+

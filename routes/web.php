@@ -21,11 +21,14 @@ Route::get('/librarian', 'LibrarianHomepageController@index');
 
 Route::post('/search', 'HomeController@search');
 
+// cashier
+
 Route::get('cashier/class', 'AdminHomeController@schoolClasses');
 
 Route::get('cashier/grade', 'AdminHomeController@schoolGrades');
 
 Route::get('/cashier', 'CashierController@home');
+
 
 Route::get('/cashier/profile/{username}', 'CashierController@profile');
 
@@ -83,6 +86,10 @@ Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
 
 Route::get('admin/profile/{username}/edit', 'AdminHomeController@editProfile');
 
+//for teacher only
+
+Route::get('teacher/class/{name}', 'TeacherHomeController@getClass');
+
 Route::get('teacher/class', 'AdminHomeController@schoolClasses');
 
 Route::get('teacher/grade', 'AdminHomeController@schoolGrades');
@@ -114,3 +121,5 @@ Route::get('accountability/addAccountability', 'AddingController@addAccountabili
 Route::get('/accountability/edit_accountability/{id}', 'AccountabilityController@edit');
 
 Route::post('/accountability/update_accountability/{id}', 'AccountabilityController@update');
+
+Route::get('/librarian/edit_borrowbook/{LRN}', 'LibrarianHomepageController@edit');

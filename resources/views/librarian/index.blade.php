@@ -21,20 +21,23 @@
 									<th>Student Name</th>	
 									<th>Book Borrowed</th>
 									<th>Date Borrowed</th>
+									<th>Return Date</th>
 									<th>Status</th>
 									<th>Edit</th>
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($results as $result)
+								@forelse($results as $result)
 									<tr>
 										<td><a href="#">{{ $result->first_name }} {{ $result->last_name }}</a></td>
 										<td>{{ $result->book_id }}</td>
-										<td>{{ $result->date }}</td>
+										<td>{{ $result->borrow_date }}</td>
+										<td>{{ $result->return_date }}</td>
 										<td>{{ $result->status }}</td>
-										<td><a href="#">Edit</a></td>
+										<td><a href="librarian/edit_borrowbook/{{$result->id}}">Edit</a></td>
 									</tr>
-								@endforeach
+								@empty
+								@endforelse
 							</tbody>
 						</table>
 					</div>
