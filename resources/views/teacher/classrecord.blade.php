@@ -8,7 +8,7 @@
 
 <div class="panel panel-default record">
 	<div class="panel-body">
-		<div class="class_name">{{$section}}</div>
+		<div class="class_name">{{$grade_section->name}}</div>
 		<div class="table-responsive">
 			<table class="table">
 				<colgroup></colgroup>
@@ -26,8 +26,9 @@
 					<th class="text-center">Science</th>
 					<th class="text-center">Average</th>
 				</tr>
+				@forelse($grade_section->studentList as $student)
 				<tr>
-					<td>{{$student->fullname()}}</td>
+					<td>{{ $student->first_name }}</td>
 					<td><input type="text"  class = "input text-center" name=""></td>
 					<td><input type="text"  class = "input text-center" name=""></td>
 					<td><input type="text"  class = "input text-center" name=""></td>
@@ -36,98 +37,9 @@
 					<td><input type="text"  class = "input text-center" name=""></td>
 
 				</tr>
-				<tr>
-					<td>Nicole Pein</td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-
-				</tr>
-				<tr>
-					<td>Michelle Nemiada</td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-
-				</tr>
-				<tr>
-					<td>Jing Talabucon</td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-
-
-				</tr>
-				<tr>
-					<td>Allyn Calcaben</td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-
-				</tr>
-				<tr>
-					<td>Relyn Dela Cruz</td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-
-				</tr>
-				<tr>
-					<td>Jessa Palquiran</td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-
-				</tr>
-				<tr>
-					<td>Rosiebelt Abisado</td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-
-				</tr>
-				<tr>
-					<td>Justine Nam-ay</td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-
-				</tr>
-				<tr>
-					<td>August Zion</td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-					<td><input type="text" class = "input text-center" name=""></td>
-
-				</tr>
-
+				@empty
+					No Data
+				@endforelse
 			</table>
 			<button class="btn btn-success save" data-toggle = "modal" data-target = "#confirm_modal">Save Changes</button>
 		</div>

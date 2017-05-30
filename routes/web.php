@@ -95,14 +95,13 @@ Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
 Route::get('admin/profile/{username}/edit', 'AdminHomeController@editProfile');
 
 //for teacher only
-<<<<<<< HEAD
+
 Route::get('teacher/class/{name}', 'TeacherHomeController@getClass');
-=======
 
 Route::get('teacher/class', 'AdminHomeController@schoolClasses');
 
 Route::get('teacher/grade', 'AdminHomeController@schoolGrades');
->>>>>>> 548a5f9566f918b40a33b066761f9e3f4cf001f4
+
 
 Route::get('teacher/schedule', 'TeacherHomeController@schedule');
 

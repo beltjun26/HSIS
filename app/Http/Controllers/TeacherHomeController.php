@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Section;
 use App\Teacher;
-use App\Student_in;
 use App\Student;
+use App\StudentIn;
 use DB;
 use Illuminate\Http\Request;
     
@@ -18,13 +18,9 @@ class TeacherHomeController extends Controller
     function schedule(){
     	return view('teacher.schedule');
     }
-    function classRecord($sectionName){
-        $section = $sectionName;
-        $stud_in = Student_in::where('section_name', '=',  $sectionName)->get();
-        $student = Student::where('LRN', '=', $stud_in->student_LRN)->get();
-    	
-   		 
-    	return view('teacher.classrecord',compact('section','student'));
+    function classRecord($sectionName){	
+        $grade_section  = Section::whereName($sectionName)->first();
+    	return view('teacher.classrecord', compact('grade_section'));
     }
     function profile($username){
 	    $user = User::whereUsername($username)->first();
