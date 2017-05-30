@@ -60,6 +60,9 @@ class AddingController extends Controller
     public function addStudent(Request $request){
         Student::create($request->all());
         return "success";
+        if($request->input('sectioName')!="none"){
+            return "student in";
+        }
     }
 
     public function addGrade(Request $request){

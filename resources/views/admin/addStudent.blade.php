@@ -21,7 +21,7 @@
 						<select class="form-control" name="sectionName">
 						<option value="none">Dont assign!</option>
 						@forelse($classes as $class)
-							<option>{{ $class->getGrade->name }} {{ $class->name }}</option>
+							<option value="{{ $class->name }}"name>{{ $class->getGrade->name }} {{ $class->name }}</option>
 						@empty
 
 						@endforelse
