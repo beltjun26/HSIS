@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<script src="{{ asset('js/cashier/cashier.js') }}"></script>
+
 @section('content')
 
 	<div class="right-parts">
@@ -41,7 +41,7 @@
 							<th colspan="4" class="table-title">
 								<span class="glyphicon glyphicon-exclamation-sign"></span>
 								<span>  Unpaid Fees</span>
-								<span class="pull-right text-primary">Php 450.00</span>
+								<span class="pull-right text-primary" id="total_acc">Php {{round($total, 2)}}</span>
 							</th>
 						</tr>
 						<tr><td>
@@ -157,6 +157,8 @@
 
 
 	</div>
-<script src="{{ asset('js/cashier/collect_fees.js') }}"></script>
+	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="{{ asset('js/cashier/cashier.js') }}"></script>
+	<script src="{{ asset('js/cashier/collect_fees.js') }}"></script>
 
 @endsection

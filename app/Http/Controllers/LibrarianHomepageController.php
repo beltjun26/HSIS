@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Accountability;
-
+use App\Pay;
+use App\Student;
 use Illuminate\Http\Request;
 
 class LibrarianHomepageController extends Controller
@@ -22,7 +23,7 @@ class LibrarianHomepageController extends Controller
                         $join->on('borrowed.student_LRN', '=', 'students.LRN');
         })->get();
 
-        return view('librarian.index', ['results'=>$results]);
+        return view('librarian.index',compact('results'));
     }
 
     /**
@@ -65,7 +66,8 @@ class LibrarianHomepageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = DB::table('borrowed')->find($id);
+        return view('librarian.edit', compact('student'));
     }
 
     /**
@@ -95,7 +97,8 @@ class LibrarianHomepageController extends Controller
     	DB::table('borrowed')->insert([
     		'student_LRN'=> $request->student_LRN,
     		'book_id'=>$request->book_id,
-    		'date'=>$request->borrow_date,
+    		'borrow_date'=>$request->borrow_date,
+            'return_date'=>$request->return_date,
     		'status'=>'Not returned'
     	]);
 

@@ -9,9 +9,10 @@ function submitStudent(e){
 		url: "/addStudent",
 		type: "post",
 		data: $("#form").serialize(),
-		success: function(){
+		success: function(data){
 			$('#successModal').modal('show');
 			document.getElementById('form').reset();
+			console.log(data);
 		}
 	});
 }

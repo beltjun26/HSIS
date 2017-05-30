@@ -121,13 +121,15 @@ class CashierController extends Controller
         $accountability = Pay::where('student_LRN', $LRN)->get();
 
         $to_pay = array();
+        $total = 0;
         foreach($accountability as $acc){
             
             $acc_detail = Accountability::where('id', $acc->accountability_id)->first();
+            $total += $acc_detail->amount;
             array_push($to_pay, $acc_detail);
         }
 
-        return view('cashier.collect_payment', compact('student', 'student_info', 'grade', 'to_pay'));
+        return view('cashier.collect_payment', compact('student', 'student_info', 'grade', 'to_pay', 'total'));
     }
 
     public function feeCategories(){

@@ -32,4 +32,8 @@ class Student extends Model
     public function hasAccountabilitesStudent(){
     	return $this->hasMany('App\Accountability');
     }
+
+    public function hasBooks(){
+        return $this->hasMany('App\Book');
+    }
 }

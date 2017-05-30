@@ -44,7 +44,9 @@
 			</div>
 		</div>
 		<div class="row text-center">
+			@if(Auth::user()->type == "admin")
 			<a href="/{{ Auth::user()->type }}/assign/{{ $result->name }}" class="btn btn-success">Add Student</a>
+			@endif
 		</div>
 	</div>
 </body>
