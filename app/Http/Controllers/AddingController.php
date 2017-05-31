@@ -13,6 +13,7 @@ use App\Librarian;
 use App\Section;
 use App\Accountability;
 use App\Pay;
+use App\Subject;
 use Auth;
 use DB;
 
@@ -103,6 +104,17 @@ class AddingController extends Controller
 
     public function editProfile(Request $request){
         
+    }
+
+    public function addSubject(Request $request){
+        $subject = Subject::whereName($request->name);
+        if($subject->count()>0){
+            $invalid = "Subject already Exis";
+            return view('admin.addSubject', compact('invalid'));
+        }else{
+            Subject::create(['name'=>$request->name]);
+            return view('admin.addSubject');
+        }
     }
 
 

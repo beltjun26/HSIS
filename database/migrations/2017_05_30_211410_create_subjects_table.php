@@ -16,9 +16,7 @@ class CreateSubjectsTable extends Migration
         //
         Schema::create('subjects', function($table){
             $table->increments('id', 11);
-            $table->integer('grade_id')->unsigned();
-            $table->string('student_LRN', 12);
-            $table->string('subject',11);
+            $table->string('name',11);
             $table->timestamps();
         });
     }

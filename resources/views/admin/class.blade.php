@@ -40,7 +40,7 @@
 			    @foreach($grades as $grade)
 			    	<div class="panel panel-default" id="{{ $grade->id }}" style="display: none">
 			    		<div class="panel-heading">
-			    			<h4>{{ $grade->name }}</h4>
+			    			<h4>Classes under <span class="text-primary"><i>{{ $grade->name }}</i></span></h4>
 			    		</div>
 			    		<div class="panel-body">
 			    			<div class="list-group">

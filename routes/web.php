@@ -50,6 +50,7 @@ Route::get('/cashier/collection_history', 'CashierController@collectionHistory')
 
 Auth::routes();
 
+
 Route::post('allAccount', 'AdminHomeController@getAllAccount');
 
 Route::post('registerUser', 'AddingController@registerUser');
@@ -63,6 +64,11 @@ Route::post('addClass', 'AddingController@addClass');
 Route::post('searchStudent', 'TeacherHomeController@searchStudent');
 
 Route::post('assignStudent', 'TeacherHomeController@assignStudent');
+
+Route::post('admin/addSubject', 'AddingController@addSubject');
+
+//admin
+Route::get('admin/addSubject', 'AdminHomeController@addSubject');
 
 Route::get('admin/class', 'AdminHomeController@schoolClasses');
 
@@ -109,6 +115,8 @@ Route::get('grades/save/', 'TeacherHomeController@update');
 Route::get('temporary', function(){
 	return view('profile(teacher)');
 }); 	
+
+//librarian
 
 Route::get('/accountability/view_accountability', 'AccountabilityController@index');
 
