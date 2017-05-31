@@ -94,13 +94,10 @@ class AddingController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
-
-
         Pay::create([
            'student_LRN' => $request->student_LRN,
            'status' => 'unpaid',
            'date' => $request->due_date
-
         ]);
 
         $id = Auth::user()->id;
