@@ -29,7 +29,6 @@ Route::get('cashier/grade', 'AdminHomeController@schoolGrades');
 
 Route::get('/cashier', 'CashierController@home');
 
-
 Route::get('/cashier/profile/{username}', 'CashierController@profile');
 
 Route::get('cashier/edit_category', 'CashierController@editCategory');
@@ -40,6 +39,8 @@ Route::get('/cashier/add_new_category', 'CashierController@newCategory');
 
 Route::get('/cashier/collect_payment', 'CashierController@collectPayment');
 
+Route::get('/cashier/collect_payment2/{lrn}', 'CashierController@collectPayment2');
+
 Route::get('/cashier/collect_fees', 'CashierController@collectFees');
 
 Route::get('/cashier/fee_categories', 'CashierController@feeCategories');
@@ -47,6 +48,10 @@ Route::get('/cashier/fee_categories', 'CashierController@feeCategories');
 Route::get('/cashier/overdues', 'CashierController@overdues');
 
 Route::get('/cashier/collection_history', 'CashierController@collectionHistory');
+
+Route::get('/cashier/collect_now', 'CashierController@recordCollection');
+
+
 
 Auth::routes();
 
@@ -87,8 +92,6 @@ Route::get('admin/assign/{name}', 'TeacherHomeController@assignToSection');
 Route::get('admin/profile/{username}/edit', 'AdminHomeController@editProfile');
 
 //for teacher only
-
-Route::get('teacher/class/{name}', 'TeacherHomeController@getClass');
 
 Route::get('teacher/class', 'AdminHomeController@schoolClasses');
 

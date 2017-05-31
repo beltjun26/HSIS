@@ -17,12 +17,8 @@ class Student extends Model
     	'bdate',
     ];
 
-    public function hasAccountabilites(){
-    	return $this->belongsToMany('App\Accountability','pays','accountability_id','student_LRN');
-    }
-
-    public function student_acc(){
-    	return $this->belongsToMany('App\Accountability', 'pay', 'LRN', 'student_LRN');
+    public function hasAccountabilities(){
+    	return $this->belongsToMany('App\Accountability','pays','student_LRN','LRN');
     }
 
     public function fullName(){
@@ -35,5 +31,13 @@ class Student extends Model
 
     public function hasBooks(){
         return $this->hasMany('App\Book');
+    }
+
+    public function hasStudentInfo(){
+        return $this->belongsTo('App\StudentIn', 'LRN', 'student_LRN');
+    }
+
+    public function pays(){
+        return $this->belongsToMany('App\Accountability', 'pays', 'student_LRN', 'accountability_id');
     }
 }

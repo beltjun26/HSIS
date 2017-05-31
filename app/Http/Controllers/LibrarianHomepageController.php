@@ -22,7 +22,6 @@ class LibrarianHomepageController extends Controller
                         ->join('students', function($join){
                         $join->on('borrowed.student_LRN', '=', 'students.LRN');
         })->get();
-
         return view('librarian.index',compact('results'));
     }
 

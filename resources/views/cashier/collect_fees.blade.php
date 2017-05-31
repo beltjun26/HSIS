@@ -25,6 +25,4 @@
 
 
 	</div>
-<script src="{{ asset('js/cashier/collect_fees.js') }}"></script>
-
 @endsection

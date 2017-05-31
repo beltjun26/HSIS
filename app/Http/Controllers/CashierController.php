@@ -12,6 +12,7 @@ use App\Section;
 use App\Cashier;
 use App\Student;
 use App\Grade;
+use Carbon;
 
 class CashierController extends Controller
 {
@@ -105,29 +106,46 @@ class CashierController extends Controller
     }
 
 
+    public function collectPayment2($LRN){
+        return $this->startCollection($LRN);
+    }
+
     public function collectPayment(Request $request){
         $text = $request->input('student_name');
         if( preg_match( '!\(([^\)]+)\)!', $text, $match ) )
             $LRN = $match[1];
 
-        $student = Student::where('LRN', '=', $LRN)->get();
+        return $this->startCollection($LRN);
+    }
 
-        $student_info = StudentIn::where('student_LRN', $LRN)->first();
 
-        $grade_section = Section::where('name', $student_info->section_name)->first();
+    public function startCollection($LRN){
+        $student = Student::where('LRN', '=', $LRN)->first();
 
-        $grade = Grade::where('id', $grade_section->grade_id)->first();
+        $student_unpaid = DB::table('students')
+            ->select('accountability_name', 'due_date', 'pays.id', 'date', 'amount')
+            ->join('pays', 'pays.student_LRN', 'LRN')
+            ->join('accountabilities','accountabilities.id','pays.accountability_id')
+            ->where('status','unpaid')
+            ->where('LRN', $LRN)
+            ->get();
 
-        $accountability = Pay::where('student_LRN', $LRN)->get();
+       // dd($student_unpaid);
+        $student_paid = DB::table('students')
+            ->join('pays', 'pays.student_LRN', 'LRN')
+            ->join('accountabilities','accountabilities.id','pays.accountability_id')
+            ->where('status','paid')
+            ->orWhere('status', 'on time')
+            ->orWhere('status', 'overdue')
+            ->where('LRN', $LRN)
+            ->get();
 
-        $to_pay = array();
-        foreach($accountability as $acc){
-            
-            $acc_detail = Accountability::where('id', $acc->accountability_id)->first();
-            array_push($to_pay, $acc_detail);
+        $total = 0;
+        foreach($student_unpaid as $s){
+            $total += $s->amount;
         }
 
-        return view('cashier.collect_payment', compact('student', 'student_info', 'grade', 'to_pay'));
+        return view('cashier.collect_payment', compact('student', 'total', 'student_unpaid', 'student_paid'));
     }
 
     public function feeCategories(){
@@ -136,10 +154,12 @@ class CashierController extends Controller
     }
 
     public function overdues(){
+        $now = Carbon\Carbon::now()->setTimezone('Asia/Shanghai');
         $students = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at')
             ->join('pays', 'pays.student_LRN', 'LRN')
             ->join('accountabilities','accountabilities.id','pays.accountability_id')
             ->where('status','unpaid')
+            ->where('due_date', '<', $now)
             ->get();
 
             return view('cashier.overdues', compact('students'));
@@ -204,11 +224,7 @@ class CashierController extends Controller
             ->join('accountabilities','accountabilities.id','pays.accountability_id')
             ->get();
 
-        $studentOnTime = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at','amount','date')
-            ->join('pays', 'pays.student_LRN', 'LRN')
-            ->join('accountabilities','accountabilities.id','pays.accountability_id')
-            ->where('status','paid')
-            ->get();
+
         $sports = DB::table('students')->select('LRN', 'first_name', 'last_name', 'status', 'accountability_name', 'due_date','pays.created_at','amount','date')
             ->join('pays', 'pays.student_LRN', 'LRN')
             ->join('accountabilities','accountabilities.id','pays.accountability_id')
@@ -231,8 +247,11 @@ class CashierController extends Controller
     }
 
     public function home(){
-         
-        return view('cashier.home');
+        $accountabilities = Accountability::all();
+        // $pays = Pay::select(DB::raw('DISTINCT student_LRN'))->get();
+        $pays = Pay::all();
+        $students = Student::all();
+        return view('cashier.home', compact('accountabilities', 'pays', 'students'));
     }
 
      public function collectFees(){
@@ -240,7 +259,34 @@ class CashierController extends Controller
         return view('cashier.collect_fees', compact('students'));
     }
 
-    // public function findPage($page_name){
-    //     return view('cashier.'.$page_name);
-    // }
+    public function recordCollection(Request $request){
+        $paylist = $request->input('paylist');
+
+        $paylist = explode("_", $paylist);
+        $payment;
+
+        foreach($paylist as $pay_id){
+            $now = Carbon\Carbon::now()->setTimezone('Asia/Shanghai');
+            if($pay_id != ""){
+                $pays_acc = Pay::where('id', $pay_id)->first();
+                if($pays_acc->acc_details->due_date > $now){
+                     $pay = Pay::where('id', $pay_id)
+                            ->update(['status'=> "on time", 'date' => $now]);
+                }
+                else{
+                    $pay = Pay::where('id', $pay_id)
+                            ->update(['status'=> "overdue", 'date' => $now]);
+                }
+
+               
+
+                $payment = Pay::where('id', $pay_id)->first();
+            }
+        }
+
+        // dd($payment);
+
+        return redirect('/cashier/collect_payment2/'.$payment->student_LRN);
+    }
+
 }
