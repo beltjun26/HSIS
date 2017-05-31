@@ -12,14 +12,16 @@
 				<li class="active"><a data-toggle="tab" href="#all">All</a></li>
 			    <li><a data-toggle="tab" href="#overdue">Overdue</a></li>
 			    <li><a data-toggle="tab" href="#on_time">On time</a></li>
-			    <li class="dropdown">
+
+			    <!-- PENDING: to be implemented on next iteration -->
+			    <!-- <li class="dropdown">
 			    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
 			    	<ul class="dropdown-menu">
 			    		<li><a href="#sports" data-toggle="tab">Sports</a></li>
 			    		<li><a  href="#miscellaneous" data-toggle="tab">Miscellaneous</a></li>
 			    		<li><a  href="#pta_fee" data-toggle="tab">PTA Fee</a></li>
 			    	</ul>
-			    </li>
+			    </li> -->
 			</ul>
 		</nav>
 
@@ -37,7 +39,7 @@
 							<th class="text-center t-head">OVERDUE DURATION</th>
 						</thead>
 						<?php $counter = 0; ?>
-						@foreach($students as $student)
+						@foreach($students->where('status', '!=', 'unpaid') as $student)
 						<?php 
 							$counter +=1;
 							$overdue = ((strtotime(date("Y-m-d")) - strtotime($student->due_date))/86400);
@@ -76,7 +78,7 @@
 							<th class="text-center t-head">OVERDUE DURATION</th>
 						</thead>
 						<?php $counter = 0; ?>
-						@foreach($students as $student)
+						@foreach($students->where('status', 'overdue') as $student)
 							<?php 
 								$counter +=1;
 								$overdue = ((strtotime(date("Y-m-d")) - strtotime($student->due_date))/86400);
@@ -113,7 +115,7 @@
 							<th class="text-center t-head">STATUS</th>
 						</thead>
 						<?php $counter = 0; ?>
-						@foreach($studentOnTime as $studentOn)
+						@foreach($students->where('status', 'on time') as $studentOn)
 							<?php 
 								$counter +=1;
 								$overdue = ((strtotime(date("Y-m-d")) - strtotime($studentOn->due_date))/86400);
@@ -139,7 +141,9 @@
 					</table>
 				</div>
 		    </div>
-		    <div id="sports" class="tab-pane fade">
+
+		    <!-- PENDING to be implemented on next iteration -->
+		   <!--  <div id="sports" class="tab-pane fade">
 		      	<div class=" history-table panel panel-default">
 					<table class="table table-hover table-bordered">
 						<thead>
@@ -252,7 +256,7 @@
 						@endforeach
 					</table>
 		    	</div>
-		 	</div>
+		 	</div> -->
 		</div>
 	</div>
 

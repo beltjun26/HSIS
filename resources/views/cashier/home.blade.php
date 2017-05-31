@@ -17,7 +17,7 @@
 			<div class="top-boxes bg-2">
 				<span class="info-content text-center pull-right">
 					@if(count($pays)>0)
-						{{ round(count($students)/count($pays) * 100, 2) }} %
+						{{ round(count($pays->where('status', "unpaid"))/count($pays) * 100, 0) }} %
 
 					@endif
 				</span>
@@ -27,7 +27,7 @@
 			<div class="top-boxes bg-3">
 				<span class="info-content text-center pull-right">
 					@if(count($pays)>0)
-						{{ round(count($students)/count($pays) * 100, 2) }} %
+						{{ round(count($pays->where('status', "overdue"))/count($pays) * 100, 0) }} %
 
 					@endif
 				</span>
