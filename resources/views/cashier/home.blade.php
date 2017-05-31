@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
 	
     <script src="{{ asset('js/cashier/cashier.js') }}"></script>

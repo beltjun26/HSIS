@@ -30,6 +30,9 @@
 #stud_list{
 	margin-top: 90px;
 }
+th{
+	padding: 8px;
+}
 /*#more{
 	margin-left: 200px;
 	margin-right: 0px;

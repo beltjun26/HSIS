@@ -10,7 +10,7 @@
 	<div class="panel-body">
 		<div class="class_name">{{$grade_section->name}}</div>
 		<div class="table-responsive">
-			<table class="table">
+			<table class="table">	
 				<colgroup></colgroup>
 				<colgroup class="bg-success"></colgroup>
 				<colgroup></colgroup>
@@ -25,23 +25,24 @@
 					<th class="text-center">Aral-Pan</th>
 					<th class="text-center">Science</th>
 					<th class="text-center">Average</th>
+					<th class= "text-center">Actions</th>
 				</tr>
-				@forelse($grade_section->studentList as $student)
+				@forelse($students as $student)
 				<tr>
 					<td>{{ $student->first_name }}</td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-					<td><input type="text"  class = "input text-center" name=""></td>
-
+					<td class="text-center">{{$student->grade}}</td>
+					<td class="text-center"></td>
+					<td class="text-center"></td>
+					<td class="text-center"></td>
+					<td class="text-center"></td>
+					<td class="text-center"></td>
+					<td class="text-center"><a href = "/profile/classRecord/{{$grade_section->name}}/{{$student->LRN}}"><button class="btn btn-primary" >Edit Grades </button></a></td>
 				</tr>
 				@empty
 					No Data
 				@endforelse
 			</table>
-			<button class="btn btn-success save" data-toggle = "modal" data-target = "#confirm_modal">Save Changes</button>
+			<button class="btn btn-success save" data-toggle = "modal" data-target = "#confirm_modal">Save Changes </button>
 		</div>
 	</div>
 	

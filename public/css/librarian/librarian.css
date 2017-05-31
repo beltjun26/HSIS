@@ -1,0 +1,21 @@
+*{
+	font-family: 'Raleway', sans-serif;
+}
+.btn.btn-success{
+	display: inline-block;
+	margin-left: 5px;
+	float: right;
+}
+#buttons-group{
+	width: 50%;
+	float: right;
+	margin-top: 15px;
+	display: inline-block;
+}
+thead{
+	background-color: rgb(84, 192, 192);
+	color: white;
+}
+#content{
+	width: 60%;
+}

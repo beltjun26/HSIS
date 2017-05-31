@@ -3,16 +3,15 @@
 @section('content')
 	
 
-	<div class="container" id="content">
-		<div class="row">
-			<div id="buttons-group">
-				<a href="/librarian/create" type="button" class="btn btn-default">Borrow Books</a>
-				<a href="/accountability/view_accountability" type="button" class="btn btn-default">View Accountabilities</a>
-			</div>
+	<div class="container" id="content">		
+		<div id="buttons-group">
+			<a href="/librarian/create" type="button" class="btn btn-success">Borrow Books</a>
+			<a href="/accountability/view_accountability" type="button" class="btn btn-success">View Accountabilities</a>
 		</div>
+		<h3>Borrowed Books</h3>
 		<div class="row" id="table-div">
 			<div class="col-md-12">
-				<h3 style="margin-left: 15px; margin-top: 40px;">Borrowed Books</h3>
+				
 				<div class="panel panel-default">
 					<div class="table table-hover table-responsive">
 						<table class="table table-hover">

@@ -105,9 +105,13 @@ Route::get('teacher/profile/{username}', 'TeacherHomeController@profile');
 
 Route::get('student', 'TeacherHomeController@student');
 
+Route::get('/profile/classRecord/{sectionName}/{LRN}','TeacherHomeController@edit');
+
+Route::get('grades/save/', 'TeacherHomeController@update');
+
 Route::get('temporary', function(){
 	return view('profile(teacher)');
-});
+}); 	
 
 Route::get('/accountability/view_accountability', 'AccountabilityController@index');
 
