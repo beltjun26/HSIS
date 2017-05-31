@@ -48,12 +48,18 @@
 						<div class="panel-body">
 							<div class="table">
 								<table>
+									<tr>
+										<th class="">Section Name</th>
+										<th class="text-center">Room Assignment</th>
+										<th class="text-center">Action</th>
+
+									</tr>
 								@foreach($section as $sections)
 									<tr>
 										<div class="col-xs-12">
-											<td class="col-xs-4"><a href="/teacher/class/{{$sections->name}}">{{$sections->name}}</a></td>
-											<td class="col-xs-5">{{$sections->grade_id}}</td>
-											<td class="col-xs-3"><a href="/teacher/classRecord/{{$sections->name}}">See Class Record</a></td>
+											<td class="col-xs-4 "><a href="/teacher/class/{{$sections->name}}">{{$sections->name}}</a></td>
+											<td class="col-xs-5 text-center">{{$sections->classroom}}</td>
+											<td class="col-xs-3 text-center"><a href="/teacher/classRecord/{{$sections->name}}">See Class Record</a></td>
 										</div>
 									</tr>
 								@endforeach

@@ -19,11 +19,18 @@ class TeacherHomeController extends Controller
     	return view('teacher.schedule');
     }
     function classRecord($sectionName){	
+      $students = DB::table('marks')->select('LRN', 'first_name', 'last_name', 'marks.grade', 'subject')
+        ->join('students', 'students.LRN', 'student_LRN')
+        ->join('subjects','subjects.grade_id','marks.id')
+        // ->where('LRN' ,  'student_LRN')
+        ->get();
+        echo $students;
         $grade_section  = Section::whereName($sectionName)->first();
-    	return view('teacher.classrecord', compact('grade_section'));
+    	return view('teacher.classrecord', compact('grade_section','students'));
     }
     function profile($username){
-	    $user = User::whereUsername($username)->first();
+        $user = User::whereUsername($username)->first();
+        // echo $user->id;
         // $userId = $user->id;
         $teachered = Teacher::where('user_id','=',$user->id)->first();
         // $teacherId = $teacher->id;
@@ -34,8 +41,7 @@ class TeacherHomeController extends Controller
             $grade = "Grade 9";
             $sectionName = "Emerald";
             return view('teacher.profile', compact('grade','sectionName','teacher','userId','teachered', 'section'));
-        }
-    }
+    }}
 
     function student(){
         return view('teacher.student');
@@ -72,5 +78,20 @@ class TeacherHomeController extends Controller
         }else{
             return "Student is already under ".$student->section_name;
         }
+    }
+    public function edit($sectionName,$LRN){
+         $students = DB::table('marks')->select('LRN', 'first_name', 'last_name', 'marks.grade', 'subject')
+        ->join('students', 'students.LRN', 'student_LRN')
+        ->join('subjects','subjects.grade_id','marks.id')
+        ->where('students.LRN' , $LRN)
+        ->get();
+        // $stud = Mark::where("student_LRN",$LRN)->first();
+        // echo $stud;
+        return view('teacher.edit_grade',compact('sectionName', 'LRN','students'));
+
+    }
+
+    public function update(){
+        
     } 
 }
