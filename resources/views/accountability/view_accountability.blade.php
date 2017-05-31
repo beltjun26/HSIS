@@ -21,12 +21,15 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
+							@forelse($results as $result)
+								<tr>
+									<td>{{$result->student_LRN}}</td>
+									<td>{{$result->accountability_name}}</td>
+									<td>{{$result->amount}}</td>
+									<td><a href="#"></a></td>
+								</tr>
+							@empty
+							@endforelse
 						</tbody>
 					</table>
 				</div>

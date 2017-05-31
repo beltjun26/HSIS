@@ -16,7 +16,6 @@ class CreateAccountabilitiesTable extends Migration
             $table->decimal('amount', 5, 2);
             $table->integer('user_id');
             $table->timestamps();
-           
         });
     }
 

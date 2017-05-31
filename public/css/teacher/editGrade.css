@@ -11,3 +11,19 @@
 	margin-left: 200px;
 
 }
+#confirm_modal{
+	max-width: 700px;
+	margin-left: 300px;
+}
+#password{
+	margin-top: 20px;
+}
+#confirm{
+	margin:30px 0px 0px 500px;
+}
+#submition{
+	float:right;
+}
+.btn{
+	margin-left: 250px;
+}

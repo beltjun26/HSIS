@@ -12,7 +12,7 @@ class Pay extends Model
 	];
 
     public function payer(){
-    	return $this->belongsTo('App\Student', 'student_LRN');
+    	return $this->belongsToMany('App\Student', 'student_LRN');
     }
 
     public function acc_details(){

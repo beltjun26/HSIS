@@ -195,6 +195,7 @@
 	background-color: #c9e7dd;
 	padding: 10px 5px 10px 5px;
 	margin-bottom: 10px;
+	display: none;
 }
 
 .jumbotron{
@@ -324,7 +325,6 @@
 }
 
 .total{
-	margin-top: 15px;
 	margin-bottom: 30px;
 	font-size: 20px;
 }

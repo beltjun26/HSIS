@@ -12,14 +12,16 @@ class AccountabilityController extends Controller
 {
     public function index(){
         $id = Auth::user()->id;
-        $accs = Accountability::where('user_id',$id)->get();
-        return view('accountability.view_accountability', compact('accs'));
+        $results = DB::table('accountabilities')->join('pays', function($join){
+            $join->on('accountabilities.id', '=', 'pays.accountability_id');
+        })->where('user_id', $id)->get();
+
+        return view('accountability.view_accountability', compact('results'));
     }
 
     public function edit($id){
     	
     }
-
     public function update(Request $request, $id){
 
     }

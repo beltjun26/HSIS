@@ -42,29 +42,10 @@
 					No Data
 				@endforelse
 			</table>
-			<button class="btn btn-success save" data-toggle = "modal" data-target = "#confirm_modal">Save Changes </button>
+			
 		</div>
 	</div>
 	
-</div>
-<div class="modal fade" id = "confirm_modal" role = "document">
-	<div class="modal-content">
-		<div class="modal-dialog">
-			<div class="modal-header">
-				<button data-dismiss = "modal" class="close">&times;</button>
-			</div>
-			<div class="modal-body">
-				<div>Please verify your identity:</div>
-				<div class="input-group" id = "password">
-					<div  class="input-group-btn">
-						<button class="btn btn-default "><span>Password </span></button>
-					</div>
-					<input type="text" name="" class="form-control">
-				</div>
-				<button class = "btn btn-success" href = "#" id = "confirm" data-dismiss = "modal">Confirm</button>
-			</div>
-		</div>
-	</div>	
 </div>
 
 
