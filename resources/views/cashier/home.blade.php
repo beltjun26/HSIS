@@ -16,12 +16,22 @@
 				<span class="info-title">Fees Category</span>
 			</div>
 			<div class="top-boxes bg-2">
-				<span class="info-content text-center pull-right">{{ round(count($students)/count($pays) * 100, 2) }} %</span>
+				<span class="info-content text-center pull-right">
+					@if(count($pays)>0)
+						{{ round(count($students)/count($pays) * 100, 2) }} %
+
+					@endif
+				</span>
 				<span class="glyphicon glyphicon-alert info-icon"></span><br/>
 				<span class="info-title">Students with Unpaid Fees</span>
 			</div>
 			<div class="top-boxes bg-3">
-				<span class="info-content text-center pull-right">{{ round(count($students)/count($pays) * 100, 2) }} %</span>
+				<span class="info-content text-center pull-right">
+					@if(count($pays)>0)
+						{{ round(count($students)/count($pays) * 100, 2) }} %
+
+					@endif
+				</span>
 				<span class="glyphicon glyphicon-hourglass info-icon"></span><br/>
 				<span class="info-title">Students with overdue paymentss</span>
 			</div>
@@ -49,13 +59,15 @@
 								<th class="text-center t-head">Amount</th>
 								<th class="text-center t-head">Due</th>
 							</tr>
-							@foreach($accountabilities as $acc)
-							<tr>
-								<td class="text-center">{{ $acc->accountability_name}}</td>
-								<td class="text-center">Php {{ $acc->amount }}</td>
-								<td class="text-center">{{ $acc->due_date }}</td>
-							</tr>
-							@endforeach
+							@if(count($accountabilities)>0)
+								@foreach($accountabilities as $acc)
+								<tr>
+									<td class="text-center">{{ $acc->accountability_name}}</td>
+									<td class="text-center">Php {{ $acc->amount }}</td>
+									<td class="text-center">{{ $acc->due_date }}</td>
+								</tr>
+								@endforeach
+							@endif
 						</table>
 						</td></tr>
 					</table>

@@ -55,7 +55,9 @@
 											          	</div>
 											          	<div class="input-group group">
 											        		<label class="input-group-addon"><b>Scope: </b></label>
-											        		<input type="text" name="scope" class="form-control" required="" value="{{ $category->scope }}" />
+											        		<select name="scope" class="form-control" required="" value="{{$category->scope}}">
+											        			<option>all</option>
+											        		</select>
 											          	</div>
 										          		<input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 										          		<input type="hidden" name="category_id" value="{{ $category->id}}"/>
@@ -108,7 +110,9 @@
 				          	</div>
 				          	<div class="input-group group">
 				        		<label class="input-group-addon"><b>Scope: </b></label>
-				        		<input type="text" name="scope" class="form-control" required="" />
+				        		<select name="scope" class="form-control" required="">
+				        			<option>all</option>
+				        		</select>
 				          	</div>
 				          		<input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 				        </div>
