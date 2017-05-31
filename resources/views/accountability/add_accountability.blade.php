@@ -15,6 +15,14 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">
+									Student LRN
+								</div>
+								<input class="form-control" name="student_LRN" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
 									Accountability name
 								</div>
 								<input class="form-control" name="accountability_name" />
@@ -31,7 +39,15 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">
-									Date
+									Scope of Payors
+								</div>
+								<input class="form-control" name="scope" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									Due Date
 								</div>
 								<input class="form-control" type="date" name="due_date" />
 							</div>

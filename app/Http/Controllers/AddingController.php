@@ -88,10 +88,19 @@ class AddingController extends Controller
 
         Accountability::create([
             'accountability_name' => $request->accountability_name,
-            'amount' => $request->accountability_amount,
-            'user_id' => Auth::user()->id,
             'due_date' => $request->due_date,
-            'scope' => $request->scope
+            'scope' => $request->scope,
+            'amount' => $request->accountability_amount,
+            'user_id' => Auth::user()->id
+        ]);
+
+
+
+        Pay::create([
+           'student_LRN' => $request->student_LRN,
+           'status' => 'unpaid',
+           'date' => $request->due_date
+
         ]);
 
         $id = Auth::user()->id;
@@ -104,43 +113,6 @@ class AddingController extends Controller
     public function editProfile(Request $request){
         
     }
-
-
-    // public function teacherAddAccountability(Request $request){
-    //     Accountability::create([
-    //         'accountability_name' => $request->accountability_name,
-    //         'student_LRN' => $request->student_LRN,
-    //         'date' => $request->accountability_date,
-    //         'decimal' => $request->accountability_amount,
-    //         'type'=>'teacher',
-    //         'user_id' => Auth::user()->id
-    //     ]);
-    //     return redirect('/teacher');
-    // }
-
-    // public function cashierAddAccountability(Request $request){
-    //     Accountability::create([
-    //         'accountability_name' => $request->accountability_name,
-    //         'student_LRN' => $request->student_LRN,
-    //         'date' => $request->accountability_date,
-    //         'decimal' => $request->accountability_amount,
-    //         'type'=>'cashier',
-    //         'user_id' => Auth::user()->id
-    //     ]);
-    //     return redirect('/cashier');
-    // }
-
-    // public function adminAddAccountability(Request $request){
-    //     Accountability::create([
-    //         'accountability_name' => $request->accountability_name,
-    //         'student_LRN' => $request->student_LRN,
-    //         'date' => $request->accountability_date,
-    //         'decimal' => $request->accountability_amount,
-    //         'type'=>'admin',
-    //         'user_id' => Auth::user()->id
-    //     ]);
-    //     return redirect('/admin');
-    // }
 
 }
 

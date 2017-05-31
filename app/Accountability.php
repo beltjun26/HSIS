@@ -8,7 +8,7 @@ use DB;
 class Accountability extends Model
 {
 	protected $fillable = [
-        'id','user_id','accountability_name' ,'amount', 'scope', 'due_date'
+        'id','accountability_name', 'due_date', 'scope', 'amount', 'user_id'
     ];
 
     public function acc_id($acc_name){
