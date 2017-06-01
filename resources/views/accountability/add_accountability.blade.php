@@ -15,14 +15,6 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">
-									Student LRN
-								</div>
-								<input class="form-control" name="student_LRN" />
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">
 									Accountability name
 								</div>
 								<input class="form-control" name="accountability_name" />

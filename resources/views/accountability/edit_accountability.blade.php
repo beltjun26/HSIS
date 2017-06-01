@@ -9,10 +9,17 @@
 			</h2>
 			<div class="panel panel-default" style="margin-top: 30px;">
 				<div class="panel-body panel-default">
-					<form action="/accountability/update_accountability/{{ $acc->id }}" method="post">
+					<form action="/accountability/update/{{ $acc->id }}" method="post">
 						{{ csrf_field() }}
 						{{ method_field('PUT') }}
-						<input type="hidden" name="scope" value="{{ $acc->scope }}">
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">
+									Scope
+								</div>
+								<input class="form-control" name="scope" value="{{$acc->scope}}" />
+							</div>
+						</div>
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">
@@ -26,7 +33,7 @@
 								<div class="input-group-addon">
 									Amount
 								</div>
-								<input class="form-control" type="number" name="accountability_amount" value="$acc->amount" step="0.01" />
+								<input class="form-control" type="number" name="accountability_amount" value="$acc->amount" step="1.00" />
 							</div>
 						</div>
 						<div class="form-group">

@@ -87,18 +87,12 @@ class AddingController extends Controller
     public function addAccountability(Request $request){
 
         Accountability::create([
+            'scope' => $request->scope,
             'accountability_name' => $request->accountability_name,
             'due_date' => $request->due_date,
-            'scope' => $request->scope,
             'amount' => $request->accountability_amount,
             'user_id' => Auth::user()->id
         ]);
-
-        // Pay::create([
-        //    'student_LRN' => $request->student_LRN,
-        //    'status' => 'unpaid',
-        //    'date' => $request->due_date
-        // ]);
 
         $id = Auth::user()->id;
 

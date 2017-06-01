@@ -18,15 +18,17 @@
 								<th>Accountability</th>
 								<th>Amount</th>
 								<th>Options</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
-							@forelse($results as $result)
+							@forelse($accs as $acc)
 								<tr>
-									<td>{{$result->student_LRN}}</td>
-									<td>{{$result->accountability_name}}</td>
-									<td>{{$result->amount}}</td>
-									<td><a href="#"></a></td>
+									<td>{{$acc->scope}}</td>
+									<td>{{$acc->accountability_name}}</td>
+									<td>{{$acc->amount}}</td>
+									<td><a href="#">Add Student</a></td>
+									<td><a href="/accountability/edit_accountability/{{$acc->id}}">Edit</a></td>
 								</tr>
 							@empty
 							@endforelse

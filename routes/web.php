@@ -127,6 +127,6 @@ Route::get('accountability/addAccountability', 'AddingController@addAccountabili
 
 Route::get('/accountability/edit_accountability/{id}', 'AccountabilityController@edit');
 
-Route::post('/accountability/update_accountability/{id}', 'AccountabilityController@update');
+Route::post('/accountability/update/{id}', 'AccountabilityController@update');
 
 Route::get('/librarian/edit_borrowbook/{LRN}', 'LibrarianHomepageController@edit');
