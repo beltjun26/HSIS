@@ -81,7 +81,9 @@
                         <li><a href="/admin/addUser">Add User<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addStudent">Add Student<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         <li><a href="/admin/addClass">Add Class<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
-                        <li><a href="/admin/addGrade">Add Grade<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
+                        <li><a href="/admin/addGrade">Add Grade<span class="pull-right glyphicon 
+                        glyphicon-menu-right"></a></li>
+                        <li><a href="/admin/addSubject">Add Subject<span class="pull-right glyphicon glyphicon-menu-right"></a></li>
                         
                     @elseif(Auth::user()->type == 'teacher')
                         <li><a href="/teacher/profile/{{ Auth::user()->username }}">Profile<span class="pull-right glyphicon glyphicon-menu-right"></span></a></li>

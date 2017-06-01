@@ -7,6 +7,7 @@ use App\Teacher;
 use App\Student;
 use App\StudentIn;
 use DB;
+use Auth;
 use Illuminate\Http\Request;
     
 
@@ -91,7 +92,15 @@ class TeacherHomeController extends Controller
 
     }
 
-    public function update(){
+    public function update(Request $request){
+        $password = $request->input("password");
+        echo $password;
+
+       $array = array();
+       $data = $request;
+      
+       
+
         
     } 
 }

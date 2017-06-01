@@ -19,7 +19,7 @@
 				<div class="panel-body">
 					<div class="form-group">
 						<select class="form-control" name="sectionName">
-						<option value="none">Dont assign!</option>
+						<option value="none">Pending</option>
 						@forelse($classes as $class)
 							<option value="{{ $class->name }}"name>{{ $class->getGrade->name }} {{ $class->name }}</option>
 						@empty

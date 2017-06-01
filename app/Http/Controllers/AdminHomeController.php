@@ -45,6 +45,10 @@ class AdminHomeController extends Controller
         return view('admin.addGrade', compact('grades'));        
     }
 
+    function addSubject(){
+        return view('admin.addSubject');
+    }
+
     public function account(){
     	$admins = Admin::all();
     	return view('admin.account', compact('admins'));

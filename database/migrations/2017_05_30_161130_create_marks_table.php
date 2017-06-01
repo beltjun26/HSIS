@@ -16,9 +16,9 @@ class CreateMarksTable extends Migration
         //
            Schema::create('marks', function($table){
             $table->increments('id', 11);
-            $table->string('grading_period', 60);
+            $table->integer('subject_id');
+            $table->string('grading_period', 60)->nullable();
             $table->date('date')->nullable();
-            $table->integer('grade')->unsigned();
             $table->string('student_LRN', 12);
             $table->timestamps();
         });

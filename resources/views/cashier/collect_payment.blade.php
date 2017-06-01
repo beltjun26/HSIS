@@ -90,14 +90,18 @@
 							<tr>
 								<th class="text-center t-head">Category</th>
 								<th class="text-center t-head">Amount</th>
+								<th class="text-center t-head">Due Date</th>
 								<th class="text-center t-head">Payment Date</th>
+								<th class="text-center t-head">Status</th>
 							</tr>
 							@if($student_paid->count()>0)
 								@foreach($student_paid as $paid)
 								<tr>
 									<td class="text-center">{{$paid->accountability_name}}</td>
 									<td class="text-center">Php  {{$paid->amount }}</td>
+									<td class="text-center">{{ $paid->due_date }} </td>
 									<td class="text-center">{{ $paid->date }} </td>
+									<td class="text-center">{{ $paid->status }} </td>
 								</tr>
 								@endforeach
 							@else
